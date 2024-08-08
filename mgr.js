@@ -11,7 +11,7 @@ define(['managerAPI',
             },
             body: JSON.stringify({
                 experimentID: '2L7SRGjCWjgQ',  // 替換為實際的 experiment ID
-                filename: 'UNIQUE_FILENAME.csv',  // 替換為你希望的文件名
+                filename: 'experiment_' + Date.now() + '.csv'',  // 替換為你希望的文件名
                 data: data
             })
         })

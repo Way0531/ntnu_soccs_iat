@@ -9,7 +9,15 @@ define(['managerAPI',
 
 	var API    = new Manager();
 	//const subid = Date.now().toString(16)+Math.floor(Math.random()*10000).toString(16);
-	init_data_pipe(API, '2L7SRGjCWjgQ',  {file_type:'csv'});	
+	//init_data_pipe(API, '2L7SRGjCWjgQ',  {file_type:'csv'});	
+
+	try {
+        init_data_pipe(API, '2L7SRGjCWjgQ', {file_type:'csv'});
+        console.log('DataPipe successfully initialized with experiment ID:', '2L7SRGjCWjgQ');
+        console.log('API configuration:', API);
+    } catch (error) {
+        console.error('Error initializing DataPipe:', error);
+    }
 
     API.setName('mgr');
     API.addSettings('skip',true);

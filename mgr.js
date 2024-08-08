@@ -1,20 +1,31 @@
 define(['managerAPI',
-		'https://cdn.jsdelivr.net/gh/minnojs/minno-datapipe@1.*/datapipe.min.js'], function(Manager){
+        'https://cdn.jsdelivr.net/gh/minnojs/minno-datapipe@1.*/datapipe.min.js'], function(Manager){
 
+    // 定義用於發送數據的函數
+    function sendDataToServer(data) {
+        fetch('https://pipe.jspsych.org/api/data/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': '*/*',
+            },
+            body: JSON.stringify({
+                experimentID: '2L7SRGjCWjgQ',  // 替換為實際的 experiment ID
+                filename: 'UNIQUE_FILENAME.csv',  // 替換為你希望的文件名
+                data: data
+            })
+        })
+        .then(response => response.json())
+        .then(result => console.log('Success:', result))
+        .catch(error => console.error('Error:', error));
+    }
 
-	//You can use the commented-out code to get parameters from the URL.
-	//const queryString = window.location.search;
-    //const urlParams = new URLSearchParams(queryString);
-    //const pt = urlParams.get('pt');
-
-	var API    = new Manager();
-	//const subid = Date.now().toString(16)+Math.floor(Math.random()*10000).toString(16);
-	init_data_pipe(API, '1SxBxkkq8I0m',  {file_type:'csv'});	
+    var API = new Manager();
+    init_data_pipe(API, '2L7SRGjCWjgQ', {file_type:'csv'});    
 
     API.setName('mgr');
     API.addSettings('skip',true);
 
-    //Randomly select which of two sets of category labels to use.
     let raceSet = API.shuffle(['a','b'])[0];
     let blackLabels = [];
     let whiteLabels = [];
@@ -29,14 +40,11 @@ define(['managerAPI',
 
     API.addGlobal({
         raceiat:{},
-        //YBYB: change when copying back to the correct folder
         baseURL: './images/',
-        raceSet:raceSet,
-        blackLabels:blackLabels,
-        whiteLabels:whiteLabels,
-        //Select randomly what attribute words to see. 
-        //Based on Axt, Feng, & Bar-Anan (2021).
-        posWords : API.shuffle([
+        raceSet: raceSet,
+        blackLabels: blackLabels,
+        whiteLabels: whiteLabels,
+        posWords: API.shuffle([
             'Love', 'Cheer', 'Friend', 'Pleasure',
             'Adore', 'Cheerful', 'Friendship', 'Joyful', 
             'Smiling','Cherish', 'Excellent', 'Glad', 
@@ -46,7 +54,7 @@ define(['managerAPI',
             'Fantastic', 'Happy', 'Lovely', 'Terrific', 
             'Celebrate', 'Enjoy', 'Magnificent', 'Triumph'
         ]), 
-        negWords : API.shuffle([
+        negWords: API.shuffle([
             'Abuse', 'Grief', 'Poison', 'Sadness', 
             'Pain', 'Despise', 'Failure', 'Nasty', 
             'Angry', 'Detest', 'Horrible', 'Negative', 
@@ -57,6 +65,25 @@ define(['managerAPI',
             'Hatred', 'Hurtful', 'Sickening', 'Yucky'
         ])
     });
+
+    function uploading_task(options) {
+        return {
+            type: 'custom',
+            name: 'uploading',
+            script: function() {
+                const data = {
+                    raceSet: API.getGlobal('raceSet'),
+                    blackLabels: API.getGlobal('blackLabels'),
+                    whiteLabels: API.getGlobal('whiteLabels')
+                };
+
+                sendDataToServer(data); // 發送數據
+
+                // 確保在數據發送後結束此任務
+                API.complete();
+            }
+        };
+    }
 
     API.addTasksSet({
         instructions: [{
@@ -97,28 +124,22 @@ define(['managerAPI',
             name: 'lastpage',
             templateUrl: 'lastpage.jst',
             title: 'End',
-            //Uncomment the following if you want to end the study here.
-            //last:true, 
             header: 'You have completed the study'
         }], 
         
-        //Use if you want to redirect the participants elsewhere at the end of the study
-        redirect:
-        [{ 
-			//Replace with any URL you need to put at the end of your study, or just remove this task from the sequence below
-            type:'redirect', name:'redirecting', url: 'https://www.google.com/search' 
+        redirect: [{ 
+            type: 'redirect', 
+            name: 'redirecting', 
+            url: 'https://www.google.com/search' 
         }],
 		
-		//This task waits until the data are sent to the server.
         uploading: uploading_task({header: 'just a moment', body:'Please wait, sending data... '})
     });
 
     API.addSequence([
-        { type: 'isTouch' }, //Use Minno's internal touch detection mechanism. 
-        
+        { type: 'isTouch' },
         { type: 'post', path: ['$isTouch', 'raceSet', 'blackLabels', 'whiteLabels'] },
 
-        // apply touch only styles
         {
             mixer:'branch',
             conditions: {compare:'global.$isTouch', to: true},
@@ -139,11 +160,9 @@ define(['managerAPI',
                         '[pi-quest] .btn-toolbar {margin:15px;float:none !important; text-align:center;position:relative;}',
                         '[pi-quest] [ng-click="decline($event)"] {position:absolute;right:0;bottom:0}',
                         '[pi-quest] [ng-click="submit()"] {width:30%;line-height: 1.3333333;border-radius: 6px;}',
-                        // larger screens
                         '@media (min-width: 480px) {',
                         ' [pi-quest] [ng-click="submit()"] {width:30%;padding: 10px 16px;font-size: 1.6em;}',
                         '}',
-                        // phones and smaller screens
                         '@media (max-width: 480px) {',
                         ' [pi-quest] [ng-click="submit()"] {padding: 8px 13px;font-size: 1.2em;}',
                         ' [pi-quest] [ng-click="decline($event)"] {font-size: 0.9em;padding:3px 6px;}',
@@ -153,14 +172,11 @@ define(['managerAPI',
             ]
         },
         
-        
         {inherit: 'intro'},
         {
-            mixer:'random',
-            data:[
+            mixer: 'random',
+            data: [
                 {inherit: 'explicits'},
-
-                // force the instructions to preceed the iat
                 {
                     mixer: 'wrapper',
                     data: [
@@ -171,7 +187,7 @@ define(['managerAPI',
             ]
         },
 
-		{inherit: 'uploading'},
+        {inherit: 'uploading'},
         {inherit: 'lastpage'},
         {inherit: 'redirect'}
     ]);

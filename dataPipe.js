@@ -1,4 +1,4 @@
-function init_data_pipe(API, experimentID, file_type='json') {
+function init_data_pipe(API, 1SxBxkkq8I0m, file_type='json') {
     file_type = file_type.toLowerCase();
     var APIglobal = API.getGlobal(); 
     const manager_name = API.script.name;
@@ -52,7 +52,7 @@ function init_data_pipe(API, experimentID, file_type='json') {
                         Accept: "*/*",
                       },
                       body: JSON.stringify({
-                        experimentID: experimentID,
+                        experimentID: 1SxBxkkq8I0m,
                         filename: logName+'_'+hash+'.'+file_type,
                         data: data
                       })

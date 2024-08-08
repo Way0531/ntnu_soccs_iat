@@ -28,9 +28,9 @@ define(['pipAPI','https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/IAT/iat10.
             }, 
             stimulusMedia : [ //Stimuli content as PIP's media objects
                 {image: '06_hetero.jpg'},
-                {image: '12_hetero.jpg'},
+                {image: '13_hetero.jpg'},
                 {image: '06_hetero.jpg'},
-                {image: '12_hetero.jpg'}
+                {image: '13_hetero.jpg'}
             ],
             //Stimulus css (style)
             stimulusCss : {color:'#31940F','font-size':'2.3em'}

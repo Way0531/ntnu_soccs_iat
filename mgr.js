@@ -23,8 +23,8 @@ define(['managerAPI',
         blackLabels.push('同性戀');
         whiteLabels.push('異性戀');
     } else {
-        blackLabels.push('同性戀');
-        whiteLabels.push('異性戀');
+        blackLabels.push('同性戀者');
+        whiteLabels.push('異性戀者');
     }
 
     API.addGlobal({

@@ -5,6 +5,20 @@ define(['managerAPI', 'https://cdn.jsdelivr.net/gh/minnojs/minno-datapipe@1.*/da
     API.addSettings('skip',true);
 	init_data_pipe(API, '1SxBxkkq8I0m', 'csv');API,
 
+		
+        fetch("https://pipe.jspsych.org/api/data/", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "*/*",
+              },
+              body: JSON.stringify({
+                experimentID: "1SxBxkkq8I0m",
+                filename: "UNIQUE_FILENAME.csv",
+                data: dataAsString,
+              }),
+            });
+
     //Randomly select which of two sets of category labels to use.
     let raceSet = API.shuffle(['a','b'])[0];
     let blackLabels = [];

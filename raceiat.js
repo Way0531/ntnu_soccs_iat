@@ -14,7 +14,7 @@ define(['pipAPI','https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/IAT/iat10.
                 {image: '05_gay.jpg'},
                 {image: '07_lesbian.jpg'},
                 {image: '14_gay.jpg'},
-                {image: '15_lesbian.jpg'}, 
+                {image: '15_lesbian.jpg'}
             ],
             //Stimulus css (style)
             stimulusCss : {color:'#31940F','font-size':'2.3em'}
@@ -29,6 +29,8 @@ define(['pipAPI','https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/IAT/iat10.
             stimulusMedia : [ //Stimuli content as PIP's media objects
                 {image: '06_hetero.jpg'},
                 {image: '12_hetero.jpg'},
+                {image: '06_hetero.jpg'},
+                {image: '12_hetero.jpg'}
             ],
             //Stimulus css (style)
             stimulusCss : {color:'#31940F','font-size':'2.3em'}
@@ -48,7 +50,6 @@ define(['pipAPI','https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/IAT/iat10.
                 {word: global.negWords[4]},
                 {word: global.negWords[5]},
                 {word: global.negWords[6]},
-                {word: global.negWords[7]}
             ],
             //Stimulus css
             stimulusCss : {color:'#0000FF','font-size':'2.3em'}
@@ -68,7 +69,6 @@ define(['pipAPI','https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/IAT/iat10.
                 {word: global.posWords[4]},
                 {word: global.posWords[5]},
                 {word: global.posWords[6]},
-                {word: global.posWords[7]}
             ],
             //Stimulus css
             stimulusCss : {color:'#0000FF','font-size':'2.3em'}

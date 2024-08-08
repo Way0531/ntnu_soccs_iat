@@ -1,21 +1,17 @@
 define(['managerAPI',
-		'https://cdn.jsdelivr.net/gh/minnojs/minno-datapipe@1.*/datapipe.min.js'], function(Manager){
-
-
-	//You can use the commented-out code to get parameters from the URL.
-	//const queryString = window.location.search;
-    //const urlParams = new URLSearchParams(queryString);
-    //const pt = urlParams.get('pt');
-
-	var API    = new Manager();
-	//const subid = Date.now().toString(16)+Math.floor(Math.random()*10000).toString(16);
-	init_data_pipe(API, '2L7SRGjCWjgQ',  {file_type:'csv'});	
-
+        'https://cdn.jsdelivr.net/gh/minnojs/minno-datapipe@1.*/datapipe.min.js',
+        'https://cdn.jsdelivr.net/gh/minnojs/scorer/scorer.min.js'], 
+    function(Manager){
+    
+    var API = new Manager();
+    
+    // 初始化 DataPipe
+    init_data_pipe(API, '2L7SRGjCWjgQ', {file_type:'csv'});    
 
     API.setName('mgr');
     API.addSettings('skip',true);
 
-    //Randomly select which of two sets of category labels to use.
+    // 隨機選擇使用哪一組標籤
     let raceSet = API.shuffle(['a','b'])[0];
     let blackLabels = [];
     let whiteLabels = [];
@@ -29,19 +25,16 @@ define(['managerAPI',
     }
 
     API.addGlobal({
-        raceiat:{},
-        //YBYB: change when copying back to the correct folder
+        raceiat: {},
         baseURL: './images/',
-        raceSet:raceSet,
-        blackLabels:blackLabels,
-        whiteLabels:whiteLabels,
-        //Select randomly what attribute words to see. 
-        //Based on Axt, Feng, & Bar-Anan (2021).
-        posWords : API.shuffle([
+        raceSet: raceSet,
+        blackLabels: blackLabels,
+        whiteLabels: whiteLabels,
+        posWords: API.shuffle([
             '喜悅', '愛', '和平', '美妙',
             '愉快', '光榮', '歡笑', '快樂'
         ]), 
-        negWords : API.shuffle([
+        negWords: API.shuffle([
             '苦惱', '糟糕', '恐怖', '骯髒', 
             '邪惡', '可怕', '失敗', '傷害'
         ])
@@ -52,7 +45,6 @@ define(['managerAPI',
             type: 'message',
             buttonText: 'Continue'
         }],
-
         intro: [{
             inherit: 'instructions',
             name: 'intro',
@@ -60,7 +52,6 @@ define(['managerAPI',
             title: 'Intro',
             header: 'Welcome'
         }],
-
         raceiat_instructions: [{
             inherit: 'instructions',
             name: 'raceiat_instructions',
@@ -68,101 +59,86 @@ define(['managerAPI',
             title: 'IAT Instructions',
             header: 'Implicit Association Test'
         }],
-
         explicits: [{
             type: 'quest',
             name: 'explicits',
             scriptUrl: 'explicits.js'
         }],
-
         raceiat: [{
             type: 'time',
             name: 'raceiat',
             scriptUrl: 'raceiat.js'
         }],
-
         lastpage: [{
             type: 'message',
             name: 'lastpage',
             templateUrl: 'lastpage.jst',
             title: 'End',
-            //Uncomment the following if you want to end the study here.
-            //last:true, 
             header: 'You have completed the study'
-        }], 
-        
-        //Use if you want to redirect the participants elsewhere at the end of the study
-        redirect:
-        [{ 
-			//Replace with any URL you need to put at the end of your study, or just remove this task from the sequence below
-            type:'redirect', name:'redirecting', url: 'https://www.google.com/search' 
         }],
-		
-		//This task waits until the data are sent to the server.
+        redirect: [{ 
+            type:'redirect', name:'redirecting', url: 'https://www.google.com/search'
+        }],
         uploading: uploading_task({header: 'just a moment', body:'Please wait, sending data... '})
     });
 
     API.addSequence([
-        { type: 'isTouch' }, //Use Minno's internal touch detection mechanism. 
+        { type: 'isTouch' }, 
         
         { type: 'post', path: ['$isTouch', 'raceSet', 'blackLabels', 'whiteLabels'] },
 
-        // apply touch only styles
         {
-            mixer:'branch',
-            conditions: {compare:'global.$isTouch', to: true},
+            mixer: 'wrapper',
             data: [
-                {
-                    type: 'injectStyle',
-                    css: [
-                        '* {color:red}',
-                        '[piq-page] {background-color: #fff; border: 1px solid transparent; border-radius: 4px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); margin-bottom: 20px; border-color: #bce8f1;}',
-                        '[piq-page] > ol {margin: 15px;}',
-                        '[piq-page] > .btn-group {margin: 0px 15px 15px 15px;}',
-                        '.container {padding:5px;}',
-                        '[pi-quest]::before, [pi-quest]::after {content: " ";display: table;}',
-                        '[pi-quest]::after {clear: both;}',
-                        '[pi-quest] h3 { border-bottom: 1px solid transparent; border-top-left-radius: 3px; border-top-right-radius: 3px; padding: 10px 15px; color: inherit; font-size: 2em; margin-bottom: 20px; margin-top: 0;background-color: #d9edf7;border-color: #bce8f1;color: #31708f;}',
-                        '[pi-quest] .form-group > label {font-size:1.2em; font-weight:normal;}',
-
-                        '[pi-quest] .btn-toolbar {margin:15px;float:none !important; text-align:center;position:relative;}',
-                        '[pi-quest] [ng-click="decline($event)"] {position:absolute;right:0;bottom:0}',
-                        '[pi-quest] [ng-click="submit()"] {width:30%;line-height: 1.3333333;border-radius: 6px;}',
-                        // larger screens
-                        '@media (min-width: 480px) {',
-                        ' [pi-quest] [ng-click="submit()"] {width:30%;padding: 10px 16px;font-size: 1.6em;}',
-                        '}',
-                        // phones and smaller screens
-                        '@media (max-width: 480px) {',
-                        ' [pi-quest] [ng-click="submit()"] {padding: 8px 13px;font-size: 1.2em;}',
-                        ' [pi-quest] [ng-click="decline($event)"] {font-size: 0.9em;padding:3px 6px;}',
-                        '}'
-                    ]
-                }
-            ]
-        },
-        
-        
-        {inherit: 'intro'},
-        {
-            mixer:'random',
-            data:[
+                {inherit: 'intro'},
                 {inherit: 'explicits'},
-
-                // force the instructions to preceed the iat
                 {
                     mixer: 'wrapper',
                     data: [
                         {inherit: 'raceiat_instructions'},
                         {inherit: 'raceiat'}
                     ]
-                }
-            ]
-        },
+                },
+                {
+                    type: 'post',
+                    name: 'compute_dscore',
+                    script: function(){
+                        var scorer = new Scorer();
 
-		{inherit: 'uploading'},
-        {inherit: 'lastpage'},
-        {inherit: 'redirect'}
+                        scorer.addSettings('compute', {
+                            AnalyzedVar: 'latency',
+                            ErrorVar: 'score',
+                            condVar: 'condition',
+                            cond1VarValues: ['cond1'], // 替換為您的實際值
+                            cond2VarValues: ['cond2'], // 替換為您的實際值
+                            parcelVar: 'parcel',
+                            parcelValue: ['first', 'second'],
+                            fastRT: 300,
+                            maxFastTrialsRate: 10,
+                            minRT: 400,
+                            maxRT: 10000,
+                            maxErrorParcelRate: 0.2,
+                            errorLatency: {
+                                use: 'penalty',
+                                penalty: 600,
+                                useForSTD: true
+                            }
+                        });
+
+                        var DScoreObj = scorer.computeD();
+
+                        API.save({
+                            score: DScoreObj.Dscore,
+                            feedback: DScoreObj.FBMsg,
+                            otherData: '您需要的其他數據'
+                        });
+                    }
+                },
+                {inherit: 'uploading'},
+                {inherit: 'lastpage'},
+                {inherit: 'redirect'}
+            ]
+        }
     ]);
 
     return API.script;

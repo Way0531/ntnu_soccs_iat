@@ -6,7 +6,6 @@ define(['managerAPI', 'https://cdn.jsdelivr.net/gh/minnojs/minno-datapipe@1.*/da
 	init_data_pipe(API, '1SxBxkkq8I0m', 'csv');API,
 
 
-
     //Randomly select which of two sets of category labels to use.
     let raceSet = API.shuffle(['a','b'])[0];
     let blackLabels = [];

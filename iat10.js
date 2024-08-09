@@ -181,6 +181,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
 				'若畫面中出現 <font color="#0000ff">leftAttribute</font> 類別的圖片或詞彙，請按下鍵盤上的 <b>E</b> 鍵'+
 				'<br/>若畫面中出現 <font color="#0000ff">rightAttribute.</font> 類別的圖片或詞彙，請按下鍵盤上的 <b>I</b> 鍵<br/><br/>'+
+				'一次只會出現一個圖片或詞彙<br/>'
 				'若畫面顯示紅色的 <font color="#ff0000"><b>X</b></font> ，表示您作答錯誤。 ' +
 				'請按下另一個按鍵以繼續。<br/>' +
 				'在能夠正確作答的前提下，作答速度請<u>愈快愈好</u>。<br/><br/></p>'+
@@ -192,13 +193,13 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 					'</p>',
 					'<p align="left" style="margin-left:5px">',
 						'<br/>',
-						'Put a left finger over the the <b>left</b> green area for items that belong to the category <font color="#0000ff">leftAttribute</font>.<br/>',
-						'Put a right finger over the <b>right</b> green area for items that belong to the category <font color="#0000ff">rightAttribute</font>.<br/>',
-						'Items will appear one at a time.<br/>',
+						'若畫面中出現 <font color="#0000ff">leftAttribute</font> 類別的圖片或詞彙，請用左手手指碰觸 <b>左方</b> 綠色區域<br/>',
+						'若畫面中出現 <font color="#0000ff">rightAttribute</font> 類別的圖片或詞彙，請用右手手指碰觸 <b>右方</b> 綠色區域<br/>',
+						'一次只會出現一個圖片或詞彙<br/>',
 						'<br/>',
-						'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. Touch the other side. <u>Go as fast as you can</u> while being accurate.',
+						'若畫面顯示紅色的 <font color="#ff0000"><b>X</b></font> ，表示您作答錯誤。 請碰觸另一邊的綠色區域以繼續。 在能夠正確作答的前提下，作答速度請<u>愈快愈好</u>。',
 					'</p>',
-					'<p align="center">Touch the <b>lower </b> green area to start.</p>',
+					'<p align="center">碰觸 <b>下方 </b> 綠色區域以開始本階段測驗。</p>',
 				'</div>'
 			].join('\n'),
 

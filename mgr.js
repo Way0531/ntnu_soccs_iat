@@ -88,7 +88,7 @@ define(['managerAPI',
             title: 'End',
             //Uncomment the following if you want to end the study here.
             //last:true, 
-            header: 'You have completed the study'
+            header: '測驗結束，謝謝您的參與！'
         }], 
         
         //Use if you want to redirect the participants elsewhere at the end of the study
@@ -99,7 +99,7 @@ define(['managerAPI',
         }],
 		
 		//This task waits until the data are sent to the server.
-        uploading: uploading_task({header: 'just a moment', body:'Please wait, sending data... '})
+        uploading: uploading_task({header: 'just a moment', body:'測驗資料上傳中，請先不要關閉頁面，謝謝！'})
     });
 
     API.addSequence([

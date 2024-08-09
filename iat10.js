@@ -232,8 +232,8 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			instFirstCombined : '<div><p align="center" style="font-size:20px; font-family:arial">' +
 				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
 				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
-				'Use the <b>E</b> key for <font color="#336600">leftCategory</font> and for <font color="#0000ff">leftAttribute</font>.<br/>' +
-				'Use the <b>I</b> key for <font color="#336600">rightCategory</font> and for  <font color="#0000ff">rightAttribute</font>.<br/>' +
+				'若出現 <font color="#336600">leftCategory</font> 相關圖片或 <font color="#0000ff">leftAttribute</font> 詞彙，請按下 <b>E</b> 鍵<br/>' +
+				'若出現 <font color="#336600">rightCategory</font> 相關圖片或 <font color="#0000ff">rightAttribute</font> 詞彙，請按下 <b>I</b> 鍵<br/>' +
 				'Each item belongs to only one category.<br/><br/>' +
 				'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' +
 				'Press the other key to continue.<br/>' + 

@@ -139,8 +139,8 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			remindError : true,
 
 			remindErrorText : '<p align="center" style="font-size:1em; font-family:arial; color:#000000">' +
-			'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' +
-			'Press the other key to continue.<p/>',
+			'若出現紅色的 <font color="#ff0000"><b>X</b></font> 表示您作答錯誤， ' +
+			'請按下另一個按鍵以繼續。<p/>',
 
 			remindErrorTextTouch : '<p align="center" style="font-size:1.4em; font-family:arial; color:#000000">' +
 			'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' +
@@ -205,13 +205,12 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			instCategoriesPractice: '<div><p align="center" style="font-size:20px; font-family:arial">' +
 				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
 				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
-				'Put a left finger on the <b>E</b> key for items that belong to the category <font color="#336600">leftCategory</font>. ' +
-				'<br/>Put a right finger on the <b>I</b> key for items that belong to the category <font color="#336600">rightCategory</font>.<br/>' +
-				'Items will appear one at a time.<br/><br/>' +
-				'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' +
-				'Press the other key to continue.<br/>' +
-				'<u>Go as fast as you can</u> while being accurate.<br/><br/></p>'+
-				'<p align="center">Press the <b>space bar</b> when you are ready to start.</font></p></div>',
+				'若畫面中出現 <font color="#336600">leftCategory</font> 相關圖片，請按下 <b>E</b> 鍵'+
+				'<br/>若畫面中出現 <font color="#336600">rightCategory</font> 相關圖片，請按下 <b>I</b> 鍵<br/><br/>'+
+				'若出現紅色的 <font color="#ff0000"><b>X</b></font> 表示您作答錯誤， ' +
+				'請按下另一個按鍵以繼續。<br/>' +
+				'在能夠正確作答的前提下，作答速度請<u>愈快愈好</u>。<br/><br/></p>'+
+				'<p align="center">按下 <b>空白鍵</b> 以開始本階段的測驗。</font></p></div>',
 			instCategoriesPracticeTouch: [
 				'<div>',
 					'<p align="center">',

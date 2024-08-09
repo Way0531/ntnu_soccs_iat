@@ -1,4 +1,4 @@
-define(['pipAPI','https://github.com/Way0531/IAT_TEST/blob/38473ebb8e588151d4aa0d11ab1084f36ed672a3/iat10.js'], function(APIConstructor, iatExtension){
+define(['pipAPI','https://raw.githubusercontent.com/Way0531/IAT_TEST/main/iat10.js'], function(APIConstructor, iatExtension){
     let API = new APIConstructor();
     let global = API.getGlobal();
 

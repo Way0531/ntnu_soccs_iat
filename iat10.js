@@ -155,8 +155,8 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			leftKey : 'e', 
 			rightKey: 'i',
 			//Text and style for key instructions displayed about the category labels.
-			leftKeyText : 'Press "E" for', 
-			rightKeyText : 'Press "I" for', 
+			leftKeyText : '按下「E」鍵 ', 
+			rightKeyText : '按下「I」鍵', 
 			keysCss : {'font-size':'0.8em', 'font-family':'courier', color:'#000000'},
 			//Text and style for the separator between the top and bottom category labels.
 			orText : 'or', 
@@ -164,8 +164,8 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			
 			instWidth : 99, //The width of the instructions stimulus
 			
-			finalText : 'Press space to continue to the next task', 
-			finalTouchText : 'Touch the bottom green area to continue to the next task',
+			finalText : '按下空白鍵以進入下一階段', 
+			finalTouchText : '碰觸下方綠色區域以進入下一階段',
 
 			touchMaxStimulusWidth : '50%', 
 			touchMaxStimulusHeight : '50%', 
@@ -179,10 +179,10 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			instAttributePractice: '<div><p align="center" style="font-size:20px; font-family:arial">' +
 				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
 				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
-				'若畫面中出現 <font color="#0000ff">leftAttribute</font> 類別的圖片或詞彙，請按下鍵盤上的 <b>E</b> 鍵'+
-				'<br/>若畫面中出現 <font color="#0000ff">rightAttribute.</font> 類別的圖片或詞彙，請按下鍵盤上的 <b>I</b> 鍵<br/><br/>'+
+				'若畫面中出現 <font color="#0000ff">leftAttribute</font> 類別的圖片或詞彙，請按下 <b>E</b> 鍵'+
+				'<br/>若畫面中出現 <font color="#0000ff">rightAttribute</font> 類別的圖片或詞彙，請按下 <b>I</b> 鍵<br/><br/>'+
 				'一次只會出現一個圖片或詞彙<br/>'
-				'若畫面顯示紅色的 <font color="#ff0000"><b>X</b></font> ，表示您作答錯誤。 ' +
+				'若出現紅色的 <font color="#ff0000"><b>X</b></font> ，表示您作答錯誤， ' +
 				'請按下另一個按鍵以繼續。<br/>' +
 				'在能夠正確作答的前提下，作答速度請<u>愈快愈好</u>。<br/><br/></p>'+
 				'<p align="center">按下 <b>空白鍵</b> 以開始本階段的測驗。</font></p></div>',
@@ -197,22 +197,22 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 						'若畫面中出現 <font color="#0000ff">rightAttribute</font> 類別的圖片或詞彙，請用右手手指碰觸 <b>右方</b> 綠色區域<br/>',
 						'一次只會出現一個圖片或詞彙<br/>',
 						'<br/>',
-						'若畫面顯示紅色的 <font color="#ff0000"><b>X</b></font> ，表示您作答錯誤。 請碰觸另一邊的綠色區域以繼續。 在能夠正確作答的前提下，作答速度請<u>愈快愈好</u>。',
+						'若出現紅色的 <font color="#ff0000"><b>X</b></font> ，表示您作答錯誤，請碰觸另一邊的綠色區域以繼續。 在能夠正確作答的前提下，作答速度請<u>愈快愈好</u>。',
 					'</p>',
-					'<p align="center">碰觸 <b>下方 </b> 綠色區域以開始本階段測驗。</p>',
+					'<p align="center">碰觸 <b>下方</b> 綠色區域以開始本階段測驗。</p>',
 				'</div>'
 			].join('\n'),
 
 			instCategoriesPractice: '<div><p align="center" style="font-size:20px; font-family:arial">' +
 				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
 				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
-				'Put a left finger on the <b>E</b> key for items that belong to the category <font color="#336600">leftCategory</font>. ' +
-				'<br/>Put a right finger on the <b>I</b> key for items that belong to the category <font color="#336600">rightCategory</font>.<br/>' +
-				'Items will appear one at a time.<br/><br/>' +
-				'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' +
-				'Press the other key to continue.<br/>' +
-				'<u>Go as fast as you can</u> while being accurate.<br/><br/></p>'+
-				'<p align="center">Press the <b>space bar</b> when you are ready to start.</font></p></div>',
+				'若畫面中出現 <font color="#336600">leftAttribute</font> 類別的圖片或詞彙，請按下 <b>E</b> 鍵<br/>' +
+				'若畫面中出現 <font color="#336600">rightAttribute</font> 類別的圖片或詞彙，請按下 <b>I</b> 鍵<br/>' +
+				'一次只會出現一個圖片或詞彙<br/><br/>' +
+				'若出現紅色的 <font color="#ff0000"><b>X</b></font> ，表示您作答錯誤， ' +
+				'請按下另一個按鍵以繼續。<br/>' +
+				'在能夠正確作答的前提下，作答速度請<u>愈快愈好</u>。<br/><br/></p>'+
+				'<p align="center">按下 <b>空白鍵</b> 以開始本階段的測驗。</font></p></div>',
 			instCategoriesPracticeTouch: [
 				'<div>',
 					'<p align="center">',
@@ -220,13 +220,13 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 					'</p>',
 					'<p align="left" style="margin-left:5px">',
 						'<br/>',
-						'Put a left finger over the <b>left</b> green area for items that belong to the category <font color="#336600">leftCategory</font>.<br/>',
-						'Put a right finger over the <b>right</b> green area for items that belong to the category <font color="#336600">rightCategory</font>.<br/>',
-						'Items will appear one at a time.<br/>',
+						'若畫面中出現 <font color="#336600">leftAttribute</font> 類別的圖片或詞彙，請用左手手指碰觸 <b>左方</b> 綠色區域<br/>',
+						'若畫面中出現 <font color="#336600">rightAttribute</font> 類別的圖片或詞彙，請用右手手指碰觸 <b>右方</b> 綠色區域<br/>',
+						'一次只會出現一個圖片或詞彙<br/>',
 						'<br/>',
-						'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. Touch the other side. <u>Go as fast as you can</u> while being accurate.',
+						'若出現紅色的 <font color="#ff0000"><b>X</b></font> ，表示您作答錯誤，請碰觸另一邊的綠色區域以繼續。 在能夠正確作答的前提下，作答速度請<u>愈快愈好</u>。',
 					'</p>',
-					'<p align="center">Touch the <b>lower </b> green area to start.</p>',
+					'<p align="center">T碰觸 <b>下方</b> 綠色區域以開始本階段測驗。</p>',
 				'</div>'
 			].join('\n'),
 
@@ -235,11 +235,11 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
 				'Use the <b>E</b> key for <font color="#336600">leftCategory</font> and for <font color="#0000ff">leftAttribute</font>.<br/>' +
 				'Use the <b>I</b> key for <font color="#336600">rightCategory</font> and for  <font color="#0000ff">rightAttribute</font>.<br/>' +
-				'Each item belongs to only one category.<br/><br/>' +
-				'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' +
-				'Press the other key to continue.<br/>' + 
-				'<u>Go as fast as you can</u> while being accurate.<br/><br/></p>' +
-				'<p align="center">Press the <b>space bar</b> when you are ready to start.</font></p></div>',
+				'每個圖片或詞彙都只屬於一種類別<br/><br/>' + 
+				'若出現紅色的 <font color="#ff0000"><b>X</b></font> ，表示您作答錯誤，' +
+				'請按下另一個按鍵以繼續。' + 
+				'在能夠正確作答的前提下，作答速度請<u>愈快愈好</u>。<br/><br/></p>' +
+				'<p align="center">按下 <b>空白鍵</b> 以開始本階段的測驗。</font></p></div>',
 			instFirstCombinedTouch:[
 				'<div>',
 					'<p align="center">',

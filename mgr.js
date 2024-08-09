@@ -50,7 +50,7 @@ define(['managerAPI',
     API.addTasksSet({
         instructions: [{
             type: 'message',
-            buttonText: 'Continue'
+            buttonText: '繼續'
         }],
 
         intro: [{
@@ -58,7 +58,7 @@ define(['managerAPI',
             name: 'intro',
             templateUrl: 'intro.jst',
             title: 'Intro',
-            header: 'Welcome'
+            header: '歡迎'
         }],
 
         raceiat_instructions: [{
@@ -66,7 +66,7 @@ define(['managerAPI',
             name: 'raceiat_instructions',
             templateUrl: 'raceiat_instructions.jst',
             title: 'IAT Instructions',
-            header: 'Implicit Association Test'
+            header: '內隱聯結測驗'
         }],
 
         explicits: [{
@@ -99,7 +99,7 @@ define(['managerAPI',
         }],
 		
 		//This task waits until the data are sent to the server.
-        uploading: uploading_task({header: 'just a moment', body:'測驗資料上傳中，請先不要關閉頁面，謝謝！'})
+        uploading: uploading_task({header: '請稍等', body:'測驗資料上傳中，請先不要關閉頁面，謝謝！'})
     });
 
     API.addSequence([

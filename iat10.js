@@ -182,7 +182,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 				'若畫面中出現 <font color="#0000ff">leftAttribute.</font> 類別的圖片或詞彙，請按下鍵盤上的 <b>E</b> 鍵'+
 				'<br/>Put a right finger on the <b>I</b> key for items that belong to the category <font color="#0000ff">rightAttribute</font>.<br/><br/>' +
 				'若畫面顯示紅色的 <font color="#ff0000"><b>X</b></font> ，代表您作答錯誤。 ' +
-				'請再重新選擇正確的按鍵。<br/>' +
+				'請按下另一個按鍵以繼續。<br/>' +
 				'<u>Go as fast as you can</u> while being accurate.<br/><br/></p>'+
 				'<p align="center">按下 <b>空白鍵</b> 以開始本階段的測驗。</font></p></div>',
 			instAttributePracticeTouch: [

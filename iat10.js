@@ -155,8 +155,8 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			leftKey : 'e', 
 			rightKey: 'i',
 			//Text and style for key instructions displayed about the category labels.
-			leftKeyText : 'press "E" key', 
-			rightKeyText : 'press "I" key', 
+			leftKeyText : 'Press "E" key', 
+			rightKeyText : 'Press "I" key', 
 			keysCss : {'font-size':'0.8em', 'font-family':'courier', color:'#000000'},
 			//Text and style for the separator between the top and bottom category labels.
 			orText : 'or', 
@@ -266,7 +266,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 				'請按下另一個按鍵以繼續。<br/>' + 
 				'在能夠正確作答的前提下，作答速度請<u>愈快愈好</u><br/><br/></p>' +
 				'<p align="center">按下 <b>空白鍵</b> 以開始本階段的測驗。</font></p></div>',
-				,
+				
 			instSecondCombinedTouch:[
 				'<div>',
 					'<p align="center"><u>Part blockNum of nBlocks</u></p>',

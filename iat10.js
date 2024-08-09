@@ -232,8 +232,8 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			instFirstCombined : '<div><p align="center" style="font-size:20px; font-family:arial">' +
 				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
 				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
-				'若出現 <font color="#336600">leftCategory</font> 圖片或 <font color="#0000ff">leftAttribute</font> 詞彙，請按下 <b>E</b> 鍵<br/>' +
-				'若出現 <font color="#336600">rightCategory</font> 圖片或 <font color="#0000ff">rightAttribute</font> 詞彙，請按下 <b>I</b> 鍵<br/>' +
+				'若出現 <font color="#336600">leftCategory</font> 相關圖片或 <font color="#0000ff">leftAttribute</font> 詞彙，請按下 <b>E</b> 鍵<br/>' +
+				'若出現 <font color="#336600">rightCategory</font> 相關圖片或 <font color="#0000ff">rightAttribute</font> 詞彙，請按下 <b>I</b> 鍵<br/>' +
 				'每個圖片或詞彙都只隸屬於一種類別<br/><br/>' +
 				'若出現紅色的 <font color="#ff0000"><b>X</b></font> 表示您作答錯誤， ' +
 				'請按下另一個按鍵以繼續。<br/>' + 
@@ -258,12 +258,15 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			instSecondCombined : '<div><p align="center" style="font-size:20px; font-family:arial">' +
 				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
 				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
-				'This is the same as the previous part.<br/>' +
-				'Use the <b>E</b> key for <font color="#336600">leftCategory</font> and for <font color="#0000ff">leftAttribute</font>.<br/>' +
-				'Use the <b>I</b> key for <font color="#336600">rightCategory</font> and for  <font color="#0000ff">rightAttribute</font>.<br/>' +
-				'Each item belongs to only one category.<br/><br/>' +
-				'<u>Go as fast as you can</u> while being accurate.<br/><br/></p>' +
-				'<p align="center">Press the <b>space bar</b> when you are ready to start.</font></p></div>',
+				'本階段的操作規則與前一階段相同<br/>' +
+				'若出現 <font color="#336600">leftCategory</font> 相關圖片或 <font color="#0000ff">leftAttribute</font> 詞彙，請按下 <b>E</b> 鍵<br/>' +
+				'若出現 <font color="#336600">rightCategory</font> 相關圖片或 <font color="#0000ff">rightAttribute</font> 詞彙，請按下 <b>I</b> 鍵<br/>' +
+				'每個圖片或詞彙都只隸屬於一種類別<br/><br/>' +
+				'若出現紅色的 <font color="#ff0000"><b>X</b></font> 表示您作答錯誤， ' +
+				'請按下另一個按鍵以繼續。<br/>' + 
+				'在能夠正確作答的前提下，作答速度請<u>愈快愈好</u><br/><br/></p>' +
+				'<p align="center">按下 <b>空白鍵</b> 以開始本階段的測驗。</font></p></div>',
+				,
 			instSecondCombinedTouch:[
 				'<div>',
 					'<p align="center"><u>Part blockNum of nBlocks</u></p>',
@@ -283,11 +286,11 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			instSwitchCategories : '<div><p align="center" style="font-size:20px; font-family:arial">' +
 				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
 				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
-				'<b>Watch out, the labels have changed position!</b><br/>' +
-				'Use the left finger on the <b>E</b> key for <font color="#336600">leftCategory</font>.<br/>' +
-				'Use the right finger on the <b>I</b> key for <font color="#336600">rightCategory</font>.<br/><br/>' +
-				'<u>Go as fast as you can</u> while being accurate.<br/><br/></p>' +
-				'<p align="center">Press the <b>space bar</b> when you are ready to start.</font></p></div>',
+				'<b>請注意！本階段的按鍵規則與之前相反！</b><br/>' +
+				'若畫面中出現 <font color="#336600">leftCategory</font> 相關圖片，請按下 <b>E</b> 鍵<br/>' +
+				'若畫面中出現 <font color="#336600">rightCategory</font> 相關圖片，請按下 <b>I</b> 鍵<br/>' +
+				'在能夠正確作答的前提下，作答速度請<u>愈快愈好</u><br/><br/></p>' +
+				'<p align="center">按下 <b>空白鍵</b> 以開始本階段的測驗。</font></p></div>',
 			instSwitchCategoriesTouch: [
 				'<div>',
 					'<p align="center">',

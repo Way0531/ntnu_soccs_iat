@@ -179,8 +179,8 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			instAttributePractice: '<div><p align="center" style="font-size:20px; font-family:arial">' +
 				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
 				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
-				'若畫面中出現 <font color="#0000ff">leftAttribute</font> 類別的圖片或詞彙，請按下 <b>E</b> 鍵'+
-				'<br/>若畫面中出現 <font color="#0000ff">rightAttribute</font> 類別的圖片或詞彙，請按下 <b>I</b> 鍵<br/><br/>'+
+				'若畫面中出現 <font color="#0000ff">leftAttribute</font> 詞彙，請按下 <b>E</b> 鍵'+
+				'<br/>若畫面中出現 <font color="#0000ff">rightAttribute</font> 詞彙，請按下 <b>I</b> 鍵<br/><br/>'+
 				'若出現紅色的 <font color="#ff0000"><b>X</b></font> 表示您作答錯誤， ' +
 				'請按下另一個按鍵以繼續。<br/>' +
 				'在能夠正確作答的前提下，作答速度請<u>愈快愈好</u>。<br/><br/></p>'+

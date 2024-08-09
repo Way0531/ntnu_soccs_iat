@@ -156,10 +156,10 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			rightKey: 'i',
 			//Text and style for key instructions displayed about the category labels.
 			leftKeyText : '按下 "E" 鍵', 
-			rightKeyText : 'Press "I" key', 
+			rightKeyText : '按下 "I" 鍵', 
 			keysCss : {'font-size':'0.8em', 'font-family':'courier', color:'#000000'},
 			//Text and style for the separator between the top and bottom category labels.
-			orText : 'or', 
+			orText : '或', 
 			orCss : {'font-size':'1.8em', color:'#000000'},
 			
 			instWidth : 99, //The width of the instructions stimulus

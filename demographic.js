@@ -55,7 +55,7 @@ define(['questAPI'], function(Quest){
 		headerStyle : {'font-size':'1em'},
 		questions : {
 			mixer : 'repeat',
-			//times : 4,
+			times : 3,
 			data : [
 				{inherit:{set:'people', type:'first'}}
 			]

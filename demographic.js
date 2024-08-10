@@ -17,30 +17,34 @@ define(['questAPI'], function(Quest){
 			inherit : 'basicSelect',
 			name : 'job',
 			stem : '職業',
-      answers : [
-			'1 - 正在全職實習中',
-			'2 - 已完成全職實習，尚未考取諮商心理師執照',
-			'3 - 諮商心理師（執業未滿1年）',
-			'4 - 諮商心理師（執業1-5年）',
-			'5 - 諮商心理師（執業6-10年）',
-			'6 - 諮商心理師（10年以上）',
-		]
+                        answers : [
+			'正在全職實習中',
+			'已完成全職實習，尚未考取諮商心理師執照',
+			'諮商心理師（執業未滿1年）',
+			'諮商心理師（執業1-5年）',
+			'諮商心理師（執業6-10年）',
+			'諮商心理師（10年以上）',]
 		},
 		{
 			inherit : 'basicSelect',
-			name : 'Beyonce',
-			stem : 'Beyonce Knowles'
+			name : 'gender',
+			stem : '性別',
+			answers : [
+			'男性',
+			'女性',
+			'其他',]
 		},
 		{
 			inherit : 'basicSelect',
-			name : 'Colbert',
-			stem : 'Stephen Colbert'
+			name : 'sexuality',
+			stem : '性傾向',
+			answers : [
+			'異性戀',
+			'同性戀',
+			'雙性戀',
+			'其他',]
 		},
-		{
-			inherit : 'basicSelect',
-			name : 'Letterman',
-			stem : 'David Letterman'
-		}
+		
 	]);
 
 	// ### Pages

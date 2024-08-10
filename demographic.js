@@ -54,7 +54,7 @@ define(['questAPI'], function(Quest){
         header: 'How positive or negative are your feelings toward the people listed below?',
         headerStyle : {'font-size':'1em'},
         questions : [
-            {inherit:{set:'people'}}
+            {inherit:{set:'people', type:'all'}}
         ],
         v1style:2,
         decline:false,

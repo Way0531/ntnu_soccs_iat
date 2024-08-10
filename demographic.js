@@ -26,23 +26,23 @@ define(['questAPI'], function(Quest){
 	[
 		{
 			inherit : 'basicSelect',
-			name : 'Obama',
-			stem : 'Barack Obama'
+			name : 'one',
+			stem : '1'
 		},
 		{
 			inherit : 'basicSelect',
-			name : 'Beyonce',
-			stem : 'Beyonce Knowles'
+			name : 'two',
+			stem : '2'
 		},
 		{
 			inherit : 'basicSelect',
-			name : 'Colbert',
-			stem : 'Stephen Colbert'
+			name : 'three',
+			stem : '3'
 		},
 		{
 			inherit : 'basicSelect',
-			name : 'Letterman',
-			stem : 'David Letterman'
+			name : 'four',
+			stem : '4'
 		}
 	]);
 
@@ -54,10 +54,13 @@ define(['questAPI'], function(Quest){
 		header: 'How positive or negative are your feelings toward the people listed below?',
 		headerStyle : {'font-size':'1em'},
 		questions : {
-			mixer : 'repeat',
-			times : 4,
+			//mixer : 'repeat',
+			//times : 4,
 			data : [
-				{inherit:{set:'people', type:'exRandom'}}
+				//{inherit:{set:'people', type:'exRandom'}}
+				{inherit:'one'},
+				{inherit:'two'},
+				{inherit:'three'}
 			]
 		},
 		v1style:2,

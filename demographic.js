@@ -4,11 +4,11 @@ define(['questAPI'], function(Quest){
 	// ### Questions
 	API.addQuestionsSet('basicSelect',
 	{
-		type: 'selectOne',        // 保持為單選題
+		type: 'selectOne',
 		autoSubmit:false,
 		numericValues:true,
 		required:false,
-		style:'multiButtons',     // 使用按鈕樣式
+		style:'multiButtons',
 		answers : [
 			'1 - Extremely negative',
 			'2',
@@ -47,18 +47,19 @@ define(['questAPI'], function(Quest){
 	]);
 
 	// ### Pages
-	// Shows all four questions in a fixed order.
+	// Shows all four questions, but the order is random.
 	API.addPagesSet('basicPage',
 	{
 		progressBar: '<%= pagesMeta.number %> out of 4',
 		header: 'How positive or negative are your feelings toward the people listed below?',
 		headerStyle : {'font-size':'1em'},
-		questions : [
-			{inherit:'people', set:'Obama'},   // Barack Obama
-			{inherit:'people', set:'Beyonce'}, // Beyonce Knowles
-			{inherit:'people', set:'Colbert'}, // Stephen Colbert
-			{inherit:'people', set:'Letterman'} // David Letterman
-		],
+		questions : {
+			mixer : 'repeat',
+			times : 5,
+			data : [
+				{inherit:{set:'people', type:'each'}}
+			]
+		},
 		v1style:2,
 		decline:false,
 		numbered: false

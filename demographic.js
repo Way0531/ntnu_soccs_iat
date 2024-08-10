@@ -50,11 +50,11 @@ define(['questAPI'], function(Quest){
     // Shows all four questions in a fixed order.
     API.addPagesSet('basicPage',
     {
-        progressBar: '<%= pagesMeta.number %> out of 4',
+        //progressBar: '<%= pagesMeta.number %> out of 4',
         header: 'How positive or negative are your feelings toward the people listed below?',
         headerStyle : {'font-size':'1em'},
         questions : [
-            {inherit:{set:'people', type:'all'}}
+            {inherit:{set:'people'}}
         ],
         v1style:2,
         decline:false,

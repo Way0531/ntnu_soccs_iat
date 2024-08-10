@@ -55,9 +55,9 @@ define(['questAPI'], function(Quest){
 		headerStyle : {'font-size':'1em'},
 		questions : {
 			data : [
-				{inherit:{set:'people', type:'first'}},
-				{inherit:{set:'people', type:'second'}},
-				{inherit:{set:'people', type:'third'}}
+				{inherit:{set:'people', index:0}}, // 第一題
+				{inherit:{set:'people', index:1}}, // 第二題
+				{inherit:{set:'people', index:2}}  // 第三題
 			]
 		},
 		v1style:2,

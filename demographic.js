@@ -56,10 +56,8 @@ define(['questAPI'], function(Quest){
 		questions : {
 			//mixer : 'random',
 			data : {inherit:'one'},
-			data : {inherit:'two'},
-			data : {inherit:'three'}
-				
-			
+			//data : {inherit:'two'},
+			//data : {inherit:'three'}
 		},
 		v1style:2,
 		decline:false,

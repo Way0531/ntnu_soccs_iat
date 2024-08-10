@@ -54,8 +54,6 @@ define(['questAPI'], function(Quest){
 		header: '基本資訊',
 		headerStyle : {'font-size':'1em'},
 		questions : {
-			mixer : 'repeat',
-			times : 3,
 			data : [
 				{inherit:{set:'people', type:'first'}},
 				{inherit:{set:'people', type:'second'}},

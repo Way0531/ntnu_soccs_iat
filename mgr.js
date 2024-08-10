@@ -94,7 +94,7 @@ define(['managerAPI',
         //Use if you want to redirect the participants elsewhere at the end of the study
         redirect:
         [{ 
-			//Replace with any URL you need to put at the end of your study, or just remove this task from the sequence below
+			//最後導向的網站（問卷）
             type:'redirect', name:'redirecting', url: 'https://www.google.com/search' 
         }],
 		

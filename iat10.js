@@ -139,12 +139,12 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			remindError : true,
 
 			remindErrorText : '<p align="center" style="font-size:1em; font-family:arial; color:#000000">' +
-			'若出現紅色的 <font color="#ff0000"><b>X</b></font> 表示您作答錯誤， ' +
+			'若出現紅色的 <font color="#ff0000"><b>X</b></font> 表示您作答錯誤，' +
 			'請按下另一個按鍵以繼續。<p/>',
 
 			remindErrorTextTouch : '<p align="center" style="font-size:1.4em; font-family:arial; color:#000000">' +
-			'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' +
-			'Touch the other side to continue.<p/>',
+			'若出現紅色的 <font color="#ff0000"><b>X</b></font> 表示您作答錯誤，' +
+			'請碰觸另一邊的綠色區塊以繼續。<p/>',
 
 			errorCorrection : true, //Should participants correct error responses?
 			errorFBDuration : 500, //Duration of error feedback display (relevant only when errorCorrection is false)
@@ -164,8 +164,8 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			
 			instWidth : 99, //The width of the instructions stimulus
 			
-			finalText : 'Press space to continue to the next task', 
-			finalTouchText : 'Touch the bottom green area to continue to the next task',
+			finalText : '按下空白鍵以繼續。', 
+			finalTouchText : '碰觸下方綠色區塊以繼續。',
 
 			touchMaxStimulusWidth : '50%', 
 			touchMaxStimulusHeight : '50%', 

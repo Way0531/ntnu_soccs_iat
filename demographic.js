@@ -57,8 +57,8 @@ define(['questAPI'], function(Quest){
 			mixer : 'repeat',
 			times : 3,
 			data : [
-				{inherit:{set:'people', type:'first'},
-				{inherit:{set:'people', type:'second'},
+				{inherit:{set:'people', type:'first'}},
+				{inherit:{set:'people', type:'second'}},
 				{inherit:{set:'people', type:'third'}}
 			]
 		},

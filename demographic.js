@@ -61,7 +61,7 @@ define(['questAPI'], function(Quest){
 	API.addPagesSet('basicPage',
 	{
 		//progressBar: '<%= pagesMeta.number %> out of 4',
-		header: 'How positive or negative are your feelings toward the people listed below?',
+		header: '基本資訊',
 		headerStyle : {'font-size':'1em'},
 		questions : {
 			mixer : 'repeat',

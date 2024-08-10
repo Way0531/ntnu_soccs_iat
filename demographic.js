@@ -9,55 +9,56 @@ define(['questAPI'], function(Quest){
 		numericValues:true,
 		required:false,
 		style:'multiButtons',
+		answers : [
+			'1 - Extremely negative',
+			'2',
+			'3',
+			'4',
+			'5',
+			'6',
+			'7',
+			'8',
+			'9 - Extremely positive'
+		]
 	});
 
 	API.addQuestionsSet('people',
 	[
 		{
 			inherit : 'basicSelect',
-			name : 'job',
-			stem : '職業',
-                        answers : [
-			'正在全職實習中',
-			'已完成全職實習，尚未考取諮商心理師執照',
-			'諮商心理師（執業未滿1年）',
-			'諮商心理師（執業1-5年）',
-			'諮商心理師（執業6-10年）',
-			'諮商心理師（10年以上）',]
+			name : 'Obama',
+			stem : 'Barack Obama'
 		},
 		{
 			inherit : 'basicSelect',
-			name : 'gender',
-			stem : '性別',
-			answers : [
-			'男性',
-			'女性',
-			'其他',]
+			name : 'Beyonce',
+			stem : 'Beyonce Knowles'
 		},
 		{
 			inherit : 'basicSelect',
-			name : 'sexuality',
-			stem : '性傾向',
-			answers : [
-			'異性戀',
-			'同性戀',
-			'雙性戀',
-			'其他',]
+			name : 'Colbert',
+			stem : 'Stephen Colbert'
 		},
-		
+		{
+			inherit : 'basicSelect',
+			name : 'Letterman',
+			stem : 'David Letterman'
+		}
 	]);
 
 	// ### Pages
-	// Shows all four questions, but the order is random.
+	// Shows all four questions in a fixed order.
 	API.addPagesSet('basicPage',
 	{
-		header: '基本資訊',
+		progressBar: '<%= pagesMeta.number %> out of 4',
+		header: 'How positive or negative are your feelings toward the people listed below?',
 		headerStyle : {'font-size':'1em'},
 		questions : {
 			data : [
-				{inherit:{set:'people', index:0}}, // 第一題
-				{inherit:{set:'people', index:1}}, // 第二題
-				{inherit:{set:'people', index:2}}  // 第三題
+				{inherit:{set:'people', index:0}}, // Barack Obama
+				{inherit:{set:'people', index:1}}, // Beyonce Knowles
+				{inherit:{set:'people', index:2}}, // Stephen Colbert
+				{inherit:{set:'people', index:3}}  // David Letterman
 			]
 		},
 		v1style:2,
@@ -76,4 +77,3 @@ define(['questAPI'], function(Quest){
 	**/
 	return API.script;
 });
-

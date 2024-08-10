@@ -26,23 +26,23 @@ define(['questAPI'], function(Quest){
 	[
 		{
 			inherit : 'basicSelect',
-			name : 'one',
-			stem : '1'
+			name : 'Obama',
+			stem : 'Barack Obama'
 		},
 		{
 			inherit : 'basicSelect',
-			name : 'two',
-			stem : '2'
+			name : 'Beyonce',
+			stem : 'Beyonce Knowles'
 		},
 		{
 			inherit : 'basicSelect',
-			name : 'three',
-			stem : '3'
+			name : 'Colbert',
+			stem : 'Stephen Colbert'
 		},
 		{
 			inherit : 'basicSelect',
-			name : 'four',
-			stem : '4'
+			name : 'Letterman',
+			stem : 'David Letterman'
 		}
 	]);
 
@@ -50,14 +50,15 @@ define(['questAPI'], function(Quest){
 	// Shows all four questions, but the order is random.
 	API.addPagesSet('basicPage',
 	{
-		//progressBar: '<%= pagesMeta.number %> out of 4',
+		progressBar: '<%= pagesMeta.number %> out of 4',
 		header: 'How positive or negative are your feelings toward the people listed below?',
 		headerStyle : {'font-size':'1em'},
 		questions : {
-			//mixer : 'random',
-			data : {inherit:'one'},
-			//data : {inherit:'two'},
-			//data : {inherit:'three'}
+			mixer : 'repeat',
+			times : 4,
+			data : [
+				{inherit:{set:'people', type:'exRandom'}}
+			]
 		},
 		v1style:2,
 		decline:false,

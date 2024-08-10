@@ -27,22 +27,32 @@ define(['questAPI'], function(Quest){
 		{
 			inherit : 'basicSelect',
 			name : 'Obama',
-			stem : 'Barack Obama'
+			stem : '1'
 		},
 		{
 			inherit : 'basicSelect',
 			name : 'Beyonce',
-			stem : 'Beyonce Knowles'
+			stem : '2'
 		},
 		{
 			inherit : 'basicSelect',
 			name : 'Colbert',
-			stem : 'Stephen Colbert'
+			stem : '3'
 		},
 		{
 			inherit : 'basicSelect',
 			name : 'Letterman',
-			stem : 'David Letterman'
+			stem : '4'
+		},
+		{
+			inherit : 'basicSelect',
+			name : 'five',
+			stem : '5'
+		},
+		{
+			inherit : 'basicSelect',
+			name : 'six',
+			stem : '6'
 		}
 	]);
 
@@ -55,7 +65,7 @@ define(['questAPI'], function(Quest){
 		headerStyle : {'font-size':'1em'},
 		questions : {
 			mixer : 'repeat',
-			times : 5,
+			times : 6,
 			data : [
 				{inherit:{set:'people', type:'each'}}
 			]

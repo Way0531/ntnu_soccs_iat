@@ -67,7 +67,7 @@ define(['questAPI'], function(Quest){
 			mixer : 'repeat',
 			times : 6,
 			data : [
-				{inherit:{set:'people', type:'each'}}
+				{inherit:{set:'people', type:'custom'}}
 			]
 		},
 		v1style:2,

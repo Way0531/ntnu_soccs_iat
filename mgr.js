@@ -104,9 +104,9 @@ define(['managerAPI',
 
     API.addSequence([
         { type: 'isTouch', 
-	 text: 'Would you like to use the touch interface?',
-	 yesText: 'Yes! Touch is my thing!',
-	 noText: 'Nah, I\'ll go with the keyboard.'}, //Use Minno's internal touch detection mechanism. 
+	 text: '請問您正在使用智慧型手機/平板進行測驗嗎？',
+	 yesText: '是',
+	 noText: '否'}, //Use Minno's internal touch detection mechanism. 
 	    
         
         { type: 'post', path: ['$isTouch', 'raceSet', 'blackLabels', 'whiteLabels'] },

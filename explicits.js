@@ -92,7 +92,7 @@ define(['questAPI'], function(Quest){
 
     API.addSequence([
 	     { // page begins
-            header: 'Grid questions simple',
+            header: '性傾向諮商能力量表',
             questions: [
                 {
                     type: 'grid',

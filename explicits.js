@@ -8,7 +8,14 @@ define(['questAPI'], function(Quest){
                 {
                     type: 'grid',
                     stem: 'What sort of things do you like?',
-                    columns: ['非常不符合' , '不符合' , '有點不符合' , '普通' , '有點符合' , '符合' , '非常符合'],
+                    columns: [
+                        {text:'非常不符合' , value:1} , 
+                        {text:'不符合' , value:2},
+                        {text:'有點不符合' , value:3},
+                        {text:'普通' , value:4},
+                        {text:'有點符合' , value:5}, 
+                        {text:'符合' , value:6},
+                        {text:'非常符合' , value:7}],
                     rows: [
 '1. 我已經具備足夠的臨床訓練與督導，可以提供同志個案諮商服務。', 
 '2. 同志個案的生活型態是不自然或不道德的。',

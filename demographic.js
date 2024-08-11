@@ -51,7 +51,20 @@ define(['questAPI'], function(Quest){
 			'41-50歲',
 			'51-60歲',
 			'61歲以上']
-		}
+		},
+		{
+			inherit : 'basicSelect',
+			name : 'religion',
+			stem : '請問您是否有宗教信仰？',
+			answers : [
+			'無信仰',
+			'基督教',
+			'天主教',
+			'佛教',
+			'道教',
+			'伊斯蘭教',
+			'其他宗教']
+		},
 	]);
 
 	// ### Pages

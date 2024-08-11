@@ -57,43 +57,36 @@ define(['questAPI'], function(Quest){
 
 	
 	
-    API.addQuestionsSet('thermBlack',{
+    API.addQuestionsSet('comptence',{
         inherit : 'therm',
-        name: 'Tblack_0to10',
+        name: 'comptence',
         stem: 'How warm or cold do you feel towards <b><%= global.blackLabels %></b>?'
     });
 
-    API.addQuestionsSet('thermWhite',{
-        inherit : 'therm',
-        name: 'Twhite_0to10',
-        stem: 'How warm or cold do you feel towards <b><%= global.whiteLabels %></b>?'
-    });
+	API.addPagesSet('basicPage',
+	{
+		//progressBar: '<%= pagesMeta.number %> out of 4',
+		header: '性傾向諮商能力量表',
+		headerStyle : {'font-size':'1em'},
+		questions : {
+			mixer : 'repeat',
+			times : 29,
+			data : [
+				{inherit:{set:'comptence', type:'sequential'}}
+			]
+		},
+		v1style:2,
+		decline:false,
+		numbered: false
+	});
 
-    API.addSequence([
-        {
-            mixer : 'random', 
-            data : [
-                {
-                    mixer : 'random', 
-                    wrapper:true, 
-                    data : [
-                        {
-                            inherit:'basicPage', 
-                            questions: {inherit:'thermBlack'}
-                        },
-                        {
-                            inherit:'basicPage', 
-                            questions: {inherit:'thermWhite'}							
-                        }
-                    ]
-                },
-                {
-                    inherit:'basicPage', 
-                    questions: {inherit:'attributes7'}
-                }
-            ]
-        }
-    ]);
+	// ### Sequence
+	API.addSequence(
+	[
+		{inherit : 'basicPage'}
+	]);
+
+	
 
     return API.script;
 });

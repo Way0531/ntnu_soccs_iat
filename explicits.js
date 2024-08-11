@@ -6,17 +6,17 @@ define(['questAPI'], function(Quest){
     API.addQuestionsSet('basicSelect', {
         type: 'selectOne',
         autoSubmit: false,
-        numericValues: false,
+        numericValues: true,
         required: true, // 強制回答問題
         style: 'multiButtons',
         answers: [
-            {'非常不符合', value: 1},
-            {'不符合', value: 2},
-            {'有點不符合', value: 3},
-            {'普通', value: 4},
-            {'有點符合', value: 5},
-            {'符合', value: 6},
-            {'非常符合', value: 7}
+            '1 - 非常不符合',
+            '2',
+            '3',
+            '4 - 普通',
+            '5',
+            '6',
+            '7 - 非常符合'
         ],
         errorMsg: {required: "此題項為必填"}
     });

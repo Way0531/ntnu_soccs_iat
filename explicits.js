@@ -45,38 +45,17 @@ define(['questAPI'], function(Quest){
     API.addQuestionsSet('therm',{
         inherit: 'basicSelect',
         answers: [
-            {text:'10 - Extremely warm', value:10},
-            {text:'9 - Very warm', value:9},
-            {text:'8 - Moderately warm', value:8},
-            {text:'7 - Somewhat warm', value:7},
-            {text:'6 - Slightly warm', value:6},
-            {text:'5 - Neither warm nor cold', value:5},
-            {text:'4 - Slightly cold', value:4},
-            {text:'3 - Somewhat cold', value:3},
-            {text:'2 - Moderately cold', value:2},
-            {text:'1 - Very cold', value:1},
-            {text:'0 - Extremely cold', value:0}
+            {text:'1 - 非常不符合', value:1},
+            {text:'2 - 不符合', value:2},
+            {text:'3 - 有點不符合', value:3},
+            {text:'4 - 普通', value:4},
+            {text:'5 - 有點符合', value:5},
+            {text:'6 - 符合', value:6},
+            {text:'7 - 非常符合', value:7}
         ]
     });
 
 	
-    /**
-	*Specific questions
-	*/	
-    API.addQuestionsSet('attributes7',{
-        inherit : 'basicSelect',
-        name: 'attributes7',
-        stem: 'Which statement best describes you?',
-        answers: [
-            {text:'I strongly prefer <%= global.whiteLabels %> to <%= global.blackLabels %>.',value:7},
-            {text:'I moderately prefer <%= global.whiteLabels %> to <%= global.blackLabels %>.',value:6},
-            {text:'I slightly prefer <%= global.whiteLabels %> to <%= global.blackLabels %>.',value:5},
-            {text:'I like <%= global.whiteLabels %> and <%= global.blackLabels %> equally.',value:4},
-            {text:'I slightly prefer <%= global.blackLabels %> to <%= global.whiteLabels %>.',value:3},
-            {text:'I moderately prefer <%= global.blackLabels %> to <%= global.whiteLabels %>.',value:2},
-            {text:'I strongly prefer <%= global.blackLabels %> to <%= global.whiteLabels %>.',value:1}
-        ]
-    });
 	
     API.addQuestionsSet('thermBlack',{
         inherit : 'therm',

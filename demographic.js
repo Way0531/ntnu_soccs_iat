@@ -9,40 +9,48 @@ define(['questAPI'], function(Quest){
 		numericValues:true,
 		required:false,
 		style:'multiButtons',
-		answers : [
-			'1 - Extremely negative',
-			'2',
-			'3',
-			'4',
-			'5',
-			'6',
-			'7',
-			'8',
-			'9 - Extremely positive'
-		]
 	});
 
 	API.addQuestionsSet('people',
 	[
 		{
 			inherit : 'basicSelect',
-			name : 'Obama',
-			stem : 'Barack Obama'
+			name : 'job',
+			stem : '請問您的身份是？',
+			answers : [
+			'正在進行全職實習',
+			'已完成全職實習，尚未考取諮商心理師執照',
+			'諮商心理師']
 		},
 		{
 			inherit : 'basicSelect',
-			name : 'Beyonce',
-			stem : 'Beyonce Knowles'
+			name : 'gender',
+			stem : '請問您的性別是？',
+			answers : [
+			'男性',
+			'女性',
+			'其他']
 		},
 		{
 			inherit : 'basicSelect',
-			name : 'Colbert',
-			stem : 'Stephen Colbert'
+			name : 'sexuality',
+			stem : '請問您的性傾向是？',
+			answers : [
+			'異性戀',
+			'同性戀',
+			'雙性戀',
+			'其他']
 		},
 		{
 			inherit : 'basicSelect',
-			name : 'Letterman',
-			stem : 'David Letterman'
+			name : 'age',
+			stem : '請問您的年齡是？',
+			answers : [
+			'21-30歲',
+			'31-40歲',
+			'41-50歲',
+			'51-60歲',
+			'61歲以上']
 		}
 	]);
 

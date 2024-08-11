@@ -57,11 +57,23 @@ define(['questAPI'], function(Quest){
 
 	
 	
-    API.addQuestionsSet('comptence',{
-        inherit : 'therm',
-        name: 'comptence',
-        stem: 'How warm or cold do you feel towards <b><%= global.blackLabels %></b>?'
-    });
+    API.addQuestionsSet('comptence',
+	{inherit : 'therm',
+        name: 'com_1',
+        stem: '1. 我已經具備足夠的臨床訓練與督導，可以提供同志個案諮商服務。'},
+	{inherit : 'therm',
+        name: 'com_2',
+        stem: '2. 同志個案的生活型態是不自然或不道德的。'},
+	{inherit : 'therm',
+        name: 'com_3',
+        stem: '3. 我透過諮詢、督導與繼續教育來檢視自己在同志諮商技巧上的效能與能力。'},
+	{inherit : 'therm',
+        name: 'com_4',
+        stem: '4. 我曾有過諮商男同志個案的經驗。'},
+	{inherit : 'therm',
+        name: 'com_5',
+        stem: '5. 與異性戀個案相比，同志個案比較容易遭受到他們不喜歡的諮商處遇。'})
+    );
 
 	API.addPagesSet('basicPage',
 	{
@@ -70,7 +82,7 @@ define(['questAPI'], function(Quest){
 		headerStyle : {'font-size':'1em'},
 		questions : {
 			mixer : 'repeat',
-			times : 29,
+			times : 5,
 			data : [
 				{inherit:{set:'comptence', type:'sequential'}}
 			]

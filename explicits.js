@@ -11,11 +11,11 @@ define(['questAPI'], function(Quest){
         style: 'multiButtons',
         answers: [
             '1 - 非常不符合',
-            '2',
-            '3',
+            '2 - 不符合',
+            '3 - 有點不符合',
             '4 - 普通',
-            '5',
-            '6',
+            '5 - 有點符合',
+            '6 - 符合',
             '7 - 非常符合'
         ],
         errorMsg: {required: "此題項為必填"}
@@ -56,7 +56,7 @@ define(['questAPI'], function(Quest){
     // ### Pages
     // Shows all questions, but the order is random.
     API.addPagesSet('basicPage', {
-        header: '基本資訊',
+        header: '在下面的題目中，請選擇一個最符合您的形容',
         headerStyle: {'font-size': '1em'},
         questions: {
             mixer: 'repeat',

@@ -6,7 +6,7 @@ define(['questAPI'], function(Quest){
 	{
 		type: 'selectOne',
 		autoSubmit:false,
-		numericValues:true,
+		numericValues:false,
 		required:true, //強制回答問題
 		style:'multiButtons',
 		errorMsg: {required: "此題項為必填"}

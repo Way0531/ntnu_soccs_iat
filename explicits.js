@@ -13,17 +13,17 @@ define(['questAPI'], function(Quest){
         autoFocus:true, 
         progressBar:  'Page <%= pagesMeta.number %> out of 3'
     });
-	
+
     /**
 	* Question prototypes
 	*/
     API.addQuestionsSet('basicQ',{
-        decline: 'true',
+        decline: 'false',
         required : true, 		
         errorMsg: {
             required: isTouch 
-                ? 'Please select an answer, or click \'Decline\'' 
-                : 'Please select an answer, or click \'Decline to Answer\''
+                ? '此題項為必填' 
+                : '此題項為必填'
         },
         autoSubmit:'true',
         numericValues:'true',

@@ -9,7 +9,7 @@ define(['questAPI'], function(Quest){
 		numericValues:true,
 		required:true, //強制回答問題
 		style:'multiButtons',
-		errorMsg: {required: "您有尚未回答之題項"}
+		errorMsg: {required: "此題項為必填"}
 	});
 
 	API.addQuestionsSet('people',

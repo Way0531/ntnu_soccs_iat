@@ -10,13 +10,13 @@ define(['questAPI'], function(Quest){
         required: true, // 強制回答問題
         style: 'multiButtons',
         answers: [
-            {text: '非常不符合', value: 1},
-            {text: '不符合', value: 2},
-            {text: '有點不符合', value: 3},
-            {text: '普通', value: 4},
-            {text: '有點符合', value: 5},
-            {text: '符合', value: 6},
-            {text: '非常符合', value: 7}
+            {'非常不符合', value: 1},
+            {'不符合', value: 2},
+            {'有點不符合', value: 3},
+            {'普通', value: 4},
+            {'有點符合', value: 5},
+            {'符合', value: 6},
+            {'非常符合', value: 7}
         ],
         errorMsg: {required: "此題項為必填"}
     });

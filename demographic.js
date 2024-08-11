@@ -50,16 +50,14 @@ define(['questAPI'], function(Quest){
 	// Shows all four questions, but the order is random.
 	API.addPagesSet('basicPage',
 	{
-		progressBar: '<%= pagesMeta.number %> out of 4',
+		//progressBar: '<%= pagesMeta.number %> out of 4',
 		header: 'How positive or negative are your feelings toward the people listed below?',
 		headerStyle : {'font-size':'1em'},
 		questions : {
-			mixer : 'repeat',
-			times : 4,
-			data : [
-				{inherit:{set:'people', type:'exRandom'}}
-			]
-		},
+		data : [
+			{inherit: {set: 'people', type: 'sequential'}}
+		]
+	},
 		v1style:2,
 		decline:false,
 		numbered: false

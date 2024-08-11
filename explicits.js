@@ -18,15 +18,15 @@ define(['questAPI'], function(Quest){
 	* Question prototypes
 	*/
     API.addQuestionsSet('basicQ',{
-        decline: 'false',
+        decline: false,
         required : true, 		
         errorMsg: {
             required: isTouch 
                 ? '此題項為必填' 
                 : '此題項為必填'
         },
-        autoSubmit:'true',
-        numericValues:'true',
+        autoSubmit: true,
+        numericValues: true,
         help: '<%= pagesMeta.number < 3 %>',
         helpText: 'Tip: For quick response, click to select your answer, and then click again to submit.'
     });
@@ -39,7 +39,7 @@ define(['questAPI'], function(Quest){
     API.addQuestionsSet('basicDropdown',{
         inherit :'basicQ',
         type : 'dropdown',
-        autoSubmit:false
+        autoSubmit: false
     });
 	
     API.addQuestionsSet('therm',{
@@ -96,8 +96,8 @@ define(['questAPI'], function(Quest){
             questions: [
                 {
                     type: 'grid',
-                    stem: '請勾選最符合自己的形容';,
-                    columns: ['非常不符合' , '符合' , '有點不符合' , '普通' , '有點符合' , '符合' , '非常符合'],
+                    stem: '請勾選最符合自己的形容',
+                    columns: ['非常不符合' , '不符合' , '有點不符合' , '普通' , '有點符合' , '符合' , '非常符合'],
                     rows: [
 '1. 我已經具備足夠的臨床訓練與督導，可以提供同志個案諮商服務。', 
 '2. 同志個案的生活型態是不自然或不道德的。',
@@ -143,18 +143,4 @@ define(['questAPI'], function(Quest){
                             questions: {inherit:'thermBlack'}
                         },
                         {
-                            inherit:'basicPage', 
-                            questions: {inherit:'thermWhite'}							
-                        }
-                    ]
-                },
-                {
-                    inherit:'basicPage', 
-                    questions: {inherit:'attributes7'}
-                }
-            ]
-        }
-    ]);
-
-    return API.script;
-});
+                           

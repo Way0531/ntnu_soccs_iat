@@ -7,8 +7,9 @@ define(['questAPI'], function(Quest){
 		type: 'selectOne',
 		autoSubmit:false,
 		numericValues:true,
-		required:false,
+		required:true, //強制回答問題
 		style:'multiButtons',
+		errorMsg: {required: "您有尚未回答之題項"}
 	});
 
 	API.addQuestionsSet('people',

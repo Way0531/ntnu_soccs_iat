@@ -8,7 +8,7 @@ define(['questAPI'], function(Quest){
         autoSubmit: false,
         numericValues: false,
         required: true, // 強制回答問題
-        style: 'multiButtons',
+        style: 'buttons',
         answers: [
             {stem: '非常不符合', value: 1},
             {stem: '不符合', value: 2},

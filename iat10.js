@@ -192,9 +192,9 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 					'</p>',
 					'<p align="left" style="margin-left:5px">',
 						'<br/>', //
-						'若畫面中出現 <font color="#0000ff">leftAttribute</font> 相關圖片，請碰觸 <b>左方</b> 綠色區塊。<br/>',
-						'若畫面中出現 <font color="#0000ff">rightAttribute</font> 相關圖片，請碰觸 <b>右方</b> 綠色區塊。<br/>',
-						'一次只會出現一張圖片。<br/>',
+						'若畫面中出現 <font color="#0000ff">leftAttribute</font> 相關圖片或文字，請碰觸 <b>左方</b> 綠色區塊。<br/>',
+						'若畫面中出現 <font color="#0000ff">rightAttribute</font> 相關圖片或文字，請碰觸 <b>右方</b> 綠色區塊。<br/>',
+						'一次只會出現一個圖片或文字。<br/>',
 						'<br/>',
 						'若出現紅色的 <font color="#ff0000"><b>X</b></font> 表示您作答錯誤，請碰觸另一邊的綠色區塊以繼續。 在能夠正確作答的前提下，作答速度請<u>愈快愈好</u>。</br>',
 					'</p>',
@@ -205,8 +205,8 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			instCategoriesPractice: '<div><p align="center" style="font-size:20px; font-family:arial">' +
 				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
 				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
-				'若畫面中出現 <font color="#336600">leftCategory</font> 相關圖片，請按下 <b>E</b> 鍵'+
-				'<br/>若畫面中出現 <font color="#336600">rightCategory</font> 相關圖片，請按下 <b>I</b> 鍵<br/><br/>'+
+				'若畫面中出現 <font color="#336600">leftCategory</font> 相關圖片或文字，請按下 <b>E</b> 鍵'+
+				'<br/>若畫面中出現 <font color="#336600">rightCategory</font> 相關圖片或文字，請按下 <b>I</b> 鍵<br/><br/>'+
 				'若出現紅色的 <font color="#ff0000"><b>X</b></font> 表示您作答錯誤， ' +
 				'請按下另一個按鍵以繼續。<br/>' +
 				'在能夠正確作答的前提下，作答速度請<u>愈快愈好</u>。<br/><br/></p>'+
@@ -218,9 +218,9 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 					'</p>',
 					'<p align="left" style="margin-left:5px">',
 						'<br/>',
-						'若畫面中出現 <font color="#336600">leftCategory</font> 相關圖片，請碰觸 <b>左方</b> 綠色區塊。<br/>',
-						'若畫面中出現 <font color="#336600">rightCategory</font> 相關圖片，請碰觸 <b>右方</b> 綠色區塊。<br/>',
-						'一次只會出現一張圖片。<br/>',
+						'若畫面中出現 <font color="#336600">leftCategory</font> 相關圖片或文字，請碰觸 <b>左方</b> 綠色區塊。<br/>',
+						'若畫面中出現 <font color="#336600">rightCategory</font> 相關圖片或文字，請碰觸 <b>右方</b> 綠色區塊。<br/>',
+						'一次只會出現一張圖片或文字。<br/>',
 						'<br/>',
 						'若出現紅色的 <font color="#ff0000"><b>X</b></font> 表示您作答錯誤，請碰觸另一邊的綠色區塊以繼續。 在能夠正確作答的前提下，作答速度請<u>愈快愈好</u>。</br>',
 					'</p>',
@@ -231,8 +231,8 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			instFirstCombined : '<div><p align="center" style="font-size:20px; font-family:arial">' +
 				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
 				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
-				'若出現 <font color="#336600">leftCategory</font> 相關圖片或 <font color="#0000ff">leftAttribute</font> 詞彙，請按下 <b>E</b> 鍵<br/>' +
-				'若出現 <font color="#336600">rightCategory</font> 相關圖片或 <font color="#0000ff">rightAttribute</font> 詞彙，請按下 <b>I</b> 鍵<br/>' +
+				'若出現 <font color="#336600">leftCategory</font> 相關圖片及文字或 <font color="#0000ff">leftAttribute</font> 詞彙，請按下 <b>E</b> 鍵<br/>' +
+				'若出現 <font color="#336600">rightCategory</font> 相關圖片及文字或 <font color="#0000ff">rightAttribute</font> 詞彙，請按下 <b>I</b> 鍵<br/>' +
 				'每個圖片或詞彙都只隸屬於一種類別<br/><br/>' +
 				'若出現紅色的 <font color="#ff0000"><b>X</b></font> 表示您作答錯誤， ' +
 				'請按下另一個按鍵以繼續。<br/>' + 
@@ -246,8 +246,8 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 					'<br/>',
 					'<br/>',
 					'<p align="left" style="margin-left:5px">',
-						'若出現 <font color="#336600">leftCategory</font> 相關圖片或 <font color="#0000ff">leftAttribute</font> 詞彙，請碰觸 <b>左方</b> 綠色區塊<br/>',
-						'若出現 <font color="#336600">rightCategory</font> 相關圖片或 <font color="#0000ff">rightAttribute</font> 詞彙，請碰觸 <b>右方</b> 綠色區塊<br/>',
+						'若出現 <font color="#336600">leftCategory</font> 相關圖片及文字或 <font color="#0000ff">leftAttribute</font> 詞彙，請碰觸 <b>左方</b> 綠色區塊<br/>',
+						'若出現 <font color="#336600">rightCategory</font> 相關圖片及文字或 <font color="#0000ff">rightAttribute</font> 詞彙，請碰觸 <b>右方</b> 綠色區塊<br/>',
 							'若出現紅色的 <font color="#ff0000"><b>X</b></font> 表示您作答錯誤，請碰觸另一邊的綠色區塊以繼續。 在能夠正確作答的前提下，作答速度請<u>愈快愈好</u>。</br>',
 						'</p>',
 						'<p align="center">碰觸<b>下方</b>綠色區塊以開始本階段測驗。</p>',
@@ -258,8 +258,8 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
 				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
 				'本階段的操作規則與前一階段相同<br/>' +
-				'若出現 <font color="#336600">leftCategory</font> 相關圖片或 <font color="#0000ff">leftAttribute</font> 詞彙，請按下 <b>E</b> 鍵<br/>' +
-				'若出現 <font color="#336600">rightCategory</font> 相關圖片或 <font color="#0000ff">rightAttribute</font> 詞彙，請按下 <b>I</b> 鍵<br/>' +
+				'若出現 <font color="#336600">leftCategory</font> 相關圖片及文字或 <font color="#0000ff">leftAttribute</font> 詞彙，請按下 <b>E</b> 鍵<br/>' +
+				'若出現 <font color="#336600">rightCategory</font> 相關圖片及文字或 <font color="#0000ff">rightAttribute</font> 詞彙，請按下 <b>I</b> 鍵<br/>' +
 				'每個圖片或詞彙都只隸屬於一種類別<br/><br/>' +
 				'若出現紅色的 <font color="#ff0000"><b>X</b></font> 表示您作答錯誤， ' +
 				'請按下另一個按鍵以繼續。<br/>' + 
@@ -273,8 +273,8 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 					'<br/>',
 
 					'<p align="left" style="margin-left:5px">',
-						'若出現 <font color="#336600">leftCategory</font> 相關圖片或 <font color="#0000ff">leftAttribute</font> 詞彙，請碰觸 <b>左方</b> 綠色區塊<br/>',
-						'若出現 <font color="#336600">rightCategory</font> 相關圖片或 <font color="#0000ff">rightAttribute</font> 詞彙，請碰觸 <b>右方</b> 綠色區塊<br/>',
+						'若出現 <font color="#336600">leftCategory</font> 相關圖片及文字或 <font color="#0000ff">leftAttribute</font> 詞彙，請碰觸 <b>左方</b> 綠色區塊<br/>',
+						'若出現 <font color="#336600">rightCategory</font> 相關圖片及文字或 <font color="#0000ff">rightAttribute</font> 詞彙，請碰觸 <b>右方</b> 綠色區塊<br/>',
 						'<br/>',
 						'在能夠正確作答的前提下，作答速度請<u>愈快愈好</u><br/><br/></p>',
 					'</p>',
@@ -286,8 +286,8 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' +
 				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
 				'<b>請注意！本階段的按鍵規則與之前相反！</b><br/>' +
-				'若畫面中出現 <font color="#336600">leftCategory</font> 相關圖片，請按下 <b>E</b> 鍵<br/>' +
-				'若畫面中出現 <font color="#336600">rightCategory</font> 相關圖片，請按下 <b>I</b> 鍵<br/>' +
+				'若畫面中出現 <font color="#336600">leftCategory</font> 相關圖片或文字，請按下 <b>E</b> 鍵<br/>' +
+				'若畫面中出現 <font color="#336600">rightCategory</font> 相關圖片或文字，請按下 <b>I</b> 鍵<br/>' +
 				'在能夠正確作答的前提下，作答速度請<u>愈快愈好</u><br/><br/></p>' +
 				'<p align="center">按下 <b>空白鍵</b> 以開始本階段的測驗。</font></p></div>',
 			instSwitchCategoriesTouch: [
@@ -298,9 +298,9 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 					'<p align="left" style="margin-left:5px">',
 						'<br/>',
 						'請注意！本階段的按鍵規則與之前相反！<br/>',
-							'若畫面中出現 <font color="#336600">leftCategory</font> 相關圖片，請碰觸 <b>左方</b> 綠色區塊<br/>',
-							'若畫面中出現 <font color="#336600">rightCategory</font> 相關圖片，請碰觸 <b>右方</b> 綠色區塊<br/>',
-							'一次只會出現一張圖片。',
+							'若畫面中出現 <font color="#336600">leftCategory</font> 相關圖片或文字，請碰觸 <b>左方</b> 綠色區塊<br/>',
+							'若畫面中出現 <font color="#336600">rightCategory</font> 相關圖片或文字，請碰觸 <b>右方</b> 綠色區塊<br/>',
+							'一次只會出現一個圖片或文字。',
 							'<br/>',
 							'若出現紅色的 <font color="#ff0000"><b>X</b></font> 表示您作答錯誤，請碰觸另一邊的綠色區塊以繼續。 在能夠正確作答的前提下，作答速度請<u>愈快愈好</u>。</br>',
 						'</p>',

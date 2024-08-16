@@ -16,17 +16,8 @@ define(['questAPI'], function(Quest){
 	[
 		{
 			inherit : 'basicSelect',
-			name : 'job',
-			stem : '請問您的身份是？',
-			answers : [
-			'正在進行全職實習',
-			'已完成全職實習，尚未考取諮商心理師執照',
-			'諮商心理師']
-		},
-		{
-			inherit : 'basicSelect',
 			name : 'gender',
-			stem : '請問您的性別是？',
+			stem : '請問您的生理性別是？',
 			answers : [
 			'男性',
 			'女性',
@@ -35,7 +26,7 @@ define(['questAPI'], function(Quest){
 		{
 			inherit : 'basicSelect',
 			name : 'sexuality',
-			stem : '請問您的性傾向是？',
+			stem : '請問您自身的性傾向認同是？',
 			answers : [
 			'異性戀',
 			'同性戀',
@@ -66,6 +57,27 @@ define(['questAPI'], function(Quest){
 			'伊斯蘭教',
 			'其他宗教']
 		},
+		{
+			inherit : 'basicSelect',
+			name : 'job',
+			stem : '請問您目前的身份是？',
+			answers : [
+			'正在進行全職實習',
+			'已完成全職實習，尚未考取諮商心理師執照',
+			'諮商心理師']
+		},
+		{
+			inherit : 'basicSelect',
+			name : 'job_age',
+			stem : '請問您的執業年資為？（包含全職實習）',
+			answers : [
+			'未滿1年',
+			'1-5年',
+			'6-10年',
+			'11-15年',
+			'16-20年',
+			'21年以上']
+		},
 	]);
 
 	// ### Pages
@@ -77,7 +89,7 @@ define(['questAPI'], function(Quest){
 		headerStyle : {'font-size':'1em'},
 		questions : {
 			mixer : 'repeat',
-			times : 5,
+			times : 6,
 			data : [
 				{inherit:{set:'people', type:'sequential'}}
 			]

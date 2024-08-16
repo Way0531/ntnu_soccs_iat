@@ -44,7 +44,13 @@ define(['managerAPI',
         negWords : API.shuffle([
             '苦惱', '糟糕', '恐怖', '骯髒', 
             '邪惡', '可怕', '失敗', '傷害'
-        ])
+        ]),
+	gayWords : API.shuffle([
+            '同性戀', '同性戀者'
+        ]), 
+	strightWords : API.shuffle([
+            '異性戀', '異性戀者'
+        ]), 
     });
 
     API.addTasksSet({

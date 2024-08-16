@@ -14,7 +14,9 @@ define(['pipAPI','iat10.js'], function(APIConstructor, iatExtension){
                 {image: '05_gay.jpg'},
                 {image: '07_lesbian.jpg'},
                 {image: '14_gay.jpg'},
-                {image: '15_lesbian.jpg'}
+                {image: '15_lesbian.jpg'},
+                {word: '同性戀'},
+                {word: '同性戀者'},
             ],
             //Stimulus css (style)
             stimulusCss : {color:'#31940F','font-size':'2.3em'}
@@ -29,6 +31,8 @@ define(['pipAPI','iat10.js'], function(APIConstructor, iatExtension){
             stimulusMedia : [ //Stimuli content as PIP's media objects
                 {image: '06_hetero.jpg'},
                 {image: '13_hetero.jpg'},
+                {word: '異性戀'},
+                {word: '異性戀者'},
             ],
             //Stimulus css (style)
             stimulusCss : {color:'#31940F','font-size':'2.3em'}

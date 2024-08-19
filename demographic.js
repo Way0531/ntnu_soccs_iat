@@ -35,23 +35,16 @@ define(['questAPI'], function(Quest){
 			'其他']
 		},
 		{
-			type:'text', 
-			input: {
-				 type: 'number',
-				 min: 18,
-				 max: 100,
-				 css: {width: '80px'} // 设置输入框宽度为 100px
-					 },
+			type:'dropdown', 
 			inherit : 'basicSelect',
 			name : 'age',
 			stem : '請問您的年齡是？',
-			/*answers : [
+			answers : [
 			'21-30歲',
 			'31-40歲',
 			'41-50歲',
 			'51-60歲',
-			'61歲以上']*/
-			errorMsg: {required: "請以半形阿拉伯數字輸入"}
+			'61歲以上']
 		},
 		{
 			type: 'selectOne',

@@ -42,7 +42,6 @@ define(['questAPI'], function(Quest){
 			stem : '請問您的年齡是？',
 			min:18,
 			max:100,
-			width:40
 			/*answers : [
 			'21-30歲',
 			'31-40歲',
@@ -92,8 +91,7 @@ define(['questAPI'], function(Quest){
 			name : 'job_age',
 			stem : '請問您的執業年資為？（包含全職實習，未滿1年者請輸入1年）',
 			min:1,
-			max:80,
-			width:40
+			max:80
 			/*answers : [
 			'未滿1年',
 			'1-5年',

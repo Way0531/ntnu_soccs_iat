@@ -47,6 +47,7 @@ define(['questAPI'], function(Quest){
 			'61歲以上']*/
 		},
 		{
+			type: 'selectOne',
 			inherit : 'basicSelect',
 			name : 'religion',
 			stem : '請問您是否有宗教信仰？',
@@ -60,6 +61,7 @@ define(['questAPI'], function(Quest){
 			'其他宗教']
 		},
 		{
+			type: 'selectOne',
 			inherit : 'basicSelect',
 			name : 'job',
 			stem : '請問您目前的身份是？',
@@ -69,6 +71,7 @@ define(['questAPI'], function(Quest){
 			'諮商心理師']
 		},
 		{
+			type: 'selectOne',
 			inherit : 'basicSelect',
 			name : 'job_place',
 			stem : '請問您目前的執業登記/全職實習場域是？',
@@ -80,16 +83,17 @@ define(['questAPI'], function(Quest){
 			'醫院']
 		},
 		{
+			type: 'text',
 			inherit : 'basicSelect',
 			name : 'job_age',
-			stem : '請問您的執業年資為？（包含全職實習）',
-			answers : [
+			stem : '請問您的執業年資為？（包含全職實習，未滿1年者請輸入1年）',
+			/*answers : [
 			'未滿1年',
 			'1-5年',
 			'6-10年',
 			'11-15年',
 			'16-20年',
-			'21年以上']
+			'21年以上']*/
 		},
 	]);
 

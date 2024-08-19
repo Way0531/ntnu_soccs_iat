@@ -17,6 +17,7 @@ define(['pipAPI','iat10.js'], function(APIConstructor, iatExtension){
                 {image: '15_lesbian.jpg'},
                 {word: '同性戀'},
                 {word: '同性戀者'},
+                {word: '同志'},
             ],
             //Stimulus css (style)
             stimulusCss : {color:'#31940F','font-size':'2.3em'}

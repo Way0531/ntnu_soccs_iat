@@ -38,7 +38,7 @@ define(['questAPI'], function(Quest){
 			type:'dropdown', 
 			inherit : 'basicSelect',
 			name : 'age',
-			stem : '請問您的年齡是？',
+			stem : '請問您的年齡是？(以填表當天足歲計算）',
 			answers : [
 			'21','22','23','24','25','26','27','28','29','30',
 			'31','32','33','34','35','36','37','38','39','40',
@@ -98,6 +98,22 @@ define(['questAPI'], function(Quest){
 			'41','42','43','44','45','46','47','48','49','50',
 			'51','52','53','54','55','56','57','58','59','60']
 		},
+		{
+			type: 'selectOne',
+			inherit : 'basicSelect',
+			name : 'training',
+			stem : '你問您是否曾於碩士班在學或是執業期間，參與過同志議題相關之課程或專業訓練？',
+			answers : [
+			'是','否']
+		},
+		{
+			type: 'selectOne',
+			inherit : 'basicSelect',
+			name : 'self_assessment',
+			stem : '請問評估自身目前提供同志諮商之專業勝任能力為何？',
+			answers : [
+			'1 - 非常不足','2 - 不足','3 - 有點不足','4 - 普通','5 - 有點足夠','6 - 足夠','7 - 非常足夠']
+		},
 	]);
 
 	// ### Pages
@@ -109,7 +125,7 @@ define(['questAPI'], function(Quest){
 		headerStyle : {'font-size':'1em'},
 		questions : {
 			mixer : 'repeat',
-			times : 7,
+			times : 9,
 			data : [
 				{inherit:{set:'people', type:'sequential'}}
 			]

@@ -108,6 +108,7 @@ define(['questAPI'], function(Quest){
 		},
 		{
 			type: 'selectOne',
+			numericValues: true,
 			inherit : 'basicSelect',
 			name : 'self_assessment',
 			stem : '請問評估自身目前提供同志諮商之專業勝任能力為何？',

@@ -77,7 +77,7 @@ define(['questAPI'], function(Quest){
 			type: 'selectOne',
 			inherit : 'basicSelect',
 			name : 'job_place',
-			stem : '請問您目前的執業登記/全職實習場域是？',
+			stem : '請問您目前或最近一個執業登記/全職實習場域是？',
 			answers : [
 			'國小',
 			'國中/高中',

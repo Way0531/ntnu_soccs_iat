@@ -36,7 +36,7 @@ define(['questAPI'], function(Quest){
 			'其他']
 		},
 		{
-			type: 'text',
+			type: 'textnumber',
 			inherit : 'basicSelect',
 			name : 'age',
 			stem : '請問您的年齡是？',
@@ -84,7 +84,7 @@ define(['questAPI'], function(Quest){
 			'醫院']
 		},
 		{
-			type: 'text',
+			type: 'textnumber',
 			inherit : 'basicSelect',
 			name : 'job_age',
 			stem : '請問您的執業年資為？（包含全職實習，未滿1年者請輸入1年）',

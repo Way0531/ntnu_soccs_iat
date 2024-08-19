@@ -15,7 +15,6 @@ define(['questAPI'], function(Quest){
 	[
 		{
 			type: 'selectOne',
-			width: 40,
 			inherit : 'basicSelect',
 			name : 'gender',
 			stem : '請問您的生理性別是？',

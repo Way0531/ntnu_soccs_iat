@@ -68,6 +68,17 @@ define(['questAPI'], function(Quest){
 		},
 		{
 			inherit : 'basicSelect',
+			name : 'job_place',
+			stem : '請問您目前的執業登記/全職實習場域是？',
+			answers : [
+			'國小',
+			'國中/高中',
+			'大專院校',
+			'社區機構',
+			'醫院']
+		},
+		{
+			inherit : 'basicSelect',
 			name : 'job_age',
 			stem : '請問您的執業年資為？（包含全職實習）',
 			answers : [
@@ -89,7 +100,7 @@ define(['questAPI'], function(Quest){
 		headerStyle : {'font-size':'1em'},
 		questions : {
 			mixer : 'repeat',
-			times : 6,
+			times : 7,
 			data : [
 				{inherit:{set:'people', type:'sequential'}}
 			]

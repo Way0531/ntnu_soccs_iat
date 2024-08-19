@@ -58,7 +58,7 @@ define(['managerAPI',
             inherit: 'instructions',
             name: 'intro',
             templateUrl: 'intro.jst',
-            title: 'Intro',
+            title: '心理師性傾向內隱態度與性傾向諮商勝任能力相關研究',
             header: '歡迎'
         }],
 

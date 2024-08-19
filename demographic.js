@@ -36,12 +36,16 @@ define(['questAPI'], function(Quest){
 			'其他']
 		},
 		{
-			type: 'textnumber',
+			type:'text', 
+			input: {
+				 type: 'number',
+				 min: 18,
+				 max: 100,
+				 css: {width: '80px'} // 设置输入框宽度为 100px
+					 },
 			inherit : 'basicSelect',
 			name : 'age',
 			stem : '請問您的年齡是？',
-			min:18,
-			max:100,
 			/*answers : [
 			'21-30歲',
 			'31-40歲',

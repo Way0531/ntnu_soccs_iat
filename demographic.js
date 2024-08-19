@@ -4,7 +4,6 @@ define(['questAPI'], function(Quest){
 	// ### Questions
 	API.addQuestionsSet('basicSelect',
 	{
-		type: 'selectOne',
 		autoSubmit:false,
 		numericValues:false,
 		required:true, //強制回答問題
@@ -15,6 +14,7 @@ define(['questAPI'], function(Quest){
 	API.addQuestionsSet('people',
 	[
 		{
+			type: 'selectOne',
 			inherit : 'basicSelect',
 			name : 'gender',
 			stem : '請問您的生理性別是？',
@@ -24,6 +24,7 @@ define(['questAPI'], function(Quest){
 			'其他']
 		},
 		{
+			type: 'selectOne',
 			inherit : 'basicSelect',
 			name : 'sexuality',
 			stem : '請問您自身的性傾向認同是？',
@@ -34,15 +35,16 @@ define(['questAPI'], function(Quest){
 			'其他']
 		},
 		{
+			type: 'text',
 			inherit : 'basicSelect',
 			name : 'age',
 			stem : '請問您的年齡是？',
-			answers : [
+			/*answers : [
 			'21-30歲',
 			'31-40歲',
 			'41-50歲',
 			'51-60歲',
-			'61歲以上']
+			'61歲以上']*/
 		},
 		{
 			inherit : 'basicSelect',

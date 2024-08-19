@@ -16,6 +16,15 @@ define(['questAPI'], function(Quest){
 		{
 			type: 'selectOne',
 			inherit : 'basicSelect',
+			name : 'first_time',
+			stem : '請問這是否是您第一次參與本測驗？',
+			answers : [
+			'是',
+			'否']
+		},
+		{
+			type: 'selectOne',
+			inherit : 'basicSelect',
 			name : 'gender',
 			stem : '請問您的生理性別是？',
 			answers : [
@@ -126,7 +135,7 @@ define(['questAPI'], function(Quest){
 		headerStyle : {'font-size':'1em'},
 		questions : {
 			mixer : 'repeat',
-			times : 9,
+			times : 10,
 			data : [
 				{inherit:{set:'people', type:'sequential'}}
 			]

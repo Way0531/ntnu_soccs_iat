@@ -66,7 +66,7 @@ define(['managerAPI',
             inherit: 'instructions',
             name: 'raceiat_instructions',
             templateUrl: 'raceiat_instructions.jst',
-            title: 'IAT Instructions',
+            //title: 'IAT Instructions',
             header: '內隱聯結測驗'
         }],
 
@@ -92,7 +92,7 @@ define(['managerAPI',
             type: 'message',
             name: 'lastpage',
             templateUrl: 'lastpage.jst',
-            title: 'End',
+            //title: 'End',
             //Uncomment the following if you want to end the study here.
             //last:true, 
             header: '測驗結束，謝謝您的參與！'

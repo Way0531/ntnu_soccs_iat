@@ -48,6 +48,7 @@ define(['questAPI'], function(Quest){
 			'41-50歲',
 			'51-60歲',
 			'61歲以上']*/
+			errorMsg: {required: "請以半形阿拉伯數字輸入"}
 		},
 		{
 			type: 'selectOne',
@@ -91,7 +92,7 @@ define(['questAPI'], function(Quest){
 			name : 'job_age',
 			stem : '請問您的執業年資為？（包含全職實習，未滿1年者請輸入1年）',
 			min:1,
-			max:80
+			max:80,
 			/*answers : [
 			'未滿1年',
 			'1-5年',
@@ -99,6 +100,7 @@ define(['questAPI'], function(Quest){
 			'11-15年',
 			'16-20年',
 			'21年以上']*/
+			errorMsg: {required: "請以半形阿拉伯數字輸入"}
 		},
 	]);
 

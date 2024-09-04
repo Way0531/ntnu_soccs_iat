@@ -1,9 +1,36 @@
 <style>
+/* 電腦版樣式 */
 .custom-list {
     padding-left: 10px; /* 調整這個數值來改變縮排大小 */
 }
+
 .custom-list ul {
     padding-left: 10px; /* 調整這個數值來改變內部列表的縮排 */
+}
+
+/* 智慧型手機樣式，僅當 isTouch 類別存在時套用 */
+.isTouch .panel-heading h1 {
+    font-size: 1.2em;
+}
+
+.isTouch .panel-body {
+    font-size: 0.9em;
+    line-height: 1.6;
+    padding: 0 0.5em;
+}
+
+.isTouch .custom-list {
+    padding-left: 15px;
+}
+
+.isTouch .custom-list ul {
+    padding-left: 15px;
+}
+
+.isTouch .proceed button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
 }
 </style>
 
@@ -46,3 +73,15 @@
         </button>
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    function isTouchDevice() {
+        return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    }
+
+    if (isTouchDevice()) {
+        document.body.classList.add('isTouch');
+    }
+});
+</script>

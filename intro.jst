@@ -1,87 +1,89 @@
-<style>
-/* 電腦版樣式 */
-.custom-list {
-    padding-left: 10px; /* 調整這個數值來改變縮排大小 */
-}
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* 通用樣式 */
+        .custom-list {
+            padding-left: 10px; /* 調整這個數值來改變縮排大小 */
+        }
+        .custom-list ul {
+            padding-left: 10px; /* 調整這個數值來改變內部列表的縮排 */
+        }
+        .panel-heading h1 {
+            font-size: 2em; /* 電腦版字體大小 */
+        }
+        .panel-body {
+            font-size: 1em; /* 電腦版字體大小 */
+            line-height: 1.8; /* 電腦版行高 */
+        }
+        .proceed button {
+            width: auto; /* 電腦版按鈕寬度 */
+            padding: 10px 20px; /* 電腦版按鈕內邊距 */
+        }
 
-.custom-list ul {
-    padding-left: 10px; /* 調整這個數值來改變內部列表的縮排 */
-}
-
-/* 智慧型手機樣式，僅當 isTouch 類別存在時套用 */
-.isTouch .panel-heading h1 {
-    font-size: 1.2em;
-}
-
-.isTouch .panel-body {
-    font-size: 0.9em;
-    line-height: 1.6;
-    padding: 0 0.5em;
-}
-
-.isTouch .custom-list {
-    padding-left: 15px;
-}
-
-.isTouch .custom-list ul {
-    padding-left: 15px;
-}
-
-.isTouch .proceed button {
-    width: 100%;
-    padding: 12px;
-    font-size: 1.1em;
-}
-</style>
-
-<div class="panel panel-info" style="margin-top:1em">
-    <div class="panel-heading">
-        <h1 class="panel-title" style="font-size:2em">
-            心理師性傾向內隱態度與性傾向諮商勝任能力相關研究
-        </h1>
+        /* 手機版樣式 */
+        @media (max-width: 768px) {
+            .custom-list {
+                padding-left: 5px; /* 減少手機版的縮排 */
+            }
+            .custom-list ul {
+                padding-left: 5px; /* 減少手機版的內部列表縮排 */
+            }
+            .panel-heading h1 {
+                font-size: 1.5em; /* 減小手機版字體大小 */
+            }
+            .panel-body {
+                font-size: 0.9em; /* 減小手機版字體大小 */
+                line-height: 1.6; /* 減少手機版行高 */
+            }
+            .proceed button {
+                width: 100%; /* 手機版按鈕全寬 */
+                padding: 10px; /* 手機版按鈕內邊距 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="panel panel-info" style="margin-top:1em">
+        <div class="panel-heading">
+            <h1 class="panel-title">
+                心理師性傾向內隱態度與性傾向諮商勝任能力相關研究
+            </h1>
+        </div>
     </div>
-</div>
 
-<div class="panel-body" style="font-size:1em; line-height:1.8">
-    <p class='lead'>
-        <ol>
-            您好：<br/><br/>
-            我是國立臺灣師範大學教育心理與輔導學系碩士班的研究生林威宇，目前在喬虹助理教授的指導下，進行個人碩士論文研究。<br/>
-            本研究旨在了解在國內諮商心理師對於性傾向之內隱態度與與性傾向諮商勝任能力之現況，以及兩者間的關係。研究相關注意事項如下：<br/><br/>
-            <ol class="custom-list">
-                <li>參與條件（符合以下任一條件即為本研究之研究對象）：
-                    <ul>
-                        <li><b>具備中華民國諮商心理師證照</b>者。</li>
-                        <li>就讀或畢業於國內諮商輔導相關研究所，且<b>已完成全職諮商實習</b>，而尚未考取諮商心理師證照者。</li>
-                        <li>就讀於國內諮商輔導相關研究所，且<b>正在進行全職諮商實習</b>者。</li>
-                    </ul>
-                </li>
-                <li>填答時間約為<b>15-20分鐘</b>，並建議使用電腦填答，由於當中包含自陳式量表與內隱聯結測驗部分，需要較高之專注力，故請確保填答過程不會受到過多外在環境因素干擾。</li>
-                <li>本研究全程皆為為匿名填答，所獲得之資訊僅用於學術使用，內容將全數保密，並在研究完成後全數銷毀。</li>
-                <li>您是完全自願參與本研究的，在填答過程中若有任何不適，您有權隨時關閉視窗並退出本研究。</li>
+    <div class="panel-body">
+        <p class='lead'>
+            <ol>
+                您好：<br/><br/>
+                我是國立臺灣師範大學教育心理與輔導學系碩士班的研究生林威宇，目前在喬虹助理教授的指導下，進行個人碩士論文研究。<br/>
+                本研究旨在了解在國內諮商心理師對於性傾向之內隱態度與與性傾向諮商勝任能力之現況，以及兩者間的關係。研究相關注意事項如下：<br/><br/>
+                <ol class="custom-list">
+                    <li>參與條件（符合以下任一條件即為本研究之研究對象）：
+                        <ul>
+                            <li><b>具備中華民國諮商心理師證照</b>者。</li>
+                            <li>就讀或畢業於國內諮商輔導相關研究所，且<b>已完成全職諮商實習</b>，而尚未考取諮商心理師證照者。</li>
+                            <li>就讀於國內諮商輔導相關研究所，且<b>正在進行全職諮商實習</b>者。</li>
+                        </ul>
+                    </li>
+                    <li>填答時間約為<b>15-20分鐘</b>，並建議使用電腦填答，由於當中包含自陳式量表與內隱聯結測驗部分，需要較高之專注力，故請確保填答過程不會受到過多外在環境因素干擾。</li>
+                    <li>本研究全程皆為為匿名填答，所獲得之資訊僅用於學術使用，內容將全數保密，並在研究完成後全數銷毀。</li>
+                    <li>您是完全自願參與本研究的，在填答過程中若有任何不適，您有權隨時關閉視窗並退出本研究。</li>
+                </ol>
+                <br/>
+                為感謝您的參與，待本研究完成後將從所有完整填答的參與者中，抽出20名贈送100元超商禮卷作為回饋，欲參與回饋抽獎者請務必在最後跳轉之頁面留下您的e-mail，以避免您的權益受損。<br/><br/>
+                如有任何問題，請不吝來信聯絡：<br/>
+                姓名：林威宇<br/>
+                e-mail：61001030e@gapps.ntnu.edu.tw<br/>
             </ol>
-<br/>
-            為感謝您的參與，待本研究完成後將從所有完整填答的參與者中，抽出20名贈送100元超商禮卷作為回饋，欲參與回饋抽獎者請務必在最後跳轉之頁面留下您的e-mail，以避免您的權益受損。<br/><br/>
-            如有任何問題，請不吝來信聯絡：<br/>
-            姓名：林威宇<br/>
-            e-mail：61001030e@gapps.ntnu.edu.tw<br/>
-        </ol>
-    </p>
-    <div class="text-center proceed" style="margin: 30px auto 10px;">
-        <button pi-message-done type="button" class="btn btn-primary">
-            同意並開始填答
-        </button>
+        </p>
+        <div class="text-center proceed" style="margin: 30px auto 10px;">
+            <button pi-message-done type="button" class="btn btn-primary">
+                同意並開始填答
+            </button>
+        </div>
     </div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    function isTouchDevice() {
-        return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    }
-
-    if (isTouchDevice()) {
-        document.body.classList.add('isTouch');
-    }
-});
-</script>
+</body>
+</html>

@@ -56,7 +56,7 @@ define(['questAPI'], function(Quest){
     // ### Pages
     // Shows all questions, but the order is random.
     API.addPagesSet('basicPage', {
-        header: '在下面的題目中，請選擇一個最符合您的形容',
+        header: '請根據您對於每個題項之描述的認同程度進行填答。請務必填選最真實的分數，通常是您第一直覺反應。</br> *註：本量表中之「同志」所指的是女同性戀者、男同性戀者與雙性戀者（lesbian, gay and bisexual, LGB）。',
         headerStyle: {'font-size': '1em'},
         questions: {
             mixer: 'repeat',

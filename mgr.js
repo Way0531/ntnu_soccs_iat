@@ -95,14 +95,14 @@ define(['managerAPI',
             //title: 'End',
             //Uncomment the following if you want to end the study here.
             //last:true, 
-            header: '測驗結束，謝謝您的參與！'
+            header: '測驗結束，謝謝您的參與！</br>（頁面將導向回饋抽獎表單）'
         }], 
         
         //Use if you want to redirect the participants elsewhere at the end of the study
         redirect:
         [{ 
 			//最後導向的網站（問卷）
-            type:'redirect', name:'redirecting', url: 'https://www.google.com/search' 
+            type:'redirect', name:'redirecting', url: 'https://forms.gle/RiaNeukUwxnqu6yJ9' 
         }],
 		
 		//This task waits until the data are sent to the server.

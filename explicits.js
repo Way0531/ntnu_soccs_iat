@@ -10,7 +10,7 @@ define(['questAPI'], function(Quest){
         required: true, // 強制回答問題
         style: 'multiButtons',
         answers: [
-            '1 - 非常不認同',
+            '1 - -非常不認同',
             '2',
             '3',
             '4',
@@ -19,7 +19,6 @@ define(['questAPI'], function(Quest){
             '7 - 非常認同'
         ],
         errorMsg: {required: "此題項為必填"}
-	});
     });
 
     API.addQuestionsSet('competence', [
@@ -80,4 +79,4 @@ define(['questAPI'], function(Quest){
     Return the script to piquest's god, or something of that sort.
     **/
     return API.script;
-});
+}); 

@@ -18,7 +18,12 @@ define(['questAPI'], function(Quest){
             '6',
             '7<br><span style="font-size:0.8em; color:gray;">完全認同/完全符合</span>'
         ],
-        errorMsg: {required: "此題項為必填"}
+        errorMsg: {required: "此題項為必填"},
+         css: {
+        '.minno-button': {
+            'min-height': '40px' // 設定最小高度，根據需求調整這個值
+        }
+    }
     });
 
     API.addQuestionsSet('competence', [

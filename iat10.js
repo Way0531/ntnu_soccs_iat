@@ -1,4 +1,4 @@
-//完整IAT執行程式碼
+r//完整IAT執行程式碼
 define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) {
 
 	/**

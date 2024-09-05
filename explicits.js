@@ -10,10 +10,10 @@ define(['questAPI'], function(Quest){
         required: true, // 強制回答問題
         style: 'multiButtons',
         answers: [
-            '1 - -非常不認同',
+            '1 - 非常不認同',
             '2',
             '3',
-            '4',
+            '4 - 普通',
             '5',
             '6',
             '7 - 非常認同'

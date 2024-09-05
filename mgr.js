@@ -88,6 +88,12 @@ define(['managerAPI',
             scriptUrl: 'raceiat.js'
         }],
 
+	suggestion: [{    
+		type: 'quest',
+		name: 'suggestion',
+		scriptUrl: 'suggestion.js'
+	}],    
+
         lastpage: [{
             type: 'message',
             name: 'lastpage',
@@ -171,7 +177,7 @@ define(['managerAPI',
                 }
             ]
         },
-	//{inherit: 'suggestion'}, 
+	{inherit: 'suggestion'}, 
 	{inherit: 'uploading'},
         {inherit: 'lastpage'},
         {inherit: 'redirect'}

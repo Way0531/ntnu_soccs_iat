@@ -171,7 +171,7 @@ define(['managerAPI',
                 }
             ]
         },
-	{inherit: 'suggestion'}, //建議
+	//{inherit: 'suggestion'}, 
 	{inherit: 'uploading'},
         {inherit: 'lastpage'},
         {inherit: 'redirect'}

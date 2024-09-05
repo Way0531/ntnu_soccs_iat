@@ -38,7 +38,7 @@ define(['questAPI'], function(Quest){
         {inherit: 'basicSelect', name: 'com_14', stem: '14. 我認為自己有能力在治療環境中評估同志的心理健康需求。'},
         {inherit: 'basicSelect', name: 'com_15', stem: '15. 我認為同志伴侶不需要特別的權利（例如：同居伴侶權、婚姻權），因為那將會破壞正常與傳統的家庭價值。'},
         {inherit: 'basicSelect', name: 'com_16', stem: '16. 影響男同性戀與女同性戀的心理及社會議題有所不同。'},
-        {inherit: 'basicSelect', name: 'com_17', stem: '17. 如果我的個案將異性戀的生活型態是為理想的生活型態，那是最好不過的了。'},
+        {inherit: 'basicSelect', name: 'com_17', stem: '17. 如果我的個案將異性戀的生活型態視為理想的生活型態，那是最好不過的了。'},
         {inherit: 'basicSelect', name: 'com_18', stem: '18. 我曾有過與男性或女性的雙性戀個案諮商的經驗。'},
         {inherit: 'basicSelect', name: 'com_19', stem: '19. 我知道哪些體制上的阻礙可能會影響同志使用心理衛生服務。'},
         {inherit: 'basicSelect', name: 'com_20', stem: '20. 我知道諮商師經常將自身對於性傾向的價值觀強加到同志個案身上。'},

@@ -333,9 +333,9 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 
 			//Error messages in the feedback
 			
-			manyErrors: 'error_too_much',
-			tooFast: 'too_fast',
-			notEnough: 'not_enough',
+			manyErrors: '錯誤過多',
+			tooFast: '答題過快',
+			notEnough: '答題不足',
 		};
 
 		// extend the "current" object with the default

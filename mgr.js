@@ -95,7 +95,7 @@ define(['managerAPI',
             //title: 'End',
             //Uncomment the following if you want to end the study here.
             //last:true, 
-            header: '測驗結束，謝謝您的參與！</br>（頁面將導向回饋抽獎表單）'
+            header: '測驗結束，謝謝您的參與！'
         }], 
         
         //Use if you want to redirect the participants elsewhere at the end of the study

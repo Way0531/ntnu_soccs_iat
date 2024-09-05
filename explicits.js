@@ -19,6 +19,8 @@ define(['questAPI'], function(Quest){
             '7 - 非常認同'
         ],
         errorMsg: {required: "此題項為必填"}
+        helpText: '1 = 非常不認同，7 = 非常認同'
+	});
     });
 
     API.addQuestionsSet('competence', [

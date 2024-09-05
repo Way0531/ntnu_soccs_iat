@@ -10,53 +10,53 @@ define(['questAPI'], function(Quest){
         required: true, // 強制回答問題
         style: 'multiButtons',
         answers: [
-            '1 - 非常不符合',
-            '2 - 不符合',
-            '3 - 有點不符合',
-            '4 - 普通',
-            '5 - 有點符合',
-            '6 - 符合',
-            '7 - 非常符合'
+            '1 - 非常不認同',
+            '2',
+            '3',
+            '4 ',
+            '5',
+            '6',
+            '7 - 非常認同'
         ],
         errorMsg: {required: "此題項為必填"}
     });
 
     API.addQuestionsSet('competence', [
-        {inherit: 'basicSelect', name: 'com_1', stem: '1. 我已經具備足夠的臨床訓練與督導，可以提供同志個案諮商服務。'},
+        {inherit: 'basicSelect', name: 'com_1', stem: '1. 我接受過足夠的臨床訓練與督導，以服務男同性戀、女同性戀與雙性戀身份的個案。'},
         {inherit: 'basicSelect', name: 'com_2', stem: '2. 同志個案的生活型態是不自然或不道德的。'},
-        {inherit: 'basicSelect', name: 'com_3', stem: '3. 我透過諮詢、督導與繼續教育來檢視自己在同志諮商技巧上的效能與能力。'},
-        {inherit: 'basicSelect', name: 'com_4', stem: '4. 我曾有過諮商男同志個案的經驗。'},
+        {inherit: 'basicSelect', name: 'com_3', stem: '3. 我透過諮詢、督導與繼續教育來確保自己的同志諮商技巧。'},
+        {inherit: 'basicSelect', name: 'com_4', stem: '4. 我曾有過與男同性戀個案諮商的經驗。'},
         {inherit: 'basicSelect', name: 'com_5', stem: '5. 與異性戀個案相比，同志個案比較容易遭受到他們不喜歡的諮商處遇。'},
-        {inherit: 'basicSelect', name: 'com_6', stem: '6. 就我目前的專業發展，我覺得自己有能力、技巧與資格與同志個案進行諮商。'},
-        {inherit: 'basicSelect', name: 'com_7', stem: '7. 我曾有過諮商女同志或男同志伴侶的經驗。'},
-        {inherit: 'basicSelect', name: 'com_8', stem: '8. 我曾有過諮商女同志個案的經驗。'},
-        {inherit: 'basicSelect', name: 'com_9', stem: '9. 我知道有些研究指出，同志個案比起異性戀個案，更容易被診斷為心理異常。'},
-        {inherit: 'basicSelect', name: 'com_10', stem: '10. 顯而易見的是，兩個男人或是兩個女人之間的親密關係，不如一男一女間的親密關係來的穩定或是更具承諾。'},
-        {inherit: 'basicSelect', name: 'com_11', stem: '11. 我認為同志個案應該努力地對於自身的性傾向保持低調。'},
-        {inherit: 'basicSelect', name: 'com_12', stem: '12. 我曾參與過同志議題（諮商、心理學、心理衛生領域）的在職訓練、研討會或工作坊。'},
-        {inherit: 'basicSelect', name: 'com_13', stem: '13. 異性戀主義者與帶有偏見的觀念已滲透在心理衛生專業中。'},
-        {inherit: 'basicSelect', name: 'com_14', stem: '14. 在諮商情境中，我覺得我有能力評估同志的心理健康需求。'},
-        {inherit: 'basicSelect', name: 'com_15', stem: '15. 我認為同志伴侶不需要特別的權利（同居伴侶權或婚姻權），因為這樣會破壞正常及傳統的家庭價值。'},
-        {inherit: 'basicSelect', name: 'com_16', stem: '16. 影響男同志或女同志的心理、社會議題是不一樣的。'},
-        {inherit: 'basicSelect', name: 'com_17', stem: '17. 如果我的個案能將異性戀生活是為理想的生活型態，那是最好不過的。'},
-        {inherit: 'basicSelect', name: 'com_18', stem: '18. 我曾有過諮商雙性戀個案的經驗。'},
-        {inherit: 'basicSelect', name: 'com_19', stem: '19. 我知道體制中有哪些障礙可能會阻礙同志使用心理衛生服務。'},
-        {inherit: 'basicSelect', name: 'com_20', stem: '20. 我知道諮商師經常會把自己對於性的價值觀強加到同志個案身上。'},
-        {inherit: 'basicSelect', name: 'com_21', stem: '21. 我認為我的個案應該在某些程度上服從傳統的性價值觀。'},
-        {inherit: 'basicSelect', name: 'com_22', stem: '22. 如果我的個案是同志，我目前沒有具備足夠的技巧與訓練來進行個案報告或諮詢。'},
-        {inherit: 'basicSelect', name: 'com_23', stem: '23. 我認為同志個案與一位認同傳統價值觀與規範的異性戀諮商師進行諮商，能使其受益最多。'},
-        {inherit: 'basicSelect', name: 'com_24', stem: '24. 生為異性戀者在這個社會中佔有一定優勢。'},
-        {inherit: 'basicSelect', name: 'com_25', stem: '25. 我覺得若要與同志個案進行有效能的諮商，諮商師與個案具有不同的性傾向，會是一開始的障礙。'},
-        {inherit: 'basicSelect', name: 'com_26', stem: '26. 在同志議題的個案演練上，我曾扮演個案或諮商師。'},
-        {inherit: 'basicSelect', name: 'com_27', stem: '27. 我認為同性戀是一種精神障礙或一種罪，且可透過諮商或靈性協助獲得療癒。'},
-        {inherit: 'basicSelect', name: 'com_28', stem: '28. 我認為在有兒童的場合，同志個案必須對自身的性傾向保持低調。'},
-        {inherit: 'basicSelect', name: 'com_29', stem: '29. 談到同志，我認同以下的說法：「厭惡或譴責那罪，但愛那些罪人。」'}
+        {inherit: 'basicSelect', name: 'com_6', stem: '6. 就我目前的專業發展階段，我認為自己有能力、技巧與資格提供同志個案諮商服務。'},
+        {inherit: 'basicSelect', name: 'com_7', stem: '7. 我曾有過與男同性戀或女同性戀個案進行伴侶諮商的經驗。'},
+        {inherit: 'basicSelect', name: 'com_8', stem: '8. 我曾有過與女同性戀個案諮商的經驗。'},
+        {inherit: 'basicSelect', name: 'com_9', stem: '9. 我知道有一些研究指出同志個案比起異性戀個案更容易被診斷出精神疾患。'},
+        {inherit: 'basicSelect', name: 'com_10', stem: '10. 很顯然，兩個男性或兩個女性間的同性關係，並不如一男一女間的關係那樣穩定或更具承諾。'},
+        {inherit: 'basicSelect', name: 'com_11', stem: '11. 我認為同志個案應該盡可能對自己的性傾向保持謹慎與低調。'},
+        {inherit: 'basicSelect', name: 'com_12', stem: '12. 我曾參與過同志議題相關的心理專業在職訓練、研討會或工作坊。'},
+        {inherit: 'basicSelect', name: 'com_13', stem: '13. 異性戀主義與具有偏見的觀念已經滲透到心理衛生專業領域中。'},
+        {inherit: 'basicSelect', name: 'com_14', stem: '14. 我認為自己有能力在治療環境中評估同志的心理健康需求。'},
+        {inherit: 'basicSelect', name: 'com_15', stem: '15. 我認為同志伴侶不需要特別的權利（例如：同居伴侶權、婚姻權），因為那將會破壞正常與傳統的家庭價值。'},
+        {inherit: 'basicSelect', name: 'com_16', stem: '16. 影響男同性戀與女同性戀的心理及社會議題有所不同。'},
+        {inherit: 'basicSelect', name: 'com_17', stem: '17. 如果我的個案將異性戀的生活型態是為理想的生活型態，那是最好不過的了。'},
+        {inherit: 'basicSelect', name: 'com_18', stem: '18. 我曾有過與男性或女性的雙性戀個案諮商的經驗。'},
+        {inherit: 'basicSelect', name: 'com_19', stem: '19. 我知道哪些體制上的阻礙可能會影響同志使用心理衛生服務。'},
+        {inherit: 'basicSelect', name: 'com_20', stem: '20. 我知道諮商師經常將自身對於性傾向的價值觀強加到同志個案身上。'},
+        {inherit: 'basicSelect', name: 'com_21', stem: '21. 我認為我的個案應該在某些層面上接受傳統的性價值觀。'},
+        {inherit: 'basicSelect', name: 'com_22', stem: '22. 如果我的個案是同志，我目前並不具備足夠技巧或訓練去進行個案報告或諮詢。'},
+        {inherit: 'basicSelect', name: 'com_23', stem: '23. 我認為同志個案會在與一位認同傳統價值觀與規範的異性戀諮商師的諮商中受益最多。'},
+        {inherit: 'basicSelect', name: 'com_24', stem: '24. 在這個社會中，身為異性戀者具有一定的優勢。'},
+        {inherit: 'basicSelect', name: 'com_25', stem: '25. 我認為諮商師與個案之間性傾向的差異，可能會成為在與同志個案進行有效能的諮商初期的障礙。'},
+        {inherit: 'basicSelect', name: 'com_26', stem: '26. 我曾在同志議題的諮商演練中擔任過個案或諮商師。'},
+        {inherit: 'basicSelect', name: 'com_27', stem: '27. 我個人認為同性戀是一種精神障礙或是一種罪，且可以透過諮商或是靈性協助來治療。'},
+        {inherit: 'basicSelect', name: 'com_28', stem: '28. 我認為所有的同志個案都必須在兒童面前對自己的性傾向保持謹慎與低調。'},
+        {inherit: 'basicSelect', name: 'com_29', stem: '29. 當談到同性戀時，我同意這樣的說法：「應該愛要罪人，但憎恨或譴責那罪。」'}
     ]);
 
     // ### Pages
     // Shows all questions, but the order is random.
     API.addPagesSet('basicPage', {
-        header: '請根據您對於每個題項之描述的認同程度進行填答。請務必填選最真實的分數，通常是您第一直覺反應。</br> *註：本量表中之「同志」所指的是女同性戀者、男同性戀者與雙性戀者（lesbian, gay and bisexual, LGB）。',
+        header: '請根據您對於每個題項之描述的認同程度進行填答，分數愈高代表您的認同程度愈高。請務必填選最真實的分數，通常是您第一直覺反應。</br> *註：本量表中之「同志」所指的是女同性戀者、男同性戀者與雙性戀者（lesbian, gay and bisexual, LGB）。',
         headerStyle: {'font-size': '1em'},
         questions: {
             mixer: 'repeat',

@@ -1,4 +1,4 @@
-//完整IAT執行程式碼
+r//完整IAT執行程式碼
 define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) {
 
 	/**
@@ -317,25 +317,23 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor, Scorer, _) 
 			//attribute1, and attribute2 will be replaced with the name of attribute1 and attribute2.
 			//categoryA is the name of the category that is found to be associated with attribute1,
 			//and categoryB is the name of the category that is found to be associated with attribute2.
-
 			
-			fb_strong_Att1WithCatA_Att2WithCatB : 'Your responses suggested a strong automatic preference for categoryB over categoryA.',
+			/*
+   fb_strong_Att1WithCatA_Att2WithCatB : 'Your responses suggested a strong automatic preference for categoryB over categoryA.',
 			fb_moderate_Att1WithCatA_Att2WithCatB : 'Your responses suggested a moderate automatic preference for categoryB over categoryA.',
 			fb_slight_Att1WithCatA_Att2WithCatB : 'Your responses suggested a slight automatic preference for categoryB over categoryA.',
 			fb_equal_CatAvsCatB : 'Your responses suggested no automatic preference between categoryA and categoryB.',
-                        
-
-   
+   */
+			
 			//fb_strong_Att1WithCatA_Att2WithCatB : "You were much faster at sorting 'categoryA' with 'attribute1' and 'categoryB' with 'attribute2' than 'categoryB' with 'attribute1' and 'categoryA' with 'attribute2'",
 			//fb_moderate_Att1WithCatA_Att2WithCatB : "You were moderately faster at sorting 'categoryA' with 'attribute1' and 'categoryB' with 'attribute2' than 'categoryB' with 'attribute1' and 'categoryA' with 'attribute2'",
 			//fb_slight_Att1WithCatA_Att2WithCatB : "You were slightly faster at sorting 'categoryA' with 'attribute1' and 'categoryB' with 'attribute2' than 'categoryB' with 'attribute1' and 'categoryA' with 'attribute2'",
 			//fb_equal_CatAvsCatB : "You were about equally fast at sorting 'categoryA' with 'attribute1' and 'categoryB' with 'attribute2' and at sorting 'categoryB' with 'attribute1' and 'categoryA' with 'attribute2'.",
 
 			//Error messages in the feedback
-			
-			manyErrors: '錯誤過多',
-			tooFast: '答題過快',
-			notEnough: '答題不足',
+			manyErrors: 'There were too many errors made to determine a result.',
+			tooFast: 'There were too many fast trials to determine a result.',
+			notEnough: 'There were not enough trials to determine a result.'
 		};
 
 		// extend the "current" object with the default

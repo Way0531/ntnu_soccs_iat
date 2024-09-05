@@ -18,6 +18,7 @@ define(['questAPI'], function(Quest){
             '6',
             '7 - 非常認同'
         ],
+        helpText: 'Click on the gray line to indicate your judgment. After clicking the line, you can slide the circle to choose the exact judgment.',
         errorMsg: {required: "此題項為必填"}
     });
 

@@ -3,11 +3,11 @@ define(['questAPI'], function(Quest){
 
     API.addSequence([
         { // page begins
-            header: 'Text questions',
+            header: 'suggestion',
             questions: [
                 { // question begins
                     type: 'textarea',
-                    stem: 'When you say good morning, what do you mean?',
+                    stem: '請問針對目前國內心理與諮商專業領域中，同志相關議題之訓練與繼續教育，您是否有什麼相關建議與看法？（非必填問題）',
                     rows: 3,
                     minLength: 400
                 } // question ends

@@ -10,13 +10,13 @@ define(['questAPI'], function(Quest){
         required: true, // 強制回答問題
         style: 'multiButtons',
         answers: [
-            '1 - 完全不認同/完全不符合',
+            '1<br><span style="font-size:0.5em; color:gray;">完全不認同/完全不符合</span>',
             '2',
             '3',
             '4',
             '5',
             '6',
-            '7 - 完全認同/完全符合'
+            '7<br><span style="font-size:0.5em; color:gray;">完全認同/完全符合</span>'
         ],
         errorMsg: {required: "此題項為必填"}
     });

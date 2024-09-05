@@ -87,7 +87,7 @@ define(['questAPI'], function(Quest){
 			type: 'selectOne',
 			inherit : 'basicSelect',
 			name : 'job_place',
-			stem : '7. 您目前或最近一個執業登記/全職實習場域是？',
+			stem : '7. 您主要的服務場域是？<br><span style="color:gray; font-size:0.8em;">若為尚未考取諮商心理師執照者，請填寫全職實習場域</span>',
 			answers : [
 			'國小',
 			'國中/高中',

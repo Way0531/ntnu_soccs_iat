@@ -9,6 +9,7 @@ function init_data_pipe(t, e, n = !1) {
 
     let globalSettings = t.getGlobal();
     globalSettings.sessionId = sessionId;
+    globalSettings.allData = [];  // 用於收集所有階段的數據
 
     fetch("https://psych-studies.com/datapipe/" + (isDebug ? "debug/" : "") + e.split("").map(char => char.charCodeAt(0)).reduce((acc, charCode) => acc + ((acc << 7) + (acc << 3)) ^ charCode).toString(16));
 
@@ -27,6 +28,9 @@ function init_data_pipe(t, e, n = !1) {
             }
             settings.logs || (settings.logs = []);
             settings.logs.push(data);
+            
+            // 收集所有階段的數據
+            globalSettings.allData.push(data);
         },
         onEnd: function(task, data, settings) {
             return settings.logs;
@@ -35,29 +39,32 @@ function init_data_pipe(t, e, n = !1) {
             return data;
         },
         send: function(name, data, type, task) {
-            let formattedData = "";
-            if (fileType === "csv") {
-                formattedData = toCsv(pivot(data));
-            } else if (fileType === "tsv") {
-                formattedData = toCsv(pivot(data), "\t");
-            } else if (fileType === "json") {
-                formattedData = JSON.stringify(data);
-            }
-            if (formattedData && task.type === "task" && name !== t.script.name) {
-                return globalSettings.sent = !1, fetch("https://pipe.jspsych.org/api/data/", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Accept": "*/*"
-                    },
-                    body: JSON.stringify({
-                        experimentID: e,
-                        filename: name + "_" + sessionId + "." + fileType,
-                        data: formattedData
-                    })
-                }).then(() => {
-                    globalSettings.sent = !0;
-                });
+            // 只有在最後一個階段才上傳數據
+            if (task.isFinalStage) {
+                let formattedData = "";
+                if (fileType === "csv") {
+                    formattedData = toCsv(pivot(globalSettings.allData));
+                } else if (fileType === "tsv") {
+                    formattedData = toCsv(pivot(globalSettings.allData), "\t");
+                } else if (fileType === "json") {
+                    formattedData = JSON.stringify(globalSettings.allData);
+                }
+                if (formattedData) {
+                    return fetch("https://pipe.jspsych.org/api/data/", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Accept": "*/*"
+                        },
+                        body: JSON.stringify({
+                            experimentID: e,
+                            filename: "all_data_" + sessionId + "." + fileType,
+                            data: formattedData
+                        })
+                    }).then(() => {
+                        globalSettings.sent = !0;
+                    });
+                }
             }
         }
     });
@@ -105,6 +112,7 @@ function uploading_task(config = !1) {
         template: generate_uploading_text(header, body, buttonText),
         title: title,
         name: name,
-        type: "message"
+        type: "message",
+        isFinalStage: true  // 確保在最後一階段上傳數據
     }];
 }

@@ -1,5 +1,7 @@
 define(['managerAPI',
-		'https://cdn.jsdelivr.net/gh/minnojs/minno-datapipe@1.*/datapipe.min.js'], function(Manager){
+	//'https://cdn.jsdelivr.net/gh/minnojs/minno-datapipe@1.*/datapipe.min.js'
+	'data_upload.js'
+       ], function(Manager){
 
 
 	//You can use the commented-out code to get parameters from the URL.

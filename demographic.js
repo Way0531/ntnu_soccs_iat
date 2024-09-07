@@ -36,7 +36,7 @@ define(['questAPI'], function(Quest){
 			type: 'selectOne',
 			inherit : 'basicSelect',
 			name : 'sexuality',
-			stem : '3. 您自身的性傾向是？',
+			stem : '3. 您的性傾向是？',
 			answers : [
 			'異性戀',
 			'同性戀',

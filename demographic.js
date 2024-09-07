@@ -109,10 +109,28 @@ define(['questAPI'], function(Quest){
 			'41年','42年','43年','44年','45年','46年','47年','48年','49年','50年以上']
 		},
 		{
+			type: 'dropdown',
+			numericValues: true,
+			inherit : 'basicSelect',
+			name : 'lgb_friends',
+			stem : '9. 您有幾位同志朋友？<br><span style="color:gray; font-size:0.8em;">在此題項之「同志」意指LGB身份者（女同性戀、男同性戀、雙性戀）</span>',
+			answers : [
+			'0','1','2','3','4','5','6','7','8','9','10位以上']
+		},
+		{
+			type: 'dropdown',
+			numericValues: true,
+			inherit : 'basicSelect',
+			name : 'lgb_friends',
+			stem : '10. 您曾與幾位同志個案進行過諮商服務？<br><span style="color:gray; font-size:0.8em;">在此題項之「同志」意指LGB身份者（女同性戀、男同性戀、雙性戀）</span>',
+			answers : [
+			'0','1','2','3','4','5','6','7','8','9','10位以上']
+		},
+		{
 			type: 'selectOne',
 			inherit : 'basicSelect',
 			name : 'training',
-			stem : '9. 您是否曾於碩士班在學或是執業期間，參與過同志議題相關之課程或專業訓練？',
+			stem : '11. 您是否曾於碩士班在學或是執業期間，參與過同志議題相關之課程或專業訓練？',
 			answers : [
 			'是','否']
 		},
@@ -121,7 +139,7 @@ define(['questAPI'], function(Quest){
 			numericValues: true,
 			inherit : 'basicSelect',
 			name : 'self_assessment',
-			stem : '10. 您認為自身目前提供同志諮商之專業勝任能力為何？',
+			stem : '12. 您認為自身目前提供同志諮商之專業勝任能力為何？',
 			answers : [
 			'1 - 非常不足','2','3','4','5','6','7 - 非常足夠']
 		},
@@ -136,7 +154,7 @@ define(['questAPI'], function(Quest){
 		headerStyle : {'font-size':'1em'},
 		questions : {
 			mixer : 'repeat',
-			times : 10,
+			times : 12,
 			data : [
 				{inherit:{set:'people', type:'sequential'}}
 			]

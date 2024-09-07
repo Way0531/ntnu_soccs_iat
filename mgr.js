@@ -120,9 +120,6 @@ define(['managerAPI',
 	 text: '請問您正在使用智慧型手機/平板進行測驗嗎？',
 	 yesText: '是',
 	 noText: '否'}, //Use Minno's internal touch detection mechanism. 
-	    
-        //這邊是上傳資料
-        //{ type: 'post', path: ['$isTouch', 'raceSet', 'blackLabels', 'whiteLabels'] },
 
         // apply touch only styles
         {

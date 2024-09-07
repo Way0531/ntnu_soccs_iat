@@ -179,7 +179,7 @@ define(['managerAPI',
         },
 	{inherit: 'suggestion'}, 
 	{inherit: 'uploading'},
-	{type: 'post', path: ['$isTouch', 'raceSet', 'blackLabels', 'whiteLabels'] },
+	{type: 'post', path: ['$isTouch', 'raceSet', 'blackLabels', 'whiteLabels'] }, //上傳資料
         {inherit: 'lastpage'},
         {inherit: 'redirect'}
     ]);

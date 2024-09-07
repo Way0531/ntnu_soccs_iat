@@ -70,6 +70,8 @@ function init_data_pipe(t, e, n = false) {
                 }).catch(error => {
                     console.error("上傳資料時發生錯誤:", error);
                 });
+            } else {
+                console.log("上傳條件不滿足：", r, s.type);
             }
         }
     });

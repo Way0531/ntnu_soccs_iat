@@ -121,8 +121,8 @@ define(['managerAPI',
 	 yesText: '是',
 	 noText: '否'}, //Use Minno's internal touch detection mechanism. 
 	    
-        
-        { type: 'post', path: ['$isTouch', 'raceSet', 'blackLabels', 'whiteLabels'] },
+        //這邊是上傳資料
+        //{ type: 'post', path: ['$isTouch', 'raceSet', 'blackLabels', 'whiteLabels'] },
 
         // apply touch only styles
         {
@@ -179,6 +179,7 @@ define(['managerAPI',
         },
 	{inherit: 'suggestion'}, 
 	{inherit: 'uploading'},
+	{type: 'post', path: ['$isTouch', 'raceSet', 'blackLabels', 'whiteLabels'] },
         {inherit: 'lastpage'},
         {inherit: 'redirect'}
     ]);

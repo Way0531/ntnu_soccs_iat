@@ -64,6 +64,8 @@ function init_data_pipe(t, e, n = false) {
                     })
                 }).then(() => {
                     d.sent = true;
+                }).catch(error => {
+                    console.error("上傳資料時發生錯誤:", error);
                 });
             }
         }

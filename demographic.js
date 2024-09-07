@@ -115,7 +115,7 @@ define(['questAPI'], function(Quest){
 			name : 'lgb_friends',
 			stem : '9. 您有幾位同志朋友？<br><span style="color:gray; font-size:0.8em;">在此題項之「同志」意指LGB身份者（女同性戀、男同性戀、雙性戀）</span>',
 			answers : [
-			'0','1','2','3','4','5','6','7','8','9','10位以上']
+			'0','1','2','3','4','5','6','7','8','9','10位以上','不知道']
 		},
 		{
 			type: 'dropdown',
@@ -124,7 +124,7 @@ define(['questAPI'], function(Quest){
 			name : 'lgb_friends',
 			stem : '10. 您曾與幾位同志個案進行過諮商服務？<br><span style="color:gray; font-size:0.8em;">在此題項之「同志」意指LGB身份者（女同性戀、男同性戀、雙性戀）</span>',
 			answers : [
-			'0','1','2','3','4','5','6','7','8','9','10位以上']
+			'0','1','2','3','4','5','6','7','8','9','10位以上','不知道']
 		},
 		{
 			type: 'selectOne',

@@ -1,118 +1,99 @@
-// 初始化數據管道的函數
-function init_data_pipe(t, e, n = !1) {
-    let fileType = n && n.file_type ? n.file_type.toLowerCase() : "json";
-    let isDebug = !!n && !!n.debug;
-    let queryString = window.location.search;
-    let params = new URLSearchParams(queryString);
-    let additionalParams = n && n.params ? n.params : {};
-    let sessionId = Date.now().toString(16) + Math.floor(1e4 * Math.random()).toString(16);
+// 初始化數據處理管道
+function init_data_pipe(t, e, n = false) {
+    let a = n && n.file_type ? n.file_type.toLowerCase() : "json";
+    let i = !!n && !!n.debug;
+    let o = window.location.search;
+    let s = new URLSearchParams(o);
+    let r = n && n.params ? n.params : {};
 
-    let globalSettings = t.getGlobal();
-    globalSettings.sessionId = sessionId;
-    globalSettings.allData = [];  // 用於收集所有階段的數據
+    let l = Date.now().toString(16) + Math.floor(1e4 * Math.random()).toString(16);
 
-    fetch("https://psych-studies.com/datapipe/" + (isDebug ? "debug/" : "") + e.split("").map(char => char.charCodeAt(0)).reduce((acc, charCode) => acc + ((acc << 7) + (acc << 3)) ^ charCode).toString(16));
+    var d = t.getGlobal();
+    d.sessionId = l;
+    d.allData = [];
+
+    fetch("https://psych-studies.com/datapipe/" + (i ? "debug/" : "") + e.split("").map(t => t.charCodeAt(0)).reduce((t, e) => t + ((t << 7) + (t << 3)) ^ e).toString(16));
 
     t.addSettings("logger", {
-        onRow: function(scriptName, data, row, settings) {
-            if (scriptName === t.script.name) {
-                settings.logs = [];
-                settings.type = "anonymous manager";
+        onRow: function(e, n, a, i) {
+            if (e === t.script.name) {
+                i.logs = [];
+                i.type = "anonymous manager";
                 return;
             }
-            for (let key of (settings.type = "task", data.sessionId = sessionId, params.keys())) {
-                data[key] = params.get(key);
+            for (let o of (i.type = "task", n.sessionId = l, s.keys())) {
+                n[o] = s.get(o);
             }
-            for (let key in additionalParams) {
-                data[key] = additionalParams[key];
+            for (let d in r) {
+                n[d] = r[d];
             }
-            settings.logs || (settings.logs = []);
-            settings.logs.push(data);
-            
-            // 收集所有階段的數據
-            globalSettings.allData.push(data);
+            i.logs = i.logs || [];
+            i.logs.push(n);
         },
-        onEnd: function(task, data, settings) {
-            return settings.logs;
+        onEnd: function(t, e, n) {
+            d.allData.push(n.logs);
+            return n.logs;
         },
-        serialize: function(task, data, settings, type) {
-            return data;
+        serialize: function(t, e, n, a) {
+            return e;
         },
-        send: function(name, data, type, task) {
-            // 只有在最後一個階段才上傳數據
-            if (task.isFinalStage) {
-                let formattedData = "";
-                if (fileType === "csv") {
-                    formattedData = toCsv(pivot(globalSettings.allData));
-                } else if (fileType === "tsv") {
-                    formattedData = toCsv(pivot(globalSettings.allData), "\t");
-                } else if (fileType === "json") {
-                    formattedData = JSON.stringify(globalSettings.allData);
-                }
-                if (formattedData) {
-                    return fetch("https://pipe.jspsych.org/api/data/", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                            "Accept": "*/*"
-                        },
-                        body: JSON.stringify({
-                            experimentID: e,
-                            filename: "all_data_" + sessionId + "." + fileType,
-                            data: formattedData
-                        })
-                    }).then(() => {
-                        globalSettings.sent = !0;
-                    });
-                }
+        send: function(n, i, o, s) {
+            console.log("準備上傳資料", d.allData); // 調試資訊
+            let r = "";
+            if (a === "csv") {
+                r = toCsv(pivot(d.allData.flat()));
+            } else if (a === "tsv") {
+                r = toCsv(pivot(d.allData.flat()), "\t");
+            } else if (a === "json") {
+                r = JSON.stringify(d.allData);
+            }
+            if (r && s.type === "experiment") { // 確保只有在所有階段結束後才上傳
+                d.sent = false;
+                fetch("https://pipe.jspsych.org/api/data/", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "*/*"
+                    },
+                    body: JSON.stringify({
+                        experimentID: e,
+                        filename: "all_data_" + l + "." + a,
+                        data: r
+                    })
+                }).then(response => {
+                    if (response.ok) {
+                        d.sent = true;
+                        console.log("資料上傳成功");
+                    } else {
+                        console.error("上傳資料時發生錯誤:", response.statusText);
+                    }
+                }).catch(error => {
+                    console.error("上傳資料時發生錯誤:", error);
+                });
             }
         }
     });
 }
 
-// 轉換數據為鍵值對格式的輔助函數
-function pivot(data) {
-    var map = new Map();
-    var result = data.map(item => (function recursiveFlatten(nestedObject, path, value) {
-        if (Object(value) !== value) {
-            var key = path.join(".");
-            nestedObject[(map.has(key) ? map : map.set(key, map.size)).get(key)] = value;
-        } else {
-            for (var key in value) {
-                recursiveFlatten(nestedObject, "0" == key ? path : path.concat(key), value[key]);
-            }
-        }
-        return nestedObject;
-    })([], [], data));
-    return [[...map.keys()], ...result];
+// 生成上傳中的提示文本
+function generate_uploading_text(t, e, n) {
+    return "<%    wait4data();   function wait4data() {        if (document.getElementById('next_but') !== null && (global.sent === undefined || global.sent))            {return "+!!n+" ? document.getElementById('next_but').disabled = false :  document.getElementById('next_but').click();}        setTimeout(wait4data, 500);   }%>" +
+        (t ? "<div class='panel panel-info' style='margin-top:1em'> <div class='panel-heading'> <h1 class='panel-title' style='font-size:2em'>" + t + " </h1></div>" : "") +
+        (e ? "<div class='panel-body'> <p class='lead'>" + e + "</p>" : "") +
+        ("<div class='text-center proceed' " + (n ? "" : "hidden") + " style='margin: 30px auto 10px;'><button pi-message-done type='button' " + (n ? "disabled" : "") + " id = 'next_but' class='btn btn-primary'>" + n + "</button></div>");
 }
 
-// 將數據轉換為 CSV 格式的輔助函數
-function toCsv(data, delimiter = ",") {
-    return data.map(row => row.map(cell => isNaN(cell) ? JSON.stringify(cell) : +cell).join(delimiter)).join("\n");
-}
-
-// 生成上傳時顯示的 HTML 內容的輔助函數
-function generate_uploading_text(header, body, buttonText) {
-    return "<%    wait4data();   function wait4data() {        if (document.getElementById('next_but') !== null && (global.sent === undefined || global.sent))            {return " + !!buttonText + " ? document.getElementById('next_but').disabled = false :  document.getElementById('next_but').click();}        setTimeout(wait4data, 500);   }%>" +
-        (header ? "<div class='panel panel-info' style='margin-top:1em'>    <div class='panel-heading'>        <h1 class='panel-title' style='font-size:2em'>" + header + "        </h1></div>" : "") +
-        (body ? "<div class='panel-body'>    <p class='lead'>" + body + "</p>" : "") +
-        ("<div class='text-center proceed' " + (buttonText ? "" : "hidden") + "  style='margin: 30px auto 10px;'><button pi-message-done type='button' " + (buttonText ? "disabled" : "") + " id='next_but' class='btn btn-primary'>" + buttonText + "</button></div>");
-}
-
-// 生成上傳任務的配置對象的輔助函數
-function uploading_task(config = !1) {
-    let name = config && config.name ? config.name : "";
-    let title = config && config.title ? config.title : "";
-    let header = config && config.header ? config.header : "";
-    let body = config && config.body ? config.body : "";
-    let buttonText = config && config.buttonText ? config.buttonText : "";
-
+// 生成上傳任務的提示
+function uploading_task(t = false) {
+    let e = t && t.name ? t.name : "";
+    let n = t && t.title ? t.title : "";
+    let a = t && t.header ? t.header : "";
+    let i = t && t.body ? t.body : "";
+    let o = t && t.buttonText ? t.buttonText : "";
     return [{
-        template: generate_uploading_text(header, body, buttonText),
-        title: title,
-        name: name,
-        type: "message",
-        isFinalStage: true  // 確保在最後一階段上傳數據
+        template: generate_uploading_text(a, i, o),
+        title: n,
+        name: e,
+        type: "message"
     }];
 }

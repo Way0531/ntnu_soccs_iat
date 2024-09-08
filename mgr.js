@@ -87,6 +87,11 @@ define(['managerAPI',
             //last:true, 
             header: '測驗結束，謝謝您的參與！'
         }], 
+	demo_comp: [{    
+		type: 'quest',
+		name: 'demo_comp',
+		scriptUrl: 'demo_comp.js'
+	}], 
         
         //Use if you want to redirect the participants elsewhere at the end of the study
         redirect:
@@ -142,8 +147,9 @@ define(['managerAPI',
         },
         
         {inherit: 'intro'},
-	{inherit: 'demographic'},    
-	{inherit: 'explicits'}, //固定順序
+	{inherit: 'demo_comp'},
+	//{inherit: 'demographic'},    
+	//{inherit: 'explicits'}, //固定順序
         {
             mixer:'random',
             data:[

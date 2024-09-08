@@ -1,12 +1,12 @@
 define(['managerAPI',
-    'https://cdn.jsdelivr.net/gh/minnojs/minno-datapipe@1.*/datapipe.min.js'], function(Manager){
-    //You can use the commented-out code to get parameters from the URL.
-    //const queryString = window.location.search;
+		'https://cdn.jsdelivr.net/gh/minnojs/minno-datapipe@1.*/datapipe.min.js'], function(Manager){
+	//You can use the commented-out code to get parameters from the URL.
+	//const queryString = window.location.search;
     //const urlParams = new URLSearchParams(queryString);
     //const pt = urlParams.get('pt');
-    var API    = new Manager();
-    //const subid = Date.now().toString(16)+Math.floor(Math.random()*10000).toString(16);
-    init_data_pipe(API, 'dd7NaZnD7IoL',  {file_type:'csv'});    
+	var API    = new Manager();
+	//const subid = Date.now().toString(16)+Math.floor(Math.random()*10000).toString(16);
+	init_data_pipe(API, 'dd7NaZnD7IoL',  {file_type:'csv'});	
     API.setName('mgr');
     API.addSettings('skip',true);
     //Randomly select which of two sets of category labels to use.
@@ -37,7 +37,7 @@ define(['managerAPI',
             '苦惱', '糟糕', '恐怖', '骯髒', 
             '邪惡', '可怕', '失敗', '傷害'
         ]),
-    
+	
     });
     API.addTasksSet({
         instructions: [{
@@ -63,21 +63,21 @@ define(['managerAPI',
             name: 'explicits',
             scriptUrl: 'explicits.js'
         }],
-        demographic: [{    
-            type: 'quest',
-            name: 'demographic',
-            scriptUrl: 'demographic.js'
-        }],
+	demographic: [{    
+		type: 'quest',
+		name: 'demographic',
+		scriptUrl: 'demographic.js'
+	}],
         raceiat: [{
             type: 'time',
             name: 'raceiat',
             scriptUrl: 'raceiat.js'
         }],
-        suggestion: [{    
-            type: 'quest',
-            name: 'suggestion',
-            scriptUrl: 'suggestion.js'
-        }],    
+	suggestion: [{    
+		type: 'quest',
+		name: 'suggestion',
+		scriptUrl: 'suggestion.js'
+	}],    
         lastpage: [{
             type: 'message',
             name: 'lastpage',
@@ -89,39 +89,33 @@ define(['managerAPI',
         }], 
         
         //Use if you want to redirect the participants elsewhere at the end of the study
-        redirect: [{ 
-            //最後導向的網站（問卷）
-            type: 'redirect', name: 'redirecting', url: 'https://forms.gle/RiaNeukUwxnqu6yJ9' 
+        redirect:
+        [{ 
+			//最後導向的網站（問卷）
+            type:'redirect', name:'redirecting', url: 'https://forms.gle/RiaNeukUwxnqu6yJ9' 
         }],
-        
-        //This task waits until the data are sent to the server.
-        uploading: uploading_task({header: '請稍等', body:'測驗資料上傳中，請先不要關閉頁面，謝謝！'}),
-
-        // New task that combines intro, demographic, and explicits
-        preTest: {
-            mixer: 'wrapper',
-            data: [
-                { inherit: 'intro' },
-                { inherit: 'demographic' },
-                { inherit: 'explicits' }
-            ]
-        }
+		
+		//This task waits until the data are sent to the server.
+        uploading: uploading_task({header: '請稍等', body:'測驗資料上傳中，請先不要關閉頁面，謝謝！'})
     });
     API.addSequence([
         { type: 'isTouch', 
-          text: '請問您正在使用智慧型手機/平板進行測驗嗎？',
-          yesText: '是',
-          noText: '否'
-        },
+	 text: '請問您正在使用智慧型手機/平板進行測驗嗎？',
+	 yesText: '是',
+	 noText: '否'}, //Use Minno's internal touch detection mechanism. 
+
+        //這邊是上傳資料
         { type: 'post', path: ['$isTouch', 'raceSet', 'blackLabels', 'whiteLabels'] },
+
+        // apply touch only styles
         {
-            mixer: 'branch',
-            conditions: { compare: 'global.$isTouch', to: true },
+            mixer:'branch',
+            conditions: {compare:'global.$isTouch', to: true},
             data: [
                 {
                     type: 'injectStyle',
                     css: [
-                        // CSS 樣式
+                        //'* {color:red}',
                         '[piq-page] {background-color: #fff; border: 1px solid transparent; border-radius: 4px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); margin-bottom: 20px; border-color: #bce8f1;}',
                         '[piq-page] > ol {margin: 15px;}',
                         '[piq-page] > .btn-group {margin: 0px 15px 15px 15px;}',
@@ -146,23 +140,30 @@ define(['managerAPI',
                 }
             ]
         },
-        { inherit: 'preTest' },  // 使用整合後的 task
+        
+        
+        {inherit: 'intro'},
+	{inherit: 'demographic'},    
         {
-            mixer: 'random',
-            data: [
+            mixer:'random',
+            data:[
+                {inherit: 'explicits'},
+                // force the instructions to preceed the iat
                 {
                     mixer: 'wrapper',
                     data: [
-                        { inherit: 'raceiat_instructions' },
-                        { inherit: 'raceiat' }
+                        {inherit: 'raceiat_instructions'},
+                        {inherit: 'raceiat'}
                     ]
                 }
             ]
         },
-        { inherit: 'suggestion' },
-        { inherit: 'uploading' },
-        { inherit: 'lastpage' },
-        { inherit: 'redirect' }
+	{inherit: 'suggestion'}, 
+	{inherit: 'uploading'},
+	//改掉
+	//{type: 'post', path: ['$isTouch', 'raceSet', 'blackLabels', 'whiteLabels'] },
+        {inherit: 'lastpage'},
+        {inherit: 'redirect'}
     ]);
     return API.script;
 });

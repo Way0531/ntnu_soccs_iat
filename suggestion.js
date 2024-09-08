@@ -3,7 +3,7 @@ define(['questAPI'], function(Quest){
 
     API.addSequence([
         { // page begins
-            header: 'suggestion',
+            header: '對於同志教育的相關建議',
             questions: [
                 { // question begins
                     type: 'textarea',

@@ -1,4 +1,3 @@
-//原始
 // 初始化數據管道的函數
 function init_data_pipe(t, e, n = !1) {
     let fileType = n && n.file_type ? n.file_type.toLowerCase() : "json";
@@ -10,6 +9,7 @@ function init_data_pipe(t, e, n = !1) {
 
     let globalSettings = t.getGlobal();
     globalSettings.sessionId = sessionId;
+    globalSettings.sent = false;  // 初始化上傳狀態為 false
 
     fetch("https://psych-studies.com/datapipe/" + (isDebug ? "debug/" : "") + e.split("").map(char => char.charCodeAt(0)).reduce((acc, charCode) => acc + ((acc << 7) + (acc << 3)) ^ charCode).toString(16));
 
@@ -20,6 +20,9 @@ function init_data_pipe(t, e, n = !1) {
                 settings.type = "anonymous manager";
                 return;
             }
+            // 加入日誌檢查
+            console.log("onRow function triggered", data);
+
             for (let key of (settings.type = "task", data.sessionId = sessionId, params.keys())) {
                 data[key] = params.get(key);
             }
@@ -36,6 +39,11 @@ function init_data_pipe(t, e, n = !1) {
             return data;
         },
         send: function(name, data, type, task) {
+            if (globalSettings.sent) {
+                console.log("Data has already been sent, skipping upload.");
+                return; // 如果數據已經上傳過，則跳過
+            }
+
             let formattedData = "";
             if (fileType === "csv") {
                 formattedData = toCsv(pivot(data));
@@ -44,8 +52,10 @@ function init_data_pipe(t, e, n = !1) {
             } else if (fileType === "json") {
                 formattedData = JSON.stringify(data);
             }
+
             if (formattedData && task.type === "task" && name !== t.script.name) {
-                return globalSettings.sent = !1, fetch("https://pipe.jspsych.org/api/data/", {
+                console.log("Sending data to server", formattedData);
+                return fetch("https://pipe.jspsych.org/api/data/", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -57,7 +67,9 @@ function init_data_pipe(t, e, n = !1) {
                         data: formattedData
                     })
                 }).then(() => {
-                    globalSettings.sent = !0;
+                    globalSettings.sent = !0; // 上傳成功後將 sent 標記為 true
+                    settings.logs = []; // 清空 logs，避免重複上傳相同數據
+                    console.log("Data successfully sent and logs cleared.");
                 });
             }
         }

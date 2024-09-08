@@ -87,13 +87,6 @@ define(['managerAPI',
             //last:true, 
             header: '測驗結束，謝謝您的參與！'
         }], 
-
-	//test
-	intro_demo_ex: [{
-            type: 'quest',
-            name: 'intro_demo_ex',
-            templateUrl: 'intro_demo_ex.js',
-        }], 
         
         //Use if you want to redirect the participants elsewhere at the end of the study
         redirect:
@@ -148,7 +141,6 @@ define(['managerAPI',
             ]
         },
         
-        {inherit: 'intro_demo_ex'}, //test
         {inherit: 'intro'},
 	{inherit: 'demographic'},    
         {

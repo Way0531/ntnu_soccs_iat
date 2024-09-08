@@ -143,10 +143,11 @@ define(['managerAPI',
         
         {inherit: 'intro'},
 	{inherit: 'demographic'},    
+	{inherit: 'explicits'}, //固定順序
         {
             mixer:'random',
             data:[
-                {inherit: 'explicits'},
+                //{inherit: 'explicits'}, //隨機順序
                 // force the instructions to preceed the iat
                 {
                     mixer: 'wrapper',

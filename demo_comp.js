@@ -45,13 +45,13 @@ define(['questAPI'], function(Quest) {
             inherit: 'basicSelectOld',
             name: 'gender',
             stem: '2. 您的生理性別是？',
-            answers: ['男性', '女性', '其他'],	
-	 other: {
-        text: '',
-        name: 'otherGender',
-        placeholder: '請輸入',
-	input: true    
-    }
+            answers: [
+		    {text: '男性', value: 'male'},
+		    {text: '女性', value: 'female'},
+		    {text: '<input type="text" name="otherGender" placeholder="其他，請輸入">',
+		     value: 'otherGender'}
+		 ],	
+	
         },
        {
          type: 'selectOne',

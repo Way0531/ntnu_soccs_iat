@@ -95,7 +95,7 @@ define(['questAPI'], function(Quest) {
         type: 'text',
         //inherit : 'basicSelectOld',
 	name : 'job',
-	stem : '7. 您的現職是？<br><span style="color:gray; font-size:0.8em;">例如：專任心理師/行動心理師/教師/學生/待業中</span>',
+	stem : '7. 您的現職是？<br><span style="color:gray; font-size:0.8em;">請自行輸入，例如：專任心理師/行動心理師/教師/學生/待業中</span>',
 	rows: 3,	
       },
 	    {

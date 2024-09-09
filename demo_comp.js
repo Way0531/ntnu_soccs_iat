@@ -45,12 +45,7 @@ define(['questAPI'], function(Quest) {
             inherit: 'basicSelectOld',
             name: 'gender',
             stem: '2. 您的生理性別是？',
-            answers: [
-		    {text: '男性', value: 'male'},
-		    {text: '女性', value: 'female'},
-		    {text: '<input type="text" name="otherGender" placeholder="其他，請輸入">',
-		     value: 'otherGender'}
-		 ],	
+            answers: ['男性','女性','其他'],	
 	
         },
        {
@@ -84,11 +79,23 @@ define(['questAPI'], function(Quest) {
         answers : [
           '無信仰','基督教','天主教','佛教','道教','伊斯蘭教','其他']
       },
+	    {
+        type: 'selectOne',
+        inherit : 'basicSelectOld',
+			name : 'participation',
+			stem : '6. 您符合下列哪一項研究參與條件？',
+			answers : [
+			'具備中華民國諮商心理師證照者',
+			'就讀或畢業於國內諮商輔導相關研究所，且已完成全職諮商實習，而尚未考取諮商心理師證照者',
+			'就讀於國內諮商輔導相關研究所，且正在進行全職諮商實習者',
+			]
+      },
+	    
       {
         type: 'selectOne',
         inherit : 'basicSelectOld',
 			name : 'job',
-			stem : '6. 您目前的現職是？',
+			stem : '7. 您目前的現職是？',
 			answers : [
 			'諮商心理師',
 			'已完成全職實習，尚未考取諮商心理師執照',
@@ -99,7 +106,7 @@ define(['questAPI'], function(Quest) {
 		type: 'selectOne',
 		inherit : 'basicSelectOld',
 		name : 'job_place',
-		stem : '7. 您主要的服務場域是？<br><span style="color:gray; font-size:0.8em;">若為尚未考取諮商心理師執照者，請填寫全職實習場域</span>',
+		stem : '8. 您目前主要的服務場域是？<br><span style="color:gray; font-size:0.8em;">若為尚未考取諮商心理師執照者，請填寫全職實習場域</span>',
 		answers : [
 		'國小',
 		'國中/高中',
@@ -114,7 +121,7 @@ define(['questAPI'], function(Quest) {
 		//numericValues: true,
 		inherit : 'basicSelectOld',
 		name : 'job_age',
-		stem : '8. 您的服務年資為？（含全職實習）<br><span style="color:gray; font-size:0.8em;">例如：已完成全職實習而尚未考取諮商心理師執照者請填「1年」，已完成全職實習、考取諮商心理師並已執業1年者請填「2年」</span>',
+		stem : '9. 您執行諮商心理業務的服務年資為？（含全職實習）<br><span style="color:gray; font-size:0.8em;">例如：已完成全職實習而尚未考取諮商心理師執照者請填「1年」，已完成全職實習、考取諮商心理師並已執業1年者請填「2年」</span>',
 		answers : [
 		'未滿1年','1年','2年','3年','4年','5年','6年','7年','8年','9年','10年',
 		'11年','12年','13年','14年','15年','16年','17年','18年','19年','20年',
@@ -122,35 +129,39 @@ define(['questAPI'], function(Quest) {
 		'31年','32年','33年','34年','35年','36年','37年','38年','39年','40年',
 		'41年','42年','43年','44年','45年','46年','47年','48年','49年','50年以上']
 		},
-	{
-		type: 'dropdown',
-		inherit : 'basicSelectOld',
-		name : 'lgb_friends',
-		stem : '9. 您大約有幾位同志朋友？<br><span style="color:gray; font-size:0.8em;">在此題項之「同志」意指LGB身份者（女同性戀、男同性戀、雙性戀）</span>',
-		answers : [
-		'0','1','2','3','4','5','6','7','8','9','10位以上','不知道']
-	},
-	{
-		type: 'dropdown',
-		inherit : 'basicSelectOld',
-		name : 'lgb_clients',
-		stem : '10. 您大約與幾位同志個案進行過諮商服務？<br><span style="color:gray; font-size:0.8em;">在此題項之「同志」意指LGB身份者（女同性戀、男同性戀、雙性戀）</span>',
-		answers : [
-			'0','1','2','3','4','5','6','7','8','9','10位以上','不知道']
-	},
-	{
+
+	    {
 		type: 'selectOne',
+		numericValues: true,
 		inherit : 'basicSelectOld',
 		name : 'training',
-		stem : '11. 您是否曾於碩士班在學或是執業期間，參與過同志議題相關之課程或專業訓練？',
-		answers : ['是','否']
+		stem : '10. 您是否曾於碩士班在學或是執業期間，參與過同志議題相關之課程或專業訓練？',
+		answers : ['1 - 完全沒有','2','3','4','5','6','7 - 非常多']
 	},
+	    
+	{
+		type: 'dropdown',
+		numericValues: true,
+		inherit : 'basicSelectOld',
+		name : 'lgb_friends',
+		stem : '11. 您認為自己身邊同志朋友的數量為？<br><span style="color:gray; font-size:0.8em;">在此題項之「同志」意指LGB身份者（女同性戀、男同性戀、雙性戀）</span>',
+		answers : ['1 - 完全沒有','2','3','4','5','6','7 - 非常多']
+	},
+	{
+		type: 'dropdown',
+		numericValues: true,
+		inherit : 'basicSelectOld',
+		name : 'lgb_clients',
+		stem : '12. 您與同志個案進行諮商的經驗為？<br><span style="color:gray; font-size:0.8em;">在此題項之「同志」意指LGB身份者（女同性戀、男同性戀、雙性戀）</span>',
+		answers : ['1 - 非常缺乏','2','3','4','5','6','7 - 非常豐富']
+	},
+	
 	{
 		type: 'selectOne',
 		numericValues: true,
 		inherit : 'basicSelectOld',
 		name : 'self_assessment',
-		stem : '12. 您認為自身目前提供同志諮商之專業勝任能力為何？',
+		stem : '13. 您認為自身目前提供同志諮商之專業勝任能力為何？',
 		answers : [
 			'1 - 非常不足','2','3','4','5','6','7 - 非常足夠']
 		},
@@ -196,7 +207,7 @@ define(['questAPI'], function(Quest) {
         headerStyle: { 'font-size': '1em' },
         questions: {
             mixer: 'repeat',
-            times: 12,
+            times: 13,
             data: [
                 { inherit: { set: 'people', type: 'sequential' } }
             ]

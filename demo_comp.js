@@ -56,7 +56,7 @@ define(['questAPI'], function(Quest) {
             inherit: 'basicSelectOld',
             name: 'gender',
             stem: '3. 您的生理性別是？',
-            answers: ['男性','女性',]	
+            answers: ['男性','女性',{stem:'Other', type:'input'} ]	
         },
        {
          type: 'selectOne',

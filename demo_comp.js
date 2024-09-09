@@ -47,17 +47,6 @@ define(['questAPI'], function(Quest) {
             stem: '2. 您的生理性別是？',
             answers: ['男性', '女性', '其他'],	
         },
-	{
-        type: 'text',
-        name: 'gender_other',
-        stem: '請填寫您的生理性別',
-        placeholder: '請填寫您的性別',
-        required: true,
-        // 當選擇了“其他”時顯示該文本框
-        visibility: {
-            question: 'gender',  // 檢查 'gender' 問題的答案
-            value: '其他'         // 只有當選擇“其他”時才顯示
-	},
        {
          type: 'selectOne',
          inherit : 'basicSelectOld',
@@ -66,19 +55,6 @@ define(['questAPI'], function(Quest) {
          answers : [
            '異性戀','同性戀', '雙性戀','其他']
        },
-
-	{
-        type: 'text',
-        name: 'sexuality_other',
-        stem: '請填寫您的性傾向',
-        placeholder: '請填寫您的性傾向',
-        required: true,
-        // 當選擇了“其他”時顯示該文本框
-        visibility: {
-            question: 'sexuality',  // 檢查 'gender' 問題的答案
-            value: '其他'         // 只有當選擇“其他”時才顯示
-	},    
-	
       {
         type:'dropdown', 
         inherit : 'basicSelectOld',
@@ -102,18 +78,6 @@ define(['questAPI'], function(Quest) {
         answers : [
           '無信仰','基督教','天主教','佛教','道教','伊斯蘭教','其他']
       },
-	{
-        type: 'text',
-        name: 'religion_other',
-        stem: '請填寫您的宗教信仰',
-        placeholder: '請填寫您的宗教信仰',
-        required: true,
-        // 當選擇了“其他”時顯示該文本框
-        visibility: {
-            question: 'religion',  // 檢查 'gender' 問題的答案
-            value: '其他'         // 只有當選擇“其他”時才顯示
-	},       
-	    
       {
         type: 'selectOne',
         inherit : 'basicSelectOld',
@@ -138,17 +102,6 @@ define(['questAPI'], function(Quest) {
 		'醫院',
 		'其他']
 	},
-	    {
-        type: 'text',
-        name: 'job_place_other',
-        stem: '請填寫您的主要服務場域',
-        placeholder: '請填寫您的主要服務場域',
-        required: true,
-        // 當選擇了“其他”時顯示該文本框
-        visibility: {
-            question: 'job_place',  // 檢查 'gender' 問題的答案
-            value: '其他'         // 只有當選擇“其他”時才顯示
-	},  
 	    
 	    {
 		type: 'dropdown',

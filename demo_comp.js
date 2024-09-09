@@ -1,3 +1,4 @@
+
 define(['questAPI'], function(Quest) {
     var API = new Quest();
     var isTouch = API.getGlobal().$isTouch;
@@ -8,7 +9,7 @@ define(['questAPI'], function(Quest) {
         type: 'selectOne',
         autoSubmit: false,
         numericValues: true,
-        required: true, // 強制回答問題
+        required: true,
         style: 'multiButtons',
         answers: [
             '1<span style="font-size:0.8em;"> - 完全不認同/完全不符合</span>',
@@ -19,68 +20,88 @@ define(['questAPI'], function(Quest) {
             '6',
             '7<span style="font-size:0.8em;"> - 完全認同/完全符合</span>'
         ],
-        errorMsg: { required: "此題項為必填" },
+        errorMsg: { required: "此題項為必填" }
     });
 
-    // 基本選擇題設定
-    API.addQuestionsSet('basicSelectOld', {
-        autoSubmit: false,
-        numericValues: false,
-        required: true, // 強制回答問題
-        style: 'multiButtons',
-        errorMsg: { required: "此題項為必填" }
+    // 顯示「其他」選項的額外輸入框
+    API.addQuestionsSet('otherText', {
+        type: 'text',
+        name: 'other_text',
+        stem: '請說明您選擇「其他」的內容：',
+        rows: 2,
+        style: 'textInput'
     });
 
     // 人物基本資料題目
     API.addQuestionsSet('people', [
         {
             type: 'selectOne',
-            inherit: 'basicSelectOld',
+            inherit: 'basicSelect',
             name: 'first_time',
             stem: '1. 這是否是您第一次參與本測驗？',
             answers: ['是', '否']
         },
         {
             type: 'selectOne',
-            inherit: 'basicSelectOld',
+            inherit: 'basicSelect',
             name: 'gender',
             stem: '2. 您的生理性別是？',
-            answers: ['男性','女性','其他'],	
-		otherOption: true ,
-	
+            answers: ['男性', '女性', '其他'],
+            remix: true,
+            mixer: 'branch',
+            conditions: [
+                { compare: 3, to: 'current.questions.gender.response' }
+            ],
+            data: [
+                { inherit: 'otherText' }
+            ]
         },
-       {
-         type: 'selectOne',
-         inherit : 'basicSelectOld',
-         name : 'sexuality',
-         stem : '3. 您的性傾向是？',
-         answers : [
-           '異性戀','同性戀', '雙性戀','其他']
-       },
-      {
-        type:'dropdown', 
-        inherit : 'basicSelectOld',
-        name : 'age',
-        stem : '4. 您的年齡是？<br><span style="color:gray; font-size:0.8em;">以填表當天足歲計算</span>',
-        answers : [
-			'21','22','23','24','25','26','27','28','29','30',
-			'31','32','33','34','35','36','37','38','39','40',
-			'41','42','43','44','45','46','47','48','49','50',
-			'51','52','53','54','55','56','57','58','59','60',
-			'61','62','63','64','65','66','67','68','69','70',
-			'71','72','73','74','75','76','77','78','79','80',
-			'81','82','83','84','85','86','87','88','89','90',
-			'91','92','93','94','95','96','97','98','99','100']
-      }, 
-      {
-        type: 'selectOne',
-        inherit : 'basicSelectOld',
-        name : 'religion',
-        stem : '5. 您的宗教信仰是？',
-        answers : [
-          '無信仰','基督教','天主教','佛教','道教','伊斯蘭教','其他']
-      },
-	    {
+        {
+            type: 'selectOne',
+            inherit: 'basicSelect',
+            name: 'sexuality',
+            stem: '3. 您的性傾向是？',
+            answers: ['異性戀', '同性戀', '雙性戀', '其他'],
+            remix: true,
+            mixer: 'branch',
+            conditions: [
+                { compare: 4, to: 'current.questions.sexuality.response' }
+            ],
+            data: [
+                { inherit: 'otherText' }
+            ]
+        },
+        {
+            type: 'selectOne',
+            inherit: 'basicSelect',
+            name: 'religion',
+            stem: '4. 您的宗教信仰是？',
+            answers: ['無信仰', '基督教', '天主教', '佛教', '道教', '伊斯蘭教', '其他'],
+            remix: true,
+            mixer: 'branch',
+            conditions: [
+                { compare: 7, to: 'current.questions.religion.response' }
+            ],
+            data: [
+                { inherit: 'otherText' }
+            ]
+        },
+        {
+            type: 'selectOne',
+            inherit: 'basicSelect',
+            name: 'job_place',
+            stem: '5. 您目前主要的服務場域是？<br><span style="color:gray; font-size:0.8em;">若為尚未考取諮商心理師執照者，請填寫全職實習場域</span>',
+            answers: ['國小', '國中/高中', '大專院校', '社區機構', '醫院', '其他'],
+            remix: true,
+            mixer: 'branch',
+            conditions: [
+                { compare: 7, to: 'current.questions.job_place.response' }
+            ],
+            data: [
+                { inherit: 'otherText' }
+            ]
+        }
+  {
         type: 'selectOne',
         inherit : 'basicSelectOld',
 			name : 'participation',
@@ -162,10 +183,12 @@ define(['questAPI'], function(Quest) {
 		answers : [
 			'1 - 非常不足','2','3','4','5','6','7 - 非常足夠']
 		},
+
+
     ]);
 
-    // 能力測試題目
-    API.addQuestionsSet('competence', [
+    // 能力測試題目（省略內容）
+API.addQuestionsSet('competence', [
         {inherit: 'basicSelect', name: 'com_01', stem: '1. 我接受過足夠的臨床訓練與督導，以服務男同性戀、女同性戀與雙性戀身份的個案。'},
         {inherit: 'basicSelect', name: 'com_02', stem: '2. 同志個案的生活型態是不自然或不道德的。'},
         {inherit: 'basicSelect', name: 'com_03', stem: '3. 我透過諮詢、督導與繼續教育來確保自己的同志諮商技巧。'},
@@ -197,9 +220,6 @@ define(['questAPI'], function(Quest) {
         {inherit: 'basicSelect', name: 'com_29', stem: '29. 當談到同性戀時，我同意這樣的說法：「應該愛要罪人，但憎恨或譴責那罪。」'}
     ]);
 
-
-	
-
     // ### Pages
     // 基本資訊頁
     API.addPagesSet('basicPage1', {
@@ -217,7 +237,7 @@ define(['questAPI'], function(Quest) {
         numbered: false
     });
 
-    // 能力測試頁
+    // 能力測試頁（內容省略）
     API.addPagesSet('basicPage2', {
         header: '請根據您對於每個題項之描述的認同或符合程度進行填答，分數愈高代表認同或符合程度愈高。請務必填選最真實的分數，通常是您第一直覺反應。</br> *註：本量表中之「同志」所指的是<b>女同性戀者</b>、<b>男同性戀者</b>與<b>雙性戀者</b>（lesbian, gay and bisexual, LGB）。',
         headerStyle: { 'font-size': '1.2em', 'line-height': '1.2' },
@@ -225,7 +245,7 @@ define(['questAPI'], function(Quest) {
             mixer: 'repeat',
             times: 29,
             data: [
-                { inherit: { set: 'competence', type: 'sequential' } }
+                // { inherit: { set: 'competence', type: 'sequential' } }
             ]
         },
         v1style: 2,

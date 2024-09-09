@@ -192,7 +192,7 @@ define(['questAPI'], function(Quest) {
         {inherit: 'basicSelect', name: 'com_22', stem: '22. 如果我的個案是同志，我目前並不具備足夠技巧或訓練去進行個案報告或諮詢。'},
         {inherit: 'basicSelect', name: 'com_23', stem: '23. 我認為同志個案會在與一位認同傳統價值觀與規範的異性戀諮商師的諮商中受益最多。'},
         {inherit: 'basicSelect', name: 'com_24', stem: '24. 在這個社會中，身為異性戀者具有一定的優勢。'},
-        {inherit: 'basicSelect', name: 'com_25', stem: '25. 我認為諮商師與個案之間性傾向的差異，可能會成為在與同志個案進行有效能的諮商初期的障礙。'},
+        {inherit: 'basicSelect', name: 'com_25', stem: '25. 我認為諮商師與個案之間性傾向的差異，可能會成為在與同志個案進行有效諮商初期的障礙。'},
         {inherit: 'basicSelect', name: 'com_26', stem: '26. 我曾在同志議題的諮商演練中擔任過個案或諮商師。'},
         {inherit: 'basicSelect', name: 'com_27', stem: '27. 我個人認為同性戀是一種精神障礙或是一種罪，且可以透過諮商或是靈性協助來治療。'},
         {inherit: 'basicSelect', name: 'com_28', stem: '28. 我認為所有的同志個案都必須在兒童面前對自己的性傾向保持謹慎與低調。'},

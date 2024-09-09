@@ -45,7 +45,12 @@ define(['questAPI'], function(Quest) {
             inherit: 'basicSelectOld',
             name: 'gender',
             stem: '2. 您的生理性別是？',
-            answers: ['男性', '女性', '其他']
+            answers: ['男性', '女性'],
+		other: { // 使用者可以自行輸入
+			allowOther: true,  // 允许 "其他" 作为一个选项
+			//otherText: '其他：請填寫',  // 显示为 "其他：請填寫"
+			otherPlaceholder: '      '  // 文本框的占位符
+        }
         },
        {
          type: 'selectOne',

@@ -56,14 +56,7 @@ define(['questAPI'], function(Quest) {
             inherit: 'basicSelectOld',
             name: 'gender',
             stem: '3. 您的生理性別是？',
-            answers: ['男性','女性',
-		     {stem: '其他',
-		      type: 'input',
-		      input: {
-			      rows: 1,
-			      placeholder: '請輸入您的性別',
-			      style: 'width: 100%; box-sizing: border-box;'  // 調整樣式確保輸入框能夠正確顯示
-			      }]	
+            answers: ['男性','女性','其他']	
         },
        {
          type: 'selectOne',
@@ -71,7 +64,7 @@ define(['questAPI'], function(Quest) {
          name : 'sexuality',
          stem : '4. 您的性傾向是？',
          answers : [
-           '異性戀','同性戀', '雙性戀','其他']
+           '異性戀','同性戀','雙性戀','無性戀','酷兒/疑性戀','其他']
        },
       {
         type:'dropdown', 
@@ -94,7 +87,7 @@ define(['questAPI'], function(Quest) {
         name : 'religion',
         stem : '6. 您的宗教信仰是？',
         answers : [
-          '無信仰','基督教','天主教','佛教','道教','伊斯蘭教','其他']
+          '無信仰','基督教','天主教','佛教','道教','傳統民俗宗教','伊斯蘭教','其他']
       },    
       {
         type: 'text',

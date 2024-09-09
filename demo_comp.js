@@ -66,6 +66,19 @@ define(['questAPI'], function(Quest) {
          answers : [
            '異性戀','同性戀', '雙性戀','其他']
        },
+
+	{
+        type: 'text',
+        name: 'sexuality_other',
+        stem: '請填寫您的性傾向',
+        placeholder: '請填寫您的性傾向',
+        required: true,
+        // 當選擇了“其他”時顯示該文本框
+        visibility: {
+            question: 'sexuality',  // 檢查 'gender' 問題的答案
+            value: '其他'         // 只有當選擇“其他”時才顯示
+	},    
+	
       {
         type:'dropdown', 
         inherit : 'basicSelectOld',
@@ -87,8 +100,20 @@ define(['questAPI'], function(Quest) {
         name : 'religion',
         stem : '5. 您的宗教信仰是？',
         answers : [
-          '無信仰','基督教','天主教','佛教','道教','伊斯蘭教','其他宗教']
+          '無信仰','基督教','天主教','佛教','道教','伊斯蘭教','其他']
       },
+	{
+        type: 'text',
+        name: 'religion_other',
+        stem: '請填寫您的宗教信仰',
+        placeholder: '請填寫您的宗教信仰',
+        required: true,
+        // 當選擇了“其他”時顯示該文本框
+        visibility: {
+            question: 'religion',  // 檢查 'gender' 問題的答案
+            value: '其他'         // 只有當選擇“其他”時才顯示
+	},       
+	    
       {
         type: 'selectOne',
         inherit : 'basicSelectOld',
@@ -110,16 +135,29 @@ define(['questAPI'], function(Quest) {
 		'國中/高中',
 		'大專院校',
 		'社區機構',
-		'醫院']
+		'醫院',
+		'其他']
 	},
 	    {
+        type: 'text',
+        name: 'job_place_other',
+        stem: '請填寫您的主要服務場域',
+        placeholder: '請填寫您的主要服務場域',
+        required: true,
+        // 當選擇了“其他”時顯示該文本框
+        visibility: {
+            question: 'job_place',  // 檢查 'gender' 問題的答案
+            value: '其他'         // 只有當選擇“其他”時才顯示
+	},  
+	    
+	    {
 		type: 'dropdown',
-		numericValues: true,
+		//numericValues: true,
 		inherit : 'basicSelectOld',
 		name : 'job_age',
 		stem : '8. 您的服務年資為？（含全職實習）<br><span style="color:gray; font-size:0.8em;">例如：已完成全職實習而尚未考取諮商心理師執照者請填「1年」，已完成全職實習、考取諮商心理師並已執業1年者請填「2年」</span>',
 		answers : [
-		'1年（或未滿1年）','2年','3年','4年','5年','6年','7年','8年','9年','10年',
+		'未滿1年','1年','2年','3年','4年','5年','6年','7年','8年','9年','10年',
 		'11年','12年','13年','14年','15年','16年','17年','18年','19年','20年',
 		'21年','22年','23年','24年','25年','26年','27年','28年','29年','30年',
 		'31年','32年','33年','34年','35年','36年','37年','38年','39年','40年',

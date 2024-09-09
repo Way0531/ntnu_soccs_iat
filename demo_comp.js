@@ -85,7 +85,7 @@ define(['questAPI'], function(Quest) {
 			name : 'participation',
 			stem : '6. 您符合下列哪一項研究參與條件？',
 			answers : [
-			'具備中華民國諮商心理師證照',
+			'具備中華民國諮商心理師證照者',
 			'已完成全職諮商實習，尚未考取諮商心理師證照者',
 			'正在進行全職諮商實習者',
 			]

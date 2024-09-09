@@ -107,7 +107,7 @@ define(['questAPI'], function(Quest) {
 		'國小',
 		'國中/高中',
 		'大專院校',
-		'社區機構<span style="font-size:0.8em;">（如：諮商所、心衛中心、基金會等）</span>',,
+		'社區機構<span style="font-size:0.8em;">（如：諮商所、心衛中心、基金會等）</span>',
 		'醫院',
 		'身心科診所',
 		'其他']

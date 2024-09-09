@@ -46,6 +46,7 @@ define(['questAPI'], function(Quest) {
             name: 'gender',
             stem: '2. 您的生理性別是？',
             answers: ['男性','女性','其他'],	
+		otherOption: true ,
 	
         },
        {
@@ -195,6 +196,9 @@ define(['questAPI'], function(Quest) {
         {inherit: 'basicSelect', name: 'com_28', stem: '28. 我認為所有的同志個案都必須在兒童面前對自己的性傾向保持謹慎與低調。'},
         {inherit: 'basicSelect', name: 'com_29', stem: '29. 當談到同性戀時，我同意這樣的說法：「應該愛要罪人，但憎恨或譴責那罪。」'}
     ]);
+
+
+	
 
     // ### Pages
     // 基本資訊頁

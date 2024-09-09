@@ -42,18 +42,29 @@ define(['questAPI'], function(Quest) {
             stem: '1. 這是否是您第一次參與本測驗？',
             answers: ['是', '否']
         },
+	 {
+        type: 'selectOne',
+        inherit : 'basicSelectOld',
+			name : 'participation',
+			stem : '2. 您符合下列哪一項研究參與條件？',
+			answers : [
+			'具備中華民國諮商心理師證照者',
+			'已完成全職諮商實習，尚未考取諮商心理師證照者',
+			'正在進行全職諮商實習者',
+			]
+      },
         {
             type: 'selectOne',
             inherit: 'basicSelectOld',
             name: 'gender',
-            stem: '2. 您的生理性別是？',
+            stem: '3. 您的生理性別是？',
             answers: ['男性','女性',]	
         },
        {
          type: 'selectOne',
          inherit : 'basicSelectOld',
          name : 'sexuality',
-         stem : '3. 您的性傾向是？',
+         stem : '4. 您的性傾向是？',
          answers : [
            '異性戀','同性戀', '雙性戀','其他']
        },
@@ -61,7 +72,7 @@ define(['questAPI'], function(Quest) {
         type:'dropdown', 
         inherit : 'basicSelectOld',
         name : 'age',
-        stem : '4. 您的年齡是？<br><span style="color:gray; font-size:0.8em;">以填表當天足歲計算</span>',
+        stem : '5. 您的年齡是？<br><span style="color:gray; font-size:0.8em;">以填表當天足歲計算</span>',
         answers : [
 			'21','22','23','24','25','26','27','28','29','30',
 			'31','32','33','34','35','36','37','38','39','40',
@@ -76,22 +87,10 @@ define(['questAPI'], function(Quest) {
         type: 'selectOne',
         inherit : 'basicSelectOld',
         name : 'religion',
-        stem : '5. 您的宗教信仰是？',
+        stem : '6. 您的宗教信仰是？',
         answers : [
           '無信仰','基督教','天主教','佛教','道教','伊斯蘭教','其他']
-      },
-	    {
-        type: 'selectOne',
-        inherit : 'basicSelectOld',
-			name : 'participation',
-			stem : '6. 您符合下列哪一項研究參與條件？',
-			answers : [
-			'具備中華民國諮商心理師證照者',
-			'已完成全職諮商實習，尚未考取諮商心理師證照者',
-			'正在進行全職諮商實習者',
-			]
-      },
-	    
+      },    
       {
         type: 'text',
         //inherit : 'basicSelectOld',

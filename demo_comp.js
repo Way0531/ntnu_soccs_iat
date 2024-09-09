@@ -134,7 +134,7 @@ define(['questAPI'], function(Quest) {
 		numericValues: true,
 		inherit : 'basicSelectOld',
 		name : 'training',
-		stem : '10. 您是否曾於碩士班在學或是執業期間，參與過同志議題相關之課程或專業訓練？',
+		stem : '10. 您是否曾於碩士班在學或是執業期間，參與過同志議題相關之課程或專業訓練？<br><span style="color:gray; font-size:0.8em;">在此題項之「同志」意指LGB身份者（女同性戀、男同性戀、雙性戀）</span>',
 		answers : ['1 - 完全沒有','2','3','4','5','6','7 - 非常多']
 	},
 	    
@@ -160,7 +160,7 @@ define(['questAPI'], function(Quest) {
 		numericValues: true,
 		inherit : 'basicSelectOld',
 		name : 'self_assessment',
-		stem : '13. 您認為自身目前提供同志諮商之專業勝任能力為何？',
+		stem : '13. 您認為自身目前提供同志諮商之專業勝任能力為何？<br><span style="color:gray; font-size:0.8em;">在此題項之「同志」意指LGB身份者（女同性戀、男同性戀、雙性戀）</span>',
 		answers : [
 			'1 - 非常不足','2','3','4','5','6','7 - 非常足夠']
 		},

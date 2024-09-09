@@ -92,15 +92,11 @@ define(['questAPI'], function(Quest) {
       },
 	    
       {
-        type: 'selectOne',
+        type: 'text',
         inherit : 'basicSelectOld',
-			name : 'job',
-			stem : '7. 您目前的現職是？',
-			answers : [
-			'諮商心理師',
-			'已完成全職實習，尚未考取諮商心理師執照',
-			'正在進行全職實習',
-			]
+	name : 'job',
+	stem : '7. 您的現職是？<br><span style="color:gray; font-size:0.8em;">例如：專任心理師/行動心理師/教師/學生/待業中</span>',
+	rows: 3,	
       },
 	    {
 		type: 'selectOne',

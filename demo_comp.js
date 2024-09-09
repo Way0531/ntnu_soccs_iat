@@ -49,7 +49,8 @@ define(['questAPI'], function(Quest) {
 	 other: {
         text: '',
         name: 'otherGender',
-        placeholder: '請輸入'
+        placeholder: '請輸入',
+	input: true    
     }
         },
        {

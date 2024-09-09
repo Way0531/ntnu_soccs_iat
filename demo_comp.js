@@ -196,7 +196,7 @@ define(['questAPI'], function(Quest) {
         {inherit: 'basicSelect', name: 'com_26', stem: '26. 我曾在同志議題的諮商演練中擔任過個案或諮商師。'},
         {inherit: 'basicSelect', name: 'com_27', stem: '27. 我個人認為同性戀是一種精神障礙或是一種罪，且可以透過諮商或是靈性協助來治療。'},
         {inherit: 'basicSelect', name: 'com_28', stem: '28. 我認為所有的同志個案都必須在兒童面前對自己的性傾向保持謹慎與低調。'},
-        {inherit: 'basicSelect', name: 'com_29', stem: '29. 當談到同性戀時，我同意這樣的說法：「應該愛要罪人，但憎恨或譴責那罪。」'}
+        {inherit: 'basicSelect', name: 'com_29', stem: '29. 當談到同性戀時，我同意這樣的說法：「應該要愛罪人，但憎恨或譴責那罪。」'}
     ]);
 
 

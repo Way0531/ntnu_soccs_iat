@@ -1,5 +1,3 @@
-備份
-
 define(['questAPI'], function(Quest) {
     var API = new Quest();
     var isTouch = API.getGlobal().$isTouch;

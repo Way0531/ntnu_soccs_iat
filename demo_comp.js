@@ -1,3 +1,5 @@
+備份
+
 define(['questAPI'], function(Quest) {
     var API = new Quest();
     var isTouch = API.getGlobal().$isTouch;
@@ -46,14 +48,8 @@ define(['questAPI'], function(Quest) {
             name: 'gender',
             stem: '2. 您的生理性別是？',
             answers: ['男性','女性','其他'],	
-        },
-	 {
-            type: 'text',
-            name: 'gender_other',
-            stem: '如果您選擇了其他，請具體說明:',
-            rows: 3,
-            required: true,
-            errorMsg: { required: "此題項為必填" }
+		otherOption: true ,
+	
         },
        {
          type: 'selectOne',
@@ -170,7 +166,6 @@ define(['questAPI'], function(Quest) {
 		answers : [
 			'1 - 非常不足','2','3','4','5','6','7 - 非常足夠']
 		},
-	    
     ]);
 
     // 能力測試題目
@@ -221,11 +216,6 @@ define(['questAPI'], function(Quest) {
                 { inherit: { set: 'people', type: 'sequential' } }
             ]
         },
-	{
-                mixer: 'branch',
-                conditions: [{ compare: 3, to: 'current.questions.gender.response' }],
-                data: [{ inherit: 'people', name: 'gender_other' }]
-            },
         v1style: 2,
         decline: false,
         numbered: false

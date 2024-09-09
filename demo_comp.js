@@ -139,7 +139,7 @@ define(['questAPI'], function(Quest) {
 	},
 	    
 	{
-		type: 'dropdown',
+		type: 'selectOne',
 		numericValues: true,
 		inherit : 'basicSelectOld',
 		name : 'lgb_friends',
@@ -147,7 +147,7 @@ define(['questAPI'], function(Quest) {
 		answers : ['1 - 完全沒有','2','3','4','5','6','7 - 非常多']
 	},
 	{
-		type: 'dropdown',
+		type: 'selectOne',
 		numericValues: true,
 		inherit : 'basicSelectOld',
 		name : 'lgb_clients',

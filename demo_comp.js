@@ -46,6 +46,11 @@ define(['questAPI'], function(Quest) {
             name: 'gender',
             stem: '2. 您的生理性別是？',
             answers: ['男性', '女性', '其他'],	
+	 other: {
+        text: '',
+        name: 'otherGender',
+        placeholder: '請輸入'
+    }
         },
        {
          type: 'selectOne',

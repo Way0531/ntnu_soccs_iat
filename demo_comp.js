@@ -205,7 +205,7 @@ define(['questAPI'], function(Quest) {
     // 基本資訊頁
     API.addPagesSet('basicPage1', {
         header: '基本資訊',
-        headerStyle: { 'font-size': '1em' },
+        headerStyle: { 'font-size': '1.2em' },
         questions: {
             mixer: 'repeat',
             times: 13,

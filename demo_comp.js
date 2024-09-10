@@ -31,6 +31,7 @@ define(['questAPI'], function(Quest) {
         errorMsg: { required: "此題項為必填" }
     });
 
+	
     // 人物基本資料題目
     API.addQuestionsSet('people', [
         {
@@ -57,14 +58,6 @@ define(['questAPI'], function(Quest) {
             name: 'gender',
             stem: '3. 您的生理性別是？<br><span style="color:gray; font-size:0.8em;">出生時醫師判定的性別</span>',
             answers: ['男性','女性','其他']	
-        },
-	     {
-            type: 'text',
-            name: 'otherGender',
-            stem: '請說明您的生理性別',
-            required: true,
-            errorMsg: { required: "此題項為必填" },
-            isHidden: true  // 預設隱藏
         },
        {
          type: 'selectOne',
@@ -214,16 +207,11 @@ define(['questAPI'], function(Quest) {
         header: '基本資訊',
         headerStyle: { 'font-size': '1em' },
         questions: {
-            { inherit: 'people' },
-            // 設定條件：若選擇'其他'，顯示對應的輸入框
-            {
-                remix: true,
-                mixer: 'branch',
-                conditions: [
-                    { compare: 3, to: 'current.questions.gender.response' }
-                ],
-                data: [{ inherit: 'people', questions: [{name: 'otherGender'}] }]
-            },
+            mixer: 'repeat',
+            times: 13,
+            data: [
+                { inherit: { set: 'people', type: 'sequential' } }
+            ]
         },
         v1style: 2,
         decline: false,

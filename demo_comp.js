@@ -240,37 +240,6 @@ define(['questAPI'], function(Quest) {
         { inherit: 'basicPage2' }
     ]);
 
-API.addEventListener('afterPageLoad', function(pageName) {
-    if (pageName === 'basicPage1') {
-        // 创建并添加输入框
-        var otherInput = document.createElement('input');
-        otherInput.type = 'text';
-        otherInput.id = 'other-gender-input';
-        otherInput.style.display = 'none';
-        otherInput.placeholder = '請填寫具體內容';
-
-        // 获取“其他”选项并将输入框添加到其后
-        var genderOtherOption = document.querySelector('input[value="其他"]');
-        if (genderOtherOption) {
-            genderOtherOption.parentNode.appendChild(otherInput);
-
-            // 监听“其他”选项的变化
-            genderOtherOption.addEventListener('change', function() {
-                otherInput.style.display = this.checked ? 'block' : 'none';
-            });
-
-            // 监听其他选项的变化以隐藏输入框
-            document.querySelectorAll('input[name="gender"]').forEach(function(el) {
-                if (el !== genderOtherOption) {
-                    el.addEventListener('change', function() {
-                        otherInput.style.display = 'none';
-                    });
-                }
-            });
-        }
-    }
-});
-
 
     /**
     Return the script to piquest's god, or something of that sort.

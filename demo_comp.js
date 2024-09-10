@@ -234,6 +234,7 @@ define(['questAPI'], function(Quest) {
                 { inherit: { set: 'competence', type: 'sequential' } }
             ]
         },
+	    //
         v1style: 2,
         decline: false,
         numbered: true,

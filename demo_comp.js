@@ -206,6 +206,12 @@ define(['questAPI'], function(Quest) {
     API.addPagesSet('basicPage1', {
         header: '基本資訊',
         headerStyle: { 'font-size': '1.2em' },
+	numbered: true,
+	numberedStyle: { 
+        'font-size': '1em', // 調整題號字體大小與題目一致
+        'vertical-align': 'top', // 讓題號與第一行的描述切齊
+        'margin-right': '0.5em' // 控制題號與題目間的距離
+		 },
         questions: {
             mixer: 'repeat',
             times: 13,
@@ -215,7 +221,7 @@ define(['questAPI'], function(Quest) {
         },
         v1style: 2,
         decline: false,
-        numbered: true
+        
     });
 
     // 能力測試頁

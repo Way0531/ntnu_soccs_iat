@@ -215,12 +215,7 @@ define(['questAPI'], function(Quest) {
         },
         v1style: 2,
         decline: false,
-        numbered: true,
-	     numberStyle: { 
-        'font-size': '1em', // 題號字體大小
-        'line-height': '1.2', // 控制題號的行高
-        'vertical-align': 'top' // 讓題號與題目第一行對齊
-	     }
+        numbered: true
     });
 
     // 能力測試頁
@@ -237,12 +232,7 @@ define(['questAPI'], function(Quest) {
 	    //
         v1style: 2,
         decline: false,
-        numbered: true,
-	 numberStyle: { 
-        'font-size': '1em', // 題號字體大小
-        'line-height': '1.2', // 控制題號的行高
-        'vertical-align': 'top' // 讓題號與題目第一行對齊
-    }
+        numbered: true
 });
     });
 

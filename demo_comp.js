@@ -215,7 +215,7 @@ define(['questAPI'], function(Quest) {
         },
         v1style: 2,
         decline: false,
-        numbered: false
+        numbered: true
     });
 
     // 能力測試頁

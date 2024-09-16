@@ -171,7 +171,7 @@ define(['questAPI'], function(Quest) {
         {inherit: 'basicSelect', name: 'com_02', stem: '2. 同志個案的生活型態是不自然或不道德的。'},
         {inherit: 'basicSelect', name: 'com_03', stem: '3. 我透過諮詢、督導與繼續教育來監控自己的運作功能及勝任力，以檢視自己的同志諮商技巧。'},
         {inherit: 'basicSelect', name: 'com_04', stem: '4. 我有諮商男同志個案的經驗。'},
-        {inherit: 'basicSelect', name: 'com_05', stem: '5. 相較於異性戀個案，同志個案較易接受到較不偏好的諮商治療。'},
+        {inherit: 'basicSelect', name: 'com_05', stem: '5. 與異性戀個案相比，同志個案比較容易遭受到他們不喜歡的諮商處遇。'},
         {inherit: 'basicSelect', name: 'com_06', stem: '6. 就我目前的專業發展階段，我認為自己有能力、技術與資格提供同志諮商。'},
         {inherit: 'basicSelect', name: 'com_07', stem: '7. 我有提供女同志或男同志伴侶諮商的經驗。'},
         {inherit: 'basicSelect', name: 'com_08', stem: '8. 我有諮商女同志個案的經驗。'},

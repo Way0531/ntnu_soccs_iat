@@ -6,7 +6,7 @@ define(['managerAPI',
     //const pt = urlParams.get('pt');
 	var API    = new Manager();
 	//const subid = Date.now().toString(16)+Math.floor(Math.random()*10000).toString(16);
-	init_data_pipe(API, 'dd7NaZnD7IoL',  {file_type:'csv'});	
+	init_data_pipe(API, 'WICesUcOqM4V',  {file_type:'csv'});	
     API.setName('mgr');
     API.addSettings('skip',true);
     //Randomly select which of two sets of category labels to use.

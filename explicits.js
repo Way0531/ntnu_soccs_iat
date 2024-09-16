@@ -57,7 +57,7 @@ define(['questAPI'], function(Quest){
     // Shows all questions, but the order is random.
     API.addPagesSet('basicPage', {
         header: '請根據您對於每個題項之描述的認同或符合程度進行填答，分數愈高代表認同或符合程度愈高。請務必填選最真實的分數，通常是您第一直覺反應。</br> *註：本量表中之「同志」所指的是<b>女同性戀者</b>、<b>男同性戀者</b>與<b>雙性戀者</b>（lesbian, gay and bisexual, LGB）。',
-        headerStyle: {'font-size': '1.2em', 'line-height' : '1.2'},
+        headerStyle: {'font-size': '1.2em', 'line-height' : '1.3'},
         questions: {
             mixer: 'repeat',
             times: 29,

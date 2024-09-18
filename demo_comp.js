@@ -11,13 +11,13 @@ define(['questAPI'], function(Quest) {
         required: true, // 強制回答問題
         style: 'multiButtons',
         answers: [
-            '1<span style="font-size:0.8em;"> - 完全不認同/完全不符合</span>',
+            '1<span style="font-size:0.8em;"> - 完全不認同／完全不符合</span>',
             '2',
             '3',
             '4',
             '5',
             '6',
-            '7<span style="font-size:0.8em;"> - 完全認同/完全符合</span>'
+            '7<span style="font-size:0.8em;"> - 完全認同／完全符合</span>'
         ],
         errorMsg: { required: "此題項為必填" },
     });
@@ -66,7 +66,7 @@ define(['questAPI'], function(Quest) {
          name : 'sexuality',
          stem : '4. 您的性傾向是？',
          answers : [
-           '異性戀','同性戀','雙性戀','無性戀','酷兒/疑性戀','其他']
+           '異性戀','同性戀','雙性戀','無性戀','酷兒／疑性戀','其他']
        },
       {
         type:'dropdown', 
@@ -107,7 +107,7 @@ define(['questAPI'], function(Quest) {
 		stem : '8. 您目前主要的服務場域是？<br><span style="color:gray; font-size:0.8em;">若為尚未考取諮商心理師執照者，請填寫全職實習場域</span>',
 		answers : [
 		'國小',
-		'國中/高中',
+		'國中／高中',
 		'大專院校',
 		'社區機構<span style="font-size:0.8em;">（例如：諮商所、心衛中心、基金會等）</span>',
 		'醫院',
@@ -183,7 +183,7 @@ define(['questAPI'], function(Quest) {
         {inherit: 'basicSelect', name: 'com_13', stem: '13. 異性戀主義與具有偏見的觀念已經滲透到心理衛生專業領域中。'},
         {inherit: 'basicSelect', name: 'com_14', stem: '14. 我認為自己有能力在治療中評估同志的心理健康需求。'},
         {inherit: 'basicSelect', name: 'com_15', stem: '15. 我認為同志伴侶不需要特別的權利（例如：同居伴侶權、婚姻權），因為那將會破壞正常與傳統的家庭價值。'},
-        {inherit: 'basicSelect', name: 'com_16', stem: '16. 有不同的心理/社會議題分別影響著男同志和女同志。'},
+        {inherit: 'basicSelect', name: 'com_16', stem: '16. 有不同的心理／社會議題分別影響著男同志和女同志。'},
         {inherit: 'basicSelect', name: 'com_17', stem: '17. 如果我的個案將異性戀的生活型態視為理想的生活型態，那是最好不過的了。'},
         {inherit: 'basicSelect', name: 'com_18', stem: '18. 我有諮商（男性或女性）雙性戀個案的經驗。'},
         {inherit: 'basicSelect', name: 'com_19', stem: '19. 我知道哪些體制上的阻礙可能會抑制同志使用心理衛生服務。'},

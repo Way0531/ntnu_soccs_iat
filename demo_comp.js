@@ -57,7 +57,7 @@ define(['questAPI'], function(Quest) {
             type: 'selectOne',
             inherit: 'basicSelectOld',
             name: 'gender',
-            stem: '3. 您的生理性別是？<br><span style="color:gray; font-size:0.8em;">出生時醫師判定的性別</span>',
+            stem: '3. 您的生理性別／指定性別是？<br><span style="color:gray; font-size:0.8em;">出生時醫師所判定的性別</span>',
             answers: ['男性','女性','其他']	
         },
        {

@@ -174,7 +174,7 @@ define(['managerAPI',
 	//改掉
 	//{type: 'post', path: ['$isTouch', 'raceSet', 'blackLabels', 'whiteLabels'] },
         {inherit: 'lastpage'},
-        {inherit: 'redirect'}
+        //{inherit: 'redirect'}
 
     ]);
     return API.script;

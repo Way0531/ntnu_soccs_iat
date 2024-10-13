@@ -146,7 +146,7 @@ define(['managerAPI',
             ]
         },
 
-        {inherit: 'intro'},
+        //{inherit: 'intro'},
 	//{inherit: 'demo_comp'},
 	    
 	//{inherit: 'demographic'},    
@@ -169,11 +169,13 @@ define(['managerAPI',
         },
 	{inherit: 'suggestion'}, 
 	{inherit: 'uploading'},
+*/
+ 
 	//改掉
 	//{type: 'post', path: ['$isTouch', 'raceSet', 'blackLabels', 'whiteLabels'] },
         {inherit: 'lastpage'},
         {inherit: 'redirect'}
-	*/
+
     ]);
     return API.script;
 });

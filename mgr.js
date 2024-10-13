@@ -145,11 +145,17 @@ define(['managerAPI',
                 }
             ]
         },
-        
+
+	{inherit: 'close'},
+	    /*
         {inherit: 'intro'},
 	{inherit: 'demo_comp'},
+ */
+	    
 	//{inherit: 'demographic'},    
 	//{inherit: 'explicits'}, //固定順序
+
+	    /*
         {
             mixer:'random',
             data:[
@@ -170,6 +176,7 @@ define(['managerAPI',
 	//{type: 'post', path: ['$isTouch', 'raceSet', 'blackLabels', 'whiteLabels'] },
         {inherit: 'lastpage'},
         {inherit: 'redirect'}
+	*/
     ]);
     return API.script;
 });

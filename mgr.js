@@ -146,11 +146,8 @@ define(['managerAPI',
             ]
         },
 
-	{inherit: 'close'},
-	    /*
         {inherit: 'intro'},
-	{inherit: 'demo_comp'},
- */
+	//{inherit: 'demo_comp'},
 	    
 	//{inherit: 'demographic'},    
 	//{inherit: 'explicits'}, //固定順序
